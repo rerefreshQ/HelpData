@@ -8,6 +8,10 @@
     <title>Document</title>
 
     <style>
+        input:focus {
+            background-color: yellow;
+        }
+
         .tableSelector td {
             color: blue;
         }
@@ -20,15 +24,21 @@
             text-decoration: none;
         }
 
+        a:hover {
+            color: #ff6700;
+        }
+
         span {
             color: red;
             font-weight: 700;
             /* font-weight: 900; */
         }
 
-        table,td {
+        table,
+        th,
+        td {
             /* border: 1; */
-            border:1px solid #000000;
+            border: 1px solid #000000;
             /* background: red; */
             /* border:1px; */
         }
@@ -36,12 +46,21 @@
 </head>
 
 <body>
-    <h1 id="HtmlTop">HTML 常用标签</h1>
-    <h2>这是黑马基础班课程，以后要找<span> 就业班 </span>课程</h2>
-    <h3>标题标签 &#60;h1&#62;-&#60;h6&#62;(重要)</h3>
+    量屏幕 px的标尺工具:FSCapture.exe <a href="https://www.bilibili.com/video/av80149248?p=82"
+        target="_blank">5分钟左右有使用方法</a><br>
+    设置->屏幕标尺<br>
+    设置->屏幕拾色器<br>
+    <br>
+    snipaste <a href="https://www.bilibili.com/video/av80149248?p=112">截图工具</a> <br>
+    <br>
     帮助文档：<br>
     w3c:<a href="http://w3school.com.cn" target="_blank">http://w3school.com.cn</a><br>
     MDN:<a href="https:developer.mozilla.org/zh-CN/" target="_blank">https:developer.mozilla.org/zh-CN/</a>
+
+
+    <h1 id="HtmlTop">HTML 常用标签</h1>
+    <h2>这是黑马基础班课程，以后要找<span> 就业班 </span>课程</h2>
+    <h3>标题标签 &#60;h1&#62;-&#60;h6&#62;(重要)</h3>
     <table border="1">
         <thead>
             <tr>
@@ -823,10 +842,6 @@
             <tr>
                 <td colspan="3">
                     <h2>文本</h2>
-                    量屏幕 px的标尺工具:FSCapture.exe <a href="https://www.bilibili.com/video/av80149248?p=82"
-                        target="_blank">5分钟左右有使用方法</a><br>
-                    设置->屏幕标尺<br>
-                    设置->屏幕拾色器<br>
                 </td>
             </tr>
             <tr>
@@ -1090,7 +1105,7 @@
                 <td></td>
                 <td>直接将本表的后代 td 选出来作修改</td>
                 <td>.tableSelector td{color:blue}</td>
-                
+
             </tr>
         </tbody>
     </table>
@@ -1104,7 +1119,7 @@
                     元素1 是父级，元素2 是子级，最终选择的是 <span>元素2</span><br>
                     元素2必须是<span>子元素</span>，其孙子、重孙子之类都不归他管。
                 </td>
-                
+
             </tr>
         </thead>
 
@@ -1118,7 +1133,7 @@
     </table>
 
     <h3>并集选择器</h3>
-    <table >
+    <table>
         <thead>
             <tr>
                 <td colspan="3">
@@ -1149,6 +1164,371 @@
             </tr>
         </tbody>
     </table>
+
+    <h3>链接伪类选择器</h3>
+    <table>
+        <tbody>
+            <tr>
+                <td>a:link</td>
+                <td>/* 选择所有未被访问的链接 */</td>
+            </tr>
+
+            <tr>
+                <td>a:visited</td>
+                <td>/* 选择所有已被访问的链接 */</td>
+            </tr>
+
+            <tr>
+                <td>a:hover</td>
+                <td>/* 选择鼠标指针位于其上的链接 */</td>
+            </tr>
+
+            <tr>
+                <td>a:active</td>
+                <td>/* 选择活动链接(鼠标按下未弹起的链接) */</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span>链接伪类选择器注意事项</span><br>
+    1.为了确保生效，请按照<span> LVHA </span>的顺序声明:link :visited : hover :active。<br>
+    2.记忆法： LVHA (LV[包包]好啊)<br>
+    3.因为 a 链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式。<br>
+    <span>链接伪类选择器实际工作开发中的写法：</span><br>
+    /* a 是标签选择器 所有连接 */<br>
+    a {<br>
+    color: gray;<br>
+    }<br>
+    <br>
+    /* :hover 是链接伪类选择器 鼠标经过 */<br>
+    a:hover {<br>
+    color: red; /* 鼠标经过的时候，由原来的 灰色 变成了 红色 */<br>
+    }<br>
+
+
+    <h3>:focus 伪类选择器</h3>
+    <span>:focus 伪类选择器</span> 是用于选取获得焦点的表单元素。<br>
+    焦点就是光标，一般情况<input>类表单元素才能获取，因此这个选择器也主要针对于表单元素来说。<br>
+    input:focus{<br>
+    background-color:yellow;<br>
+    }
+
+    <h3>复合选择器总结</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>选择器</th>
+                <th>作用</th>
+                <th>特征</th>
+                <th>使用情况</th>
+                <th>隔开符号及用法</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td><span>后代选择器</span></td>
+                <td>用来选择后代元素</td>
+                <td>可以是子孙后代</td>
+                <td>较多</td>
+                <td>符号是<strong> 空格: </strong> .nav a </td>
+            </tr>
+
+            <tr>
+                <td>子代选择器</td>
+                <td>选择最近一级元素</td>
+                <td>只选亲儿子</td>
+                <td>较少</td>
+                <td>符号是<strong> 大于: </strong> .nav>a </td>
+            </tr>
+
+            <tr>
+                <td><span>并集选择器</span></td>
+                <td>选择某些相同样式的元素</td>
+                <td>可以用于集体声明</td>
+                <td>较多</td>
+                <td>符号是<strong> 逗号: </strong> .nav a </td>
+            </tr>
+
+            <tr>
+                <td><span>链接伪类选择器</span></td>
+                <td>选择不同状态的链接</td>
+                <td>跟链接相关</td>
+                <td>较多</td>
+                <td>重点记住 <strong>a{}</strong> 和 <strong>a:hover</strong>a{}</strong>> 实际开发的写法 </td>
+            </tr>
+
+            <tr>
+                <td>:focus选择器</td>
+                <td>选择获得光标的表单</td>
+                <td>跟表单相关</td>
+                <td>较少</td>
+                <td><strong>input:focus</strong> 记住这个写法</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>什么是元素显示模式</h3>
+    元素显示模式就是<span>元素(标签)以什么方式进行显示</span>,比如&lt;div&gt;自己占一行，比如一行可以放多个&lt;span&gt;。<br>
+    HTML 元素一般分为<span>块元素</span>和<span>行内元素</span>两种元素。
+
+    <h3>块元素</h3>
+    常见的块元素有&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、&lt;ul&gt;、&lt;ol&gt;、&lt;li&gt;等，其中<span>&lt;div&gt;</span>标签是<span>最典型的块元素</span>。<br>
+    块级元素的特点：<br>
+    1.比较霸道，自己独占一行。<br>
+    2.高度、宽度、外边距以及内边距都可以控制。<br>
+    3.宽度默认是容器(父级宽度)的 100%。<br>
+    4.是一个容器及盒子，里面可以放行内或者块级元素。<br>
+    <dl>
+        <dt><span>注意：</span></dt>
+        <dd>文字类的元素内不能使用块级元素</dd>
+        <dd>&lt;p&gt;标签主要用于存放文字，因此&lt;p&gt;里面不能放块级元素，特别是不能放&lt;div&gt;</dd>
+        <dd>同理，&lt;h1&gt;~&lt;h6&gt;等都是文字类块级标签，里面也不能放其他块级元素</dd>
+    </dl>
+
+    <h3>行内元素</h3>
+    常见的块元素有&lt;a&gt;、&lt;strong&gt;、&lt;b&gt;、&lt;em&gt;、&lt;i&gt;、&lt;del&gt;、&lt;s&gt;&lt;ins&gt;、&lt;u&gt;、&lt;span&gt;等，其中<span>&lt;span&gt;</span>标签是<span>最典型的行内元素</span>。有的地方也将行内元素称为<span>内联元素</span>。<br>
+    行内元素的特点：<br>
+    1.相邻行内元素在同一行上，一行可以显示多个。<br>
+    2.高、宽直接设置是无效的。<br>
+    3.默认宽度就是它本身内容的宽度。<br>
+    4.行内元素只能容纳文本或其他行内元素。<br>
+    <dl>
+        <dt><span>注意：</span></dt>
+        <dd>链接里面不能再放链接</dd>
+        <dd>特殊情况链接&lt;a&gt;里面可以放块级元素，但是给&lt;a&gt;转换一下块级模式最安全</dd>
+    </dl>
+
+
+    <h3>行内块元素</h3>
+    在行内元素中有几个特殊的标签----&lt;ing /&gt;、&lt;input
+    /&gt;、&lt;td&gt;，它们<span>同时具有块元素和行内元素的特点</span>。有些资料称它们为<span>行内块元素</span>。<br>
+    行内块元素的特点：<br>
+    1.和相邻行内元素(行内块)在一行上，但是他们之前会有空白缝隙。一行可以显示多个(行内元素特点)。<br>
+    2.默认宽度就是它本身内容的宽度(行内元素特点)。<br>
+    3.高度、行高、外边距以及内边距都可以控制(行内元素特点)。<br>
+    <dl>
+        <dt><span>注意：</span></dt>
+        <dd>链接里面不能再放链接</dd>
+        <dd>特殊情况链接&lt;a&gt;里面可以放块级元素，但是给&lt;a&gt;转换一下块级模式最安全</dd>
+    </dl>
+
+    <h3>元素显示模式总结</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>元素模式</th>
+                <th>元素排列</th>
+                <th>设置样式</th>
+                <th>默认宽度</th>
+                <th>包含</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>块级元素</td>
+                <td>一行只能放一个块级元素</td>
+                <td>可以设置宽度高度</td>
+                <td>容器的100%</td>
+                <td>容器级可以包含任何标签</td>
+            </tr>
+
+            <tr>
+                <td>行内元素</td>
+                <td>一行可以放多个行内元素</td>
+                <td>不可以直接设置宽度高度</td>
+                <td>它本身内容的宽度</td>
+                <td>容纳文本或其他行内元素</td>
+            </tr>
+
+            <tr>
+                <td>行内块元素</td>
+                <td>一行可以放多个行内块元素</td>
+                <td>可以设置宽度高度</td>
+                <td>它本身内容的宽度</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>元素显示模式转换</h3>
+    一个模式的的元素需要另外一种模式的特性：<br>
+    比如想要增加链接&lt;a&gt;的触发范围。
+    <ul>
+
+        <li><span>转换为块级元素：display:block;</span></li>
+        <li>转换为行内元素：display:inline;</li>
+        <li><span>转换为行内块：display:inline-block;</span></li>
+    </ul>
+
+    <h3>单选文字垂直居中</h3>
+    <table>
+        <tr>
+            <td>
+                <br>
+                行高(40px)<br>
+                <br>
+            </td>
+            <td>
+                (5px)上空隙<br>
+                (30px)文字本身高度<br>
+                (5px)下空隙<br>
+            </td>
+        </tr>
+    </table>
+
+    <h3>背景总结</h3>
+    <table>
+
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>作用</th>
+                <th>值</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>background-color</td>
+                <td>1.背景颜色</td>
+                <td>预定义的颜色值/十六进制/RGB代码</td>
+            </tr>
+
+            <tr>
+                <td>background-image</td>
+                <td>2.背景图片</td>
+                <td>url(图片路径)</td>
+            </tr>
+
+            <tr>
+                <td>background-repeat</td>
+                <td>3.是否平铺</td>
+                <td>repeate/no-repeat/repeat-x/repeat-y</td>
+            </tr>
+
+            <tr>
+                <td>background-attachment</td>
+                <td>4.背景附着</td>
+                <td>scroll(背景滚动) / fixed(背景固定)</td>
+            </tr>
+
+            <tr>
+                <td>background-position</td>
+                <td>5.背景位置</td>
+                <td>length/position 分别是 x 和 y 坐标</td>
+            </tr>
+
+            <tr>
+                <td>背景简写</td>
+                <td>书写更简单</td>
+                <td>背景颜色 背景图片地址 背景平铺 背景滚动 背景位置;</td>
+            </tr>
+
+            <tr>
+                <td>背景色半透明</td>
+                <td>背景颜色半透明</td>
+                <td>background: rgba(0,0,0,0.3); 后面必须是 4个值</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>CSS 的三大特性:层叠性、继承性、优先级</h3>
+    <h4>层叠性</h4>
+    <dl>
+        <dt>层叠性原则：</dt>
+        <dd>样式冲突，遵循的原则就是<span>就近原则</span>，哪个样式离结构近，就执行哪个样式</dd>
+        <dd>样式不冲突，不会层叠</dd>
+    </dl>
+
+    <h4>继承性</h4>
+    <dl>
+        <dt>CSS 中的继承：子标签会继承父标签的某些样式，如文本颜色和字号。</dt>
+        <dd>恰当地使用继承可以简化代码，降低CSS样式的复杂性</dd>
+        <dd>子元素可以继承父元素的样式(text-,font-,line- 这些元素开头的可以继承，以及 color 属性)</dd>
+    </dl>
+
+    <dl>
+        <dt>
+            行高的继承性<br>
+        </dt>
+        <dd>
+            body{<br>
+            font:12px/1.5 "Microsoft Yahei";<br>
+            }<br>
+        </dd>
+        <dd>行高可以跟单位也可以不跟单位</dd>
+        <dd>如果子元素没有设置行高，则会继承父元素的行高为 1.5 倍</dd>
+        <dd>此时子元素的行高是：当前子元素的文字大小 * 1.5 倍</dd>
+        <dd><span>body 行高 1.5 这样的写法最大的优势就是里面子元素可以根据自己文字大小自动调整行高</span> </dd>
+    </dl>
+
+    <h4>优先级</h4>
+    选择器权重如下表所示：
+    <table>
+        <thead>
+            <tr>
+                <th>选择器</th>
+                <th>选择器权重</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>继承 或者 *</td>
+                <td>0,0,0,0</td>
+            </tr>
+
+            <tr>
+                <td>元素选择器</td>
+                <td>0,0,0,1</td>
+            </tr>
+
+            <tr>
+                <td>类选择器，伪类选择器</td>
+                <td>0,0,1,0</td>
+            </tr>
+
+            <tr>
+                <td>ID选择器</td>
+                <td>0,1,0,0</td>
+            </tr>
+
+            <tr>
+                <td>行内样式 style=""</td>
+                <td>1,0,0,0</td>
+            </tr>
+
+            <tr>
+                <td>!important</td>
+                <td>∞无穷大&#8734;</td>
+            </tr>
+        </tbody>
+    </table>
+    <dl>
+        <dt><span>权重叠加:</span>如果是复合选择器，则会有权重叠加，需要计算权重。</dt>
+        <dd>div ul li ------> 0,0,0,3</dd>
+        <dd>.nav ul li ------> 0,0,1,2</dd>
+        <dd>a:hover ------> 0,0,1,1(a[0,0,0,1] + :hover[0,0,1,0])</dd>
+        <dd>.nav a ------> 0,0,1,1</dd>
+    </dl>
+
+    <h3>盒子模型</h3>
+    <h4>看透网页布局的本质</h4>
+    网页布局过程：
+    1.先准备好相关的网页元素，网页元素基本都是盒子 Box。<br>
+    2.利用 CSS 设置好盒子样式，然后摆放到相应位置。<br>
+    3.往盒子里面装内容。<br>
+    网页布局的核心本质：就是利用 CSS 摆盒子。
+
+
+    <h3>盒子模型</h3>
+    <h4>盒子模型(Box Model)组成</h4><br>
+    <img src="images/box-cn.jpg" alt="" width="700px"><br>
+    所谓<span>盒子模型</span>：就是把 HTML 页面中的布局元素入会费作是一个矩形的盒子，也就是一个盛装内容的容器。<br>
+    CSS 盒子模型本质上是一个盒子，封装周围的 HTML 元素，它包括：边框(<span>border</span>)、外边距(<span>margin</span>)、内边距(<span>padding</span>)、和实际内容(<span>content</span>)<br>
+    <img src="images/box-en.jpg" alt="" width="700px">
 </body>
 
 </html>
