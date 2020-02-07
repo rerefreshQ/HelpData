@@ -8,11 +8,56 @@
     <title>Document</title>
 
     <style>
-        #border4{
-            border-top: 1px solid red;  /* 只设定上边框，其余同理 */
-                    border-bottom: 10px dashed purple;  /* 只设定下边框，其余同理 */
-                    border-left: 8px dashed purple;  /* 只设定左边框，其余同理 */
-                    border-right: 7px sold blue;  /* 只设定左边框，其余同理 */
+.father {
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+            margin-top: 10px;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-top: 30px;
+        }
+
+        .fatherOk1 {
+            border-top: 1px solid transparent;
+        }
+
+        .fatherOk2 {
+            padding-top: 1px;
+        }
+
+        .fatherOk3 {
+            overflow: hidden;
+        }
+
+        .fatherMe {
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+            margin-top: 10px;
+            padding-top: 30px;
+        }
+
+        .sonMe {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .code {
+            background-color: rgb(182, 227, 248);
+            padding: 15px;
+        }
+
+        #border4 {
+            border-top: 5px solid red;
+            border-bottom: 10px dashed purple;
+            border-left: 8px dashed chartreuse;
+            border-right: 7px solid blue;
         }
 
         input:focus {
@@ -48,6 +93,12 @@
             border: 1px solid #000000;
             /* background: red; */
             /* border:1px; */
+
+        }
+
+        td,
+        th {
+            padding: 18px;
         }
     </style>
 </head>
@@ -1542,6 +1593,7 @@
     <img src="images/box-en.jpg" alt="" width="700px">
 
     <h4>边框(border)</h4>
+    <span>特别：可以给 &lt;hX&gt; 设置边框，估计其他都得</span><br>
     border 可以设置元素的边框。边框有三部分组成：边框宽度(粗细) 边框样式 边框颜色<br>
     <span>border : border-width || border-style || border-color(具体值参考 help)</span><br>
     <table>
@@ -1581,19 +1633,272 @@
                 <td>边框分开写法</td>
                 <td>
                     <div id="border4">
-                        border-top: 1px solid red; /* 只设定上边框，其余同理 */  <br>
-                        border-bottom: 10px dashed purple; /* 只设定下边框，其余同理 */<br>
+                        border-top: 1px solid red; /* 只设定上边框，其余同理 */ <br>
+                        border-bottom: 10px dashed purple; /* 只设定下边框，其余同理 */ <br>
                         border-left: 8px dashed purple; /* 只设定左边框，其余同理 */<br>
-                        border-right: 7px sold bule; /* 只设定左边框，其余同理 */<br>
+                        border-right: 7px solid bule; /* 只设定左边框，其余同理 */<br>
                     </div>
-
                 </td>
             </tr>
 
+            <tr>
+                <td>border-collapse:collapse;</td>
+
+                <td>
+                    相邻边框合并在一起<br>
+                    collapse 单词是合并的意思
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <strong>边框会影响<span>盒子实际大小</span></strong><br>
+    因此我们有两种方案解决：<br>
+    1.测量盒子大小的时候，不量边框<br>
+    2.如果测量的时候包含了边框，则需要 width/height 减云边框宽度<br>
+
+    <h4>内边距(padding)</h4>
+    即边框与内容之间的距离
+    <table>
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>作用</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>padding-left</td>
+                <td>左内边距</td>
+            </tr>
+
+            <tr>
+                <td>padding-right</td>
+                <td>右内边距</td>
+            </tr>
+
+            <tr>
+                <td>padding-top</td>
+                <td>上内边距</td>
+            </tr>
+
+            <tr>
+                <td>padding-bottom</td>
+                <td>下内边距</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span>padding</span><strong>属性(简写属性)可以有一到四个值</strong>
+    <table>
+
+        <thead>
+            <tr>
+                <th>值的个数</th>
+                <th>表达意思</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>padding: 5px;</td>
+                <td>1个值，代表上下左右都有5像素内边距;</td>
+            </tr>
+
+            <tr>
+                <td>padding: 5px 10px;</td>
+                <td>2个值，代表上下内边距是5像素 左右内边距是10像素;</td>
+            </tr>
+
+            <tr>
+                <td>padding: 5px 10px 20px;</td>
+                <td>3个值，代表上内边距是5像素 左右内边距是10像素 下内边距是20像素;</td>
+            </tr>
+
+            <tr>
+                <td>padding: 5px 10px 20px 30px;</td>
+                <td>4个值，上是5像素 右10像素 下20像素 左是30像素;(顺时针)</td>
+            </tr>
         </tbody>
     </table>
 
 
+    <strong>内边距会影响<span>盒子实际大小</span></strong><br>
+    <strong>解决方案：</strong><br>
+    如果保证盒子跟效果图大小保持一致，则让<span>width/height 减去多出来的内边距大小</span>即可<br>
+    如果盒子本身没有指定 width/height 属性，则此时 padding 不会撑开盒子大小
+
+
+    <h4>外边距(margin)</h4>
+    即控制盒子和盒子之间的距离
+    <table>
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>作用</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>margin-left</td>
+                <td>左外边距</td>
+            </tr>
+
+            <tr>
+                <td>margin-right</td>
+                <td>右外边距</td>
+            </tr>
+
+            <tr>
+                <td>margin-top</td>
+                <td>上外边距</td>
+            </tr>
+
+            <tr>
+                <td>margin-bottom</td>
+                <td>下外边距</td>
+            </tr>
+        </tbody>
+    </table>
+    margin 简写方式代表的意义跟 padding 完全一致
+
+    <h4>外边距典型应用</h4>
+    外边距可以让<strong>块级盒子</strong><span>水平居中</span>，但是必须满足两个条件：<br>
+    1.盒子必须指定了宽度(width)。<br>
+    2.盒子<span>左右的外边距</span>都设置为 auto。<br>
+    <div class="code">
+        .header{<br>
+        width:96px;<br>
+        margin:0 auto;<br>
+        }
+    </div>
+
+    <dl>
+        <dt>常见的写法，以下三种都可以：</dt>
+        <dd>margin-left: auto; margin-right: auto;</dd>
+        <dd>margin: auto;</dd>
+        <dd><span>margin: 0 auto;</span></dd>
+    </dl>
+    <span>注意：</span>以上方法是让块级元素水平居中，<span>行内元素或者行内块元素水平居中给其父元素添加 text-align:center 即可</span>
+
+
+    <h4>嵌套块元素垂直外边距的塌陷</h4>
+    <span>只要父盒子包含子盒子，子盒子使用 margin，必定会发生"外边距塌陷"！</span><br>
+    对于两个嵌套关系(父子关系)的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。<span>即是：子div margin(外边距)代替了父 div
+        margin(外边距)谁大就谁发生了作用：</span>
+    <style>
+        
+    </style>
+
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <strong>解决方法</strong>：..........................我自己想的办法是不对子元素定义外边框(不要margin)，在父元素定义内边框(padding)
+    <table>
+        <thead>
+            <tr>
+                <th>1.可以为父元素定义上边框(border-top: 1px solid transparent;)</th>
+                <th>2.可以为父元素定义上内边距(padding-top: 1px ;)</th>
+                <th>3.可以为父元素添加 overflow:hidden</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    <div class="father fatherOk1">
+                        <div class="son"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="father fatherOk2">
+                        <div class="son"></div>
+                    </div>
+                </td>
+
+                <td>
+                    <div class="father fatherOk3">
+                        <div class="son"></div>
+                    </div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <div class="fatherMe">
+        <div class="sonMe"></div>
+    </div>
+
+    <h4>清除内外边距</h4>
+    网页元素很多都带有默认的内外边距，而且不同浏览器默认的也不一致。因此我们在布局前，首先清除下网页元素的内外边距。
+    <div class="code">
+        * {<br>
+            padding: 0;<br>
+            margin: 0;<br>
+        }
+    </div>
+
+    <span>注意:行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内元素就可以了</span>
+
+    <h3><a target="_blank" href="https://www.bilibili.com/video/av80149248?p=155">PS 基本操作</a></h3>
+    因为网页美工大部分效果图都是利用<span> PS (Photoshop) </span>来做的，所以以后我们大部分切图工作都是在<span> PS </span>里面完成。
+    <ul>
+        <li><span>文件--&gt;</span>：可以打开我们要测量的图片</li>
+        <li><span>Ctrl+R</span>：可以打开标尺，或者<span>视图--&gt;标尺</span></li>
+        <li>右击标尺，把里面的单位改为<span>像素</span></li>
+        <li><span>Ctrl+加号(+)</span>可以放大视图，<span>Ctrl+减号(-)</span>可以缩小视图</li>
+        <li><span>按住空格键</span>：鼠标可以变成小手，拖动 PS 视图</li>
+        <li>用<span>选区</span>拖动 可以测量大小</li>
+        <li><span>Ctrl+D</span>可以取消选区，或者在<span>旁边空白处点击一下</span>也可以取消选区</li>
+    </ul>
+
+    <h4>新知识点：去掉 li 前面的项目符号(小圆点)</h4>
+    语法：
+    <div class="code">li {list-style: none;}</div>
+
+    <h3>圆角边框-常用</h3>
+    在 CSS3 中，新增了<span>圆角边框</span>样式，这样我们的盒子就可以变圆角了。
+    <span>border-radius</span>属性用于设置元素的外框圆角。
+    语法：
+    <div class="code">
+        broder-radius:length;(数值px 或 百分比)<br>
+        边框-半径:圆的半径长度<br>
+        原理：(椭)圆与边框的交集形成圆角效果
+    </div>
+
+
+    <style>
+        .Change{
+            background-color: blue;
+        }
+
+        .bgcYellow{
+            background-color: yellow;
+            
+        }
+    </style>
+    <ul>
+        <li class="bgcYellow">如果是<span>正方形</span>，想要设置为一个圆，把数值修改为<span>高度或者宽度的一半</span>即可，或者直接写<span>50%</span></li>
+        <li class="bgcYellow"><span>如果是矩形，设置为高度的一半就可以做</span><span class="Change">我是圆角边框</span></li>
+        <li>该属性是一个<span>简写属性</span>，可以跟四个值，分别代表<span>左上角、右上角、右下角、左下角</span></li>
+        <li>分开写：<br>
+            <span>
+                border-top-left-radius、<br>
+                border-top-right-radius、<br>
+                border-bottom-right-radius、<br>
+                border-bottom-left-radius
+            </span>
+        </li>
+    </ul>
+
+    <h3>盒子阴影-常用</h3>
+    <h3>文字阴影-少用</h3>
 </body>
 
 </html>
