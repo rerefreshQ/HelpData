@@ -7,6 +7,7 @@ git 命令：
 
 git status
 
+git rm files
 git add files
 
 git commit -m "update note"
