@@ -8,7 +8,28 @@
     <title>Document</title>
 
     <style>
-.father {
+        #divTestLeft,#divTestRight{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            float: left;
+        }
+
+        #divTestRight{
+            float:right;
+        }
+
+        .Change {
+            background-color: #888;
+            border-radius: 30px;
+        }
+
+        .bgcYellow {
+            background-color: yellow;
+
+        }
+
+        .father {
             width: 400px;
             height: 400px;
             background-color: purple;
@@ -49,9 +70,26 @@
         }
 
         .code {
+            width: 80%;
             background-color: rgb(182, 227, 248);
             padding: 15px;
+            box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.3);
+            /* 颜色一般不用纯黑色，老师用了半透明的黑色 */
         }
+
+        .code:hover {
+            box-shadow: 0px 0px;
+            /* 颜色一般不用纯黑色，老师用了半透明的黑色 */
+        }
+
+        #divShadowTest {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(182, 227, 248);
+            box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.3) inset;
+            /* 颜色一般不用纯黑色，老师用了半透明的黑色 */
+        }
+
 
         #border4 {
             border-top: 5px solid red;
@@ -104,6 +142,7 @@
 </head>
 
 <body>
+    <a href="https://www.runoob.com/html/html-colorvalues.html" target="_blank">html 常用颜色</a><br>
     量屏幕 px的标尺工具:FSCapture.exe <a href="https://www.bilibili.com/video/av80149248?p=82"
         target="_blank">5分钟左右有使用方法</a><br>
     设置->屏幕标尺<br>
@@ -1226,7 +1265,7 @@
         </tbody>
     </table>
 
-    <h3>链接伪类选择器</h3>
+    <h3>链接伪类选择器--<span>所有标签都可以做，不止&lt;a&gt;</span> </h3>
     <table>
         <tbody>
             <tr>
@@ -1788,9 +1827,6 @@
     <span>只要父盒子包含子盒子，子盒子使用 margin，必定会发生"外边距塌陷"！</span><br>
     对于两个嵌套关系(父子关系)的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。<span>即是：子div margin(外边距)代替了父 div
         margin(外边距)谁大就谁发生了作用：</span>
-    <style>
-        
-    </style>
 
     <div class="father">
         <div class="son"></div>
@@ -1839,8 +1875,8 @@
     网页元素很多都带有默认的内外边距，而且不同浏览器默认的也不一致。因此我们在布局前，首先清除下网页元素的内外边距。
     <div class="code">
         * {<br>
-            padding: 0;<br>
-            margin: 0;<br>
+        padding: 0;<br>
+        margin: 0;<br>
         }
     </div>
 
@@ -1867,25 +1903,15 @@
     <span>border-radius</span>属性用于设置元素的外框圆角。
     语法：
     <div class="code">
-        broder-radius:length;(数值px 或 百分比)<br>
+        border-radius:length;(数值px 或 百分比)<br>
         边框-半径:圆的半径长度<br>
         原理：(椭)圆与边框的交集形成圆角效果
     </div>
 
 
-    <style>
-        .Change{
-            background-color: blue;
-        }
-
-        .bgcYellow{
-            background-color: yellow;
-            
-        }
-    </style>
     <ul>
         <li class="bgcYellow">如果是<span>正方形</span>，想要设置为一个圆，把数值修改为<span>高度或者宽度的一半</span>即可，或者直接写<span>50%</span></li>
-        <li class="bgcYellow"><span>如果是矩形，设置为高度的一半就可以做</span><span class="Change">我是圆角边框</span></li>
+        <li class="bgcYellow"><span>如果是矩形，设置为高度的一半就可以做</span> <a href="#" class="Change">我是圆角边框</a></li>
         <li>该属性是一个<span>简写属性</span>，可以跟四个值，分别代表<span>左上角、右上角、右下角、左下角</span></li>
         <li>分开写：<br>
             <span>
@@ -1898,7 +1924,177 @@
     </ul>
 
     <h3>盒子阴影-常用</h3>
+    语法：做了:hover，鼠标经过阴影消失
+    <div class="code">
+        box-shadow: <strong>h-shadow v-shadow</strong> blur spread color inset;
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>值</th>
+                <th>描述</th>
+                <th>测试后的说明</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>h-shadow</td>
+                <td>必需。水平阴影的位置。允许负值。</td>
+                <td>(+数)阴影横向右移动，(-数)阴影横向左移动</td>
+            </tr>
+
+            <tr>
+                <td>v-shadow</td>
+                <td>必需。垂直阴影的位置。允许负值。</td>
+                <td>(+数)阴影竖向下移动，(-数)阴影竖向上移动</td>
+            </tr>
+
+            <tr>
+                <td>blur</td>
+                <td>可选。模糊距离</td>
+                <td>阴影的虚实，0至正数，数值越小越实，越大越模糊(负数没阴影)</td>
+            </tr>
+
+
+            <tr>
+                <td>spread</td>
+                <td>可选。阴影的尺寸</td>
+                <td>影子的大小</td>
+            </tr>
+
+            <tr>
+                <td>color</td>
+                <td>可选。阴影颜色。请参阅 CSS 颜色值</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>inset</td>
+                <td>可选。将外部阴影(outset)改为内部阴影</td>
+                <td>
+                    默认outset，但不能写outset，内阴影效果：
+                    <div id="divShadowTest"></div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <dl>
+        <span>
+            <dt>注意:</dt>
+            <dd>1.默认是外阴影(outset)，但是不可以写这个单词，否则导致阴影无效</dd>
+            <dd>2.盒子阴影不占用空间，不会影响其他盒子排列</dd>
+        </span>
+    </dl>
+
+
     <h3>文字阴影-少用</h3>
+    语法：
+    <div class="code">text-shadow: <strong>h-hadow v-shadow</strong> blur color;</div>
+    <table>
+        <thead>
+            <tr>
+                <th>值</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>h-shadow</td>
+                <td>必需。水平阴影的位置。允许负值。</td>
+            </tr>
+
+            <tr>
+                <td>v-shadow</td>
+                <td>必需。垂直阴影的位置。允许负值。</td>
+            </tr>
+
+            <tr>
+                <td>blur</td>
+                <td>可选。模糊距离</td>
+            </tr>
+
+            <tr>
+                <td>color</td>
+                <td>可选。阴影颜色。请参阅 CSS 颜色值</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h3>传统网页布局的三种方式</h3>
+    网页布局的本质----用 CSS 来摆放盒子。把盒子摆放到相应位置<br>
+    <dl>
+        <dt>CSS 提供了三种传统布局方式(简单来说，就是盒子如何进行排列顺序)</dt>
+        <dd>普通流(标准流)</dd>
+        <dd>浮动</dd>
+        <dd>定位</dd>
+    </dl>
+
+    <h4>标准流(普通流/文档流)----我认为浮动、定位外的就是标准流</h4>
+    这三种布局方式都是用来摆放盒子的，盒子摆放到合适位置，布局自然就完成了。
+    <span>注意：实际开发中，一个页面基本都包含了这三种布局方式(后面移动端学习新的布局方式)</span>
+
+
+    <h4>浮动(float)</h4>
+    总结：有很多的布局效果，标准流没有办法完成，此时可以利用浮动完成布局。因为浮动可以改变元素标签默认的排列方式<br>
+    浮动最典型的应用：可以让多个块级元素一行内排列显示<br>
+    <strong>网页布局第一准则：<span>多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动</span></strong>
+    <span>float </span>属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘。
+    语法：
+    <div class="code">选择器 { float: 属性值;}</div>
+    <table>
+        <thead>
+            <tr>
+                <th>属性值</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>none</td>
+                <td>元素不浮动(<strong>默认值</strong>)</td>
+            </tr>
+
+            <tr>
+                <td>left</td>
+                <td>元素向<strong>左</strong>浮动</td>
+            </tr>
+
+            <tr>
+                <td>right</td>
+                <td>元素向<strong>右</strong>浮动</td>
+            </tr>
+
+            <tr>
+                <td colspan="2">  <div id="divTestLeft">float:left</div> <div id="divTestRight">float:right</div> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>浮动特性(重难点)</h4>
+    <dl>
+        <dt><span>1.浮动元素会脱离标准流(脱标)</span></dt>
+        <dd>1.脱离标准普通流的控制(浮)移动到指定位置(动)，(俗称<span>脱标</span>)</dd>
+        <dd>2.浮动的盒子<span>不再保留原先的位置--(浮动元素会压住不浮动的元素)</span></dd>
+    </dl>
+    
+    2.浮动的元素会一行内显示并且元素顶部对齐<br>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;注意：浮动的元素是互相贴靠在一起的(不会有缝隙)，如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐</span><br>
+    3.浮动的元素会具有行内块元素的特性<br>
+    
+    <dl>
+        <dt>任何元素都可以浮动。不管原先是什么模式的元素，添加浮动之后具有<span>行内块元素</span>相似的特性</dt>
+        <dd>如果块级盒子没有设置宽度，默认宽度和父级一样宽，但是添加浮动后，它的大小根据内容来决定</dd>
+        <dd>浮动的盒子中间是没有缝隙的，是紧挨着一起的</dd>
+        <dd>行内元素同理</dd>
+    </dl>
+    
 </body>
 
 </html>
