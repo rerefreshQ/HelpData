@@ -11,6 +11,10 @@ git rm files
 
 git add files
 
+git add .
+
+git add --all
+
 git commit -m "update note"
 
 git push
