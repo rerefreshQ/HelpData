@@ -8,7 +8,7 @@
     <title>html css 笔记</title>
 
     <style>
-        img{
+        img {
             border: 1px solid #000;
         }
 
@@ -1512,6 +1512,7 @@
     <h3>单选文字垂直居中</h3>
     <table>
         <tr>
+            <td>块{line-height:40px}</td>
             <td>
                 <br>
                 行高(40px)<br>
@@ -1525,7 +1526,7 @@
         </tr>
     </table>
 
-    <h3>背景总结</h3>
+    <h3>背景总结(可以简写，下表是约定顺序，但无必然的规定，即可以写 d 唔写 d ，写法顺序也可以打乱)</h3>
     <table>
 
         <thead>
@@ -1564,13 +1565,18 @@
             <tr>
                 <td>background-position</td>
                 <td>5.背景位置</td>
-                <td>length/position 分别是 x 和 y 坐标</td>
+                <td>
+                    background-position : length || length<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;length : 　(x坐标 y坐标)百分数 | 由浮点数字和单位标识符组成的长度值。<br>
+                    background-position : position || position <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;position : 　top | center | bottom | left | center | right <br>
+                </td>
             </tr>
 
             <tr>
                 <td>背景简写</td>
                 <td>书写更简单</td>
-                <td>背景颜色 背景图片地址 背景平铺 背景滚动 背景位置;</td>
+                <td>1.背景颜色 2.背景图片地址 3.背景平铺 4.背景滚动 5.背景位置;</td>
             </tr>
 
             <tr>
@@ -1870,7 +1876,7 @@
     <span>注意：</span>以上方法是让块级元素水平居中，<span>行内元素或者行内块元素水平居中给其父元素添加 text-align:center 即可</span>
 
 
-    <h4>嵌套块元素垂直外边距的塌陷</h4>
+    <h4>嵌套块元素垂直外边距的塌陷(浮动盒子不会有外边距合并的问题)</h4>
     <span>只要父盒子包含子盒子，子盒子使用 margin，必定会发生"外边距塌陷"！</span><br>
     对于两个嵌套关系(父子关系)的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。<span>即是：子div margin(外边距)代替了父 div
         margin(外边距)谁大就谁发生了作用：</span>
@@ -2328,7 +2334,7 @@
     </table>
 
     <hr>
-    <h3>学成在线案例：</h3>
+    <h3><a href="learnLineTemp.html" target="_blank">学成在线案例</a>： </h3>
     <h4>CSS 属性书写顺序(重点)</h4>
     <dl>
         <dt>建议遵循以下顺序:</dt>
@@ -2349,9 +2355,23 @@
         <dd>5.所以,先理清楚布局结构再写代码尤为重要这需要我们多写多积累</dd>
     </dl>
     <br>
+    <h3>1.头部制作 .header</h3>
     <img src="images/P200.jpg">
     <img src="images/P200-1.jpg" alt="">
-
+    <h3>2.广告制作 .banner</h3>
+    <img src="images/207.jpg" alt="">
+    <h3>3.精品推荐 .goods</h3>
+    <img src="images/214.jpg" alt="">
+    <h3>4.box 核心内容 .box</h3>
+    由于盒子右边距有边，所以外盒装不下第5个<br>
+    解决方法有2个：<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;第5个盒取消外边距<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;外盒增加外边距的大小(由于这里有2行，所以用这种方法比较合适)<br>
+    <img src="images/215.jpg" alt="">
+    <img src="images/215-1.jpg" alt="">
+    中间课程无教<br>
+    <h3>5.footer 模块</h3>
+    <img src="images/218.jpg" alt="">
 </body>
 
 </html>

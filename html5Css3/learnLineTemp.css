@@ -1,41 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
 body{
     background-color: #f3f5f7;
 }
 
 .w {
     width: 1200px;
-
     margin: auto;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-}
 
-a{	text-decoration: none;
-/*background-color:yellow;*/
 
-}
 li {
     list-style: none;
 }
 
-/* div {
-    width: 80%;
-    height: 130px;
-    background-color: pink;
-    margin: 0 auto;
-} */
 
 .header {
     height: 42px;
-    
     margin: 30px auto;
-    /* margin-top: 10px; */
-    /* padding-top: 10px ; */
 }
 
+/* .header */
 .logo {
     float: left;
     /* margin: 0 auto; */
@@ -44,17 +37,19 @@ li {
 
 }
 
+/* .header */
 .nav{
 	float:left;
 	margin-left:60px
 	}
 
-
+/* .header */
 .nav ul li {
     float: left;
 	margin:0px 15px;
 }
 
+/* .header */
 .nav ul li a{
 	display:block;
 	height:42px;
@@ -64,12 +59,13 @@ li {
 	color:#050505;
 }
 
+/* .header */
 .nav ul li a:hover{
     border-bottom:2px solid #00a4ff;
     color: #00a4ff;
 }
 
-
+/* .header */
 .search{
     float: left;
     width: 412px;
@@ -78,7 +74,7 @@ li {
     margin-left: 50px;
 }
 
-
+/* .header */
 .search input[type="text"]{
     width: 330px;
     height: 40px;
@@ -90,6 +86,7 @@ li {
     padding-left: 30px;
 }
 
+/* .header  */
 .search input[type="button"]{
     float: left;
     width: 50px;
@@ -99,10 +96,23 @@ li {
     
 }
 
+/* .header  */
 .user{
     float: right;
     line-height: 42px;
     margin-right: 15px;
     font-size: 14px;
     color: #666;
+}
+
+
+
+.banner{
+    height: 421px;
+    background-color: #1c036c;
+}
+
+.banner .w{
+    height: 421px;
+    background-color: crimson;
 }
