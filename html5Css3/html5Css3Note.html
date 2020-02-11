@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 
 <head>
+    <base target="_blank" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -2227,7 +2228,7 @@
     1.清除浮动本质是？<br>
     <span>清除浮动的本质是清除浮动元素脱离标准流造成的影响</span><br>
     2.清除浮动策略是？<br>
-    <span>闭合浮动。只让浮动在父盒子内部影响，不影响父例子外面的其他盒子</span><br>
+    <span>闭合浮动。只让浮动在父盒子内部影响，不影响父盒子外面的其他盒子</span><br>
     3.额外标签法？<br>
     <span>
         隔墙法，就是在最后一个浮动的子元素后面添加一个额外标签，添加清除浮动样式<br>
@@ -2454,6 +2455,104 @@
 
         </tbody>
     </table>
+
+    静态定位 static (了解)<br>
+    语法：
+    <div class="code">
+        选择器{position:static;}
+    </div>
+    静态定位按照标准流特性摆放位置，它<span>没有边偏移</span><br>
+    静态定位在布局时很少用到
+
+    <h4>相对定位 relative (重要)</h4>
+    <span>相对定位</span>是元素在移动位置的时候，是相对它<span>原来的位置</span>来说的(自恋型)。<br>
+    语法：
+    <div class="code">
+        选择器{position:relative}
+    </div>
+    相对定位的特点：(务必记住)<br>
+    1.它是相对于自己原来的位置来移动的(<span>移动位置的时候参照点是自己原来的位置</span>)。<br>
+    2.<span>原来</span>在标准流的<span>位置</span>继续占有，后面的盒子仍然以标准流的方式对待它(<span>不脱标，继续保留原来位置</span>)。<br>
+    因此，相对定位并没有脱标。它最典型的应用是给绝对定位当爹的……
+
+
+
+    <h4>绝对定位 absolute (重要)</h4>
+    <span>绝对定位</span>是元素在移动位置的时候，是相对于它<span>祖先元素</span>来说的(拼爹型)。<br>
+    语法：
+    <div class="code">
+        选择器{position:absolute;}
+    </div>
+    绝对定位的特点：(务必记住)<br>
+    1.如果<span>没有祖先元素</span>或者<span>祖先元素没有定位</span>，则以浏览器为准定位(Document文档)。<br>
+    2.如果祖先元素有定位(相对、绝对、固定定位)，则以最近一级的有定位祖先元素为参考点移动位置。<br>
+    3.绝对定位<span>不再占有原先的位置</span>。(脱标)
+
+    <h4>子绝父相的由来</h4>
+    弄清楚这个口诀，就明白了绝对定位和相对定位的使用场景。<br>
+    这个"子绝父相"太重要了，是我们学习定位的口诀，是定位中最常用的一种方式，这句话的意思是：<span>子级是绝对定位的话，父级要用相对定位</span>。
+
+    1.子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他兄弟盒子。<br>
+    2.父盒子需要加定位限制子盒子在父盒子内显示。<br>
+    3.父盒子布局时，需要占有位置，因此父亲只能是相对定位。<br>
+    <br>
+    这就是子绝父相的由来，所以<span>相对定位经常用来作为绝对定位的父级</span>。<br>
+    总结：<span>因为父级需要占有位置，因此是相对定位，子盒子不需要占有位置，则是绝对定位</span><br>
+    当然，子绝父相不是永远不变的，如果父元素不需要占有位置，<span>子绝父绝</span>也会遇到。
+    
+
+    <h4>固定定位 fixed (重要)</h4>
+    <span>固定定位</span>是元素<span>固定于浏览器可视欧的位置</span>。主要使用场景：可以在浏览器页面滚动时元素的位置不会改变。<br>
+    语法：
+    <div class="code">选择器{position:fixed;}</div>
+    固定定位的特点：(务必记住)<br>
+    <dl>
+        <dt>1.以浏览器的可视窗口为参照点移动元素。</dt>
+        <dd>跟父元素没有任何关系</dd>
+        <dd>不随滚动条滚动</dd>
+    </dl>
+    <dl>
+        <dt>2.固定定位<span>不在占有原先的位置</span>。</dt>
+        <dd>固定定位也是脱标的，其实固定定位也可以看做是一种特殊的绝对定位。</dd>
+    </dl>
+    
+    <span>固定定位小技巧：固定在版心右侧位置。</span><br>
+    小算法：
+    1.让固定定位的盒子 left:50%，走到浏览器可视区(也可以看做版心)的一半位置。<br>
+    2.让固定定位的盒子 margin-left:版心宽度的一半距离。多走版心宽度的一半位置<br>
+    就可以让固定定位的盒子贴着版心右侧对齐了。
+    <div class="code">
+        .fixed{<br>
+            position:fixed;<br>
+            /* 1.走浏览器宽度的一半 */<br>
+            left:50%;<br>
+            /* 2.利用 margin 走版心盒子宽度的一半距离(例如版心宽度是 800px) */<br>
+            margin-left:400px;<br>
+            width:50px;<br>
+            heigth:150px;<br>
+            background-color:skyblue;<br>
+        }<br>
+    </div>
+
+
+    <style>
+        a{
+            target:_blank;
+        }
+    </style>
+
+    <h4><a href="https://www.bilibili.com/video/av80149248?p=232" >粘性定位 sticky(了解)</a> --由于浏览器支持差，所以此效果一般是用 JavaScript 实现</h4>
+    语法：
+    <div class="code">
+        选择器{position:sticky;top:10px;}
+    </div>
+    粘性定位的特点：
+    1.以浏览器的可视窗口为参照点移动元素(固定定位特点)<br>
+    2.粘性定位<span>占有原先的位置</span>(相对定位特点)<br>
+    3.必须添加 top、left、right、bottom 其中一个才有效<br>
+    跟页面滚动搭配使用。兼容性较差，IE 不支持。
+
+
 
 </body>
 
