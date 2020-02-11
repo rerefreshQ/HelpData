@@ -2658,11 +2658,69 @@
     定位最大的特点是有层叠的概念,就是可以让多个盒子前后桑压来显示。<span>如果元素自由在某个盒子内移动就用定位布局</span>。<br>
 
     <h3>元素的显示与隐藏</h3>
-类似网站广告,当我们点击关闭就不见了,但是我们重新刷新页面,会重新出现!<br>
-本质:<span>让一个元素在页面中隐藏或者显示出来</span><br>
-1. display 显示隐藏<br>
-2. visibility 显示隐藏<br>
-3. overflow 溢出显示隐藏<br>
+    类似网站广告,当我们点击关闭就不见了,但是我们重新刷新页面,会重新出现!<br>
+    本质:<span>让一个元素在页面中隐藏或者显示出来</span><br>
+    <strong>1. display 显示隐藏 </strong><br>
+    <dl>
+        <dt>display属性用于设置一个元素应如何显示。</dt>
+        <dd>display:none;隐藏对象</dd>
+        <dd>display: block;除了转换为块级元素之外,同时还有显示元素的意思</dd>
+    </dl>
+
+    <span> display隐藏元素后,不再占有原来的位置</span><br>
+    后面应用及其广泛,搭配JS可以做很多的网页特效。<br>
+    <br>
+
+    <strong> 2. visibility 显示隐藏</strong><br>
+    <dl>
+        <dt>visibility属性用于指定一个元素应可见还是隐藏</dt>
+        <dd>visibility: visible;元素可视</dd>
+        <dd>visibility: hidden;元素隐藏</dd>
+    </dl>
+
+
+    <span>visibility隐藏元素后,继续占有原来的位置</span><br>
+    如果隐藏元素想要原来位置,就用 visibility: hidden<br>
+    如果隐藏元素不想要原来位置,就用 display:none(用处更多重点)<br>
+    <br>
+
+    <strong> 3. overflow 溢出显示隐藏</strong><br>
+    <span>overflow</span> 属性指定了如果内容溢出一个元素的框(超过其指定高度及宽度)时，会发生什么。
+    <table>
+        <thead>
+            <tr>
+                <th>属性值</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            <tr>
+                <td>visible</td>
+                <td>不剪切内容也不添加滚动条</td>
+            </tr>
+
+            <tr>
+                <td>hidden</td>
+                <td>不显示超过对象尺寸的内容,超出的部分隐藏掉</td>
+            </tr>
+
+            <tr>
+                <td>scroll</td>
+                <td>不管超出内容否,总是显示滚动条</td>
+            </tr>
+
+            <tr>
+                <td>auto</td>
+                <td>超出自动显示滚动条,不超出不显示滚动条</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    一般情况下,我们都不想让溢出的内容显示出来,因为溢出的部分会影晌布局<br>
+    但是如果有定位的盒子,请慎用 overflow: hidden 因为它会隐藏多余的部分。<br>
 
 </body>
 
