@@ -2413,7 +2413,7 @@
             </tr>
         </tbody>
 
-        
+
     </table>
 
     <h4>边偏移</h4>
@@ -2427,7 +2427,7 @@
             </tr>
         </thead>
 
-        
+
         <tbody>
             <tr>
                 <td>top</td>
@@ -2499,7 +2499,7 @@
     这就是子绝父相的由来，所以<span>相对定位经常用来作为绝对定位的父级</span>。<br>
     总结：<span>因为父级需要占有位置，因此是相对定位，子盒子不需要占有位置，则是绝对定位</span><br>
     当然，子绝父相不是永远不变的，如果父元素不需要占有位置，<span>子绝父绝</span>也会遇到。
-    
+
 
     <h4>固定定位 fixed (重要)</h4>
     <span>固定定位</span>是元素<span>固定于浏览器可视欧的位置</span>。主要使用场景：可以在浏览器页面滚动时元素的位置不会改变。<br>
@@ -2515,7 +2515,7 @@
         <dt>2.固定定位<span>不在占有原先的位置</span>。</dt>
         <dd>固定定位也是脱标的，其实固定定位也可以看做是一种特殊的绝对定位。</dd>
     </dl>
-    
+
     <span>固定定位小技巧：固定在版心右侧位置。</span><br>
     小算法：
     1.让固定定位的盒子 left:50%，走到浏览器可视区(也可以看做版心)的一半位置。<br>
@@ -2523,25 +2523,26 @@
     就可以让固定定位的盒子贴着版心右侧对齐了。
     <div class="code">
         .fixed{<br>
-            position:fixed;<br>
-            /* 1.走浏览器宽度的一半 */<br>
-            left:50%;<br>
-            /* 2.利用 margin 走版心盒子宽度的一半距离(例如版心宽度是 800px) */<br>
-            margin-left:400px;<br>
-            width:50px;<br>
-            heigth:150px;<br>
-            background-color:skyblue;<br>
+        position:fixed;<br>
+        /* 1.走浏览器宽度的一半 */<br>
+        left:50%;<br>
+        /* 2.利用 margin 走版心盒子宽度的一半距离(例如版心宽度是 800px) */<br>
+        margin-left:400px;<br>
+        width:50px;<br>
+        heigth:150px;<br>
+        background-color:skyblue;<br>
         }<br>
     </div>
 
 
     <style>
-        a{
-            target:_blank;
+        a {
+            target: _blank;
         }
     </style>
 
-    <h4><a href="https://www.bilibili.com/video/av80149248?p=232" >粘性定位 sticky(了解)</a> --由于浏览器支持差，所以此效果一般是用 JavaScript 实现</h4>
+    <h4><a href="https://www.bilibili.com/video/av80149248?p=232">粘性定位 sticky(了解)</a> --由于浏览器支持差，所以此效果一般是用 JavaScript 实现
+    </h4>
     语法：
     <div class="code">
         选择器{position:sticky;top:10px;}
@@ -2552,10 +2553,99 @@
     3.必须添加 top、left、right、bottom 其中一个才有效<br>
     跟页面滚动搭配使用。兼容性较差，IE 不支持。
 
+    <h4>定位总结</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>定位模式</th>
+                <th>是否脱标</th>
+                <th>移动位置</th>
+                <th>是否常用</th>
+            </tr>
+        </thead>
 
+        <tbody>
+            <tr>
+                <td>static 静态定位</td>
+                <td>否</td>
+                <td>不能使用边偏移</td>
+                <td>很少</td>
+            </tr>
+
+            <tr>
+                <td><span>relative 相对定位</span></td>
+                <td><span>否(占有位置)</span></td>
+                <td><span>相对于自身位置移动</span></td>
+                <td><span>常用</span></td>
+            </tr>
+
+            <tr>
+                <td><span>absolute 绝对定位</span></td>
+                <td><span>是(不占有位置)</span></td>
+                <td><span>带有定位的父级</span></td>
+                <td><span>常用</span></td>
+            </tr>
+
+            <tr>
+                <td><span>fix 固定定位</span></td>
+                <td><span>是(不占有位置)</span></td>
+                <td><span>浏览器可视区</span></td>
+                <td><span>常用</span></td>
+            </tr>
+
+            <tr>
+                <td>sticky 粘性定位</td>
+                <td>否(占有位置)</td>
+                <td>浏览器可视区</td>
+                <td>当前阶段少</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <dl>
+        <dt>1.一定要记住 相对定位、固定定位、绝对定位 两个大的特点：</dt>
+        <dd>1.是否占有位置(脱标否)</dd>
+        <dd>2.以谁为基准点移动位置</dd>
+    </dl>
+    2.学习定位重点学会子绝父相。
+
+    <h4>定位叠放次序 z-index</h4>
+    在使用定位布局时，可能会出现盒子重叠的情况。此时，可以使用<span> z-index </span>来控制盒子的前后次序(z轴)<br>
+    语法：
+    <div class="code">
+        选择器{ z-index: 1;}
+    </div>
+    数值可以是正整数、负整数或0默认是auto,数值越大,盒子越靠上<br>
+    如果属性值相同,则按照书写顺序,后来居上<br>
+    数字后面不能加单位<br>
+    只有定位的盒子才有 z-index属性<br>
+
+    <h4>定位的拓展</h4>
+    <strong>1.绝对定位的盒子居中</strong><br>
+    加了绝对定位的盒子不能通过 <span>margin:0 Auto</span> 水平居中,但是可以通过以下计算方法实现水平和垂直居中<br>
+    1.lef:50%; :让盒子的左侧移动到父级元素的水平中心位置<br>
+    2.margin-lef:-100px :让盒子向左移动自身宽度的半。
+
+    <br>
+    <strong>2.定位特殊特性</strong><br>
+    绝对定位和固定定位也和浮动类似<br>
+    1.行内元素添加绝对或者固定定位,可以直接设置高度和宽度。<br>
+    2.块级元素添加绝对或者固定定位,如果不给宽度或者高度,默认大小是内容的大小<br>
+    <br>
+
+    <strong>3.脱标的盒子不会触发外边距塌陷</strong><br>
+    浮动元素、绝对定.個固定定位)元素的都不会触发外边距合并的问题<br>
+    <br>
+
+    <strong>4.绝对定位(固定定位)会完全压住盒子</strong><br>
+    浮动元素不同,只会压住它下面标准流的盒子,但是不会压住下面标准流盒子里面的文字(图片)
+    但是绝对定位(固定定位)会压住下面标准流所有的内容。
+    浮动之所以不会压住文字,因为浮动产生的目的最初是为了做文字环绕效果的。文字会围绕浮动元素
+
+    <h3>淘宝焦点图布局</h3>
+    <img src="images/238.jpg" alt="">
+    <img src="images/238-1.jpg" alt="">
 
 </body>
-
-
 
 </html>
