@@ -139,12 +139,34 @@
         }
 
 
+        #border4-3 {
+            display: inline-block;
+            width: 0px;
+            height: 0px;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid purple;
+            border-left: 50px solid chartreuse;
+            border-right: 50px solid blue;
+        }
+
+        #border4-3-1 {
+            display: inline-block;
+            width: 0px;
+            height: 0px;
+            line-height: 0;   /* 为了兼容低版本浏览器 */
+            font-size: 0;    /* 为了兼容低版本浏览器 */
+            border: 50px solid transparent;    /* 透明色 */
+            border-right-color: red;
+
+        }
+
         #border4 {
             border-top: 5px solid red;
             border-bottom: 10px dashed purple;
             border-left: 8px dashed chartreuse;
             border-right: 7px solid blue;
         }
+
 
         input:focus {
             background-color: yellow;
@@ -1723,7 +1745,11 @@
             </tr>
 
             <tr>
-                <td>边框分开写法</td>
+                <td>
+                    边框分开写法<br>
+                    <div class="code">(三角形写法: #border4-3-1)</div>
+
+                </td>
                 <td>
                     <div id="border4">
                         border-top: 1px solid red; /* 只设定上边框，其余同理 */ <br>
@@ -1731,6 +1757,10 @@
                         border-left: 8px dashed purple; /* 只设定左边框，其余同理 */<br>
                         border-right: 7px solid bule; /* 只设定左边框，其余同理 */<br>
                     </div>
+
+                    <div id="border4-3"></div>
+                    <div id="border4-3-1"></div>
+
                 </td>
             </tr>
 
@@ -2775,16 +2805,67 @@
     <br>
     <br>
     字体图标是一些网页常见的小图标,我们直接网上下载即可。因此使用可以分为：<br>
-    <a href="https://www.bilibili.com/video/av80149248?p=256"><strong>1.字体图标的下载</strong><br></a> 
+    <a href="https://www.bilibili.com/video/av80149248?p=256"><strong>1.字体图标的下载</strong></a> <br>
+    <strong>推荐下载网站：(免费)</strong><br>
+    <a href="http://icomoon.io">icomoon 字库</a> ：国外服务器，打开网速较慢。<br>
+    <a href="http://www.iconfont.cn">阿里妈妈 字库</a> ：包含了淘宝图标库和阿里妈妈图标库，可以使用 AI 制作图标上传生成。<br>
+    <br>
+
+    <a href="https://www.bilibili.com/video/av80149248?p=257"><strong>2.字体图标的引入(引入到我们 html 页面中)</strong></a> <br>
+    1.font 文件夹复制到 网页.html 同级，打开 style.css ，将 @font-face{...}  的内容复制到 自己的 style 中<br>
+    2.打开 demo.html ，复制字体的字符"四方格"使用<br>
+    3.设置对应的 font-family 为 @font-face 对内的 font-family<br>
+    <br>
+
+    <a href="https://www.bilibili.com/video/av80149248?p=258"><strong>3.字体图标的追加(以后添加新的小图标)</strong></a> <br>
+    将原下载的包内的 select.json 重新上传到网站，就可以得到原 select 的列表，再添加新的 select ，再下载新包，步骤同上
+    <br>
 
 
+    <h3> <a href="#border4-3">css 三角形写法</a> </h3>
+<br>
 
-    <strong>2.字体图标的引入(引入到我们 html 页面中)</strong>
+    <h3>css 用户样式</h3>
+    <h4>鼠标样式</h4>
+    <div class="code">
+        设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状。<br>
+        li{cursor: pointer; }
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>属性值</th>
+                <th>描述</th>
+            </tr>
+        </thead>
 
+        <tbody>
+            <tr style="cursor:default;">
+                <td>default</td>
+                <td>小白 默认箭头</td>
+            </tr>
 
-    3.字体图标的迫加(以后添加新的小图标)
+            <tr style="cursor: pointer;">
+                <td>pointer</td>
+                <td>小手</td>
+            </tr>
 
+            <tr style="cursor: move;">
+                <td>move</td>
+                <td>移动</td>
+            </tr>
 
+            <tr style="cursor: text;">
+                <td>text</td>
+                <td>文本</td>
+            </tr>
+
+            <tr style="cursor: not-allowed;">
+                <td>not-allowed</td>
+                <td>禁止</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 
