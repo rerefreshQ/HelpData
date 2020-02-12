@@ -9,6 +9,35 @@
     <title>html css 笔记</title>
 
     <style>
+        #txt-overflowMore {
+            width: 80px;
+            height: 60px;
+            background-color: pink;
+
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            /*弹性伸缩盒子模型显示*/
+            display:-webkit-box;
+            /*限制在一个块元素显示的文本的行数--第2行收缩文字*/
+            -webkit-line-clamp: 2;
+            /*设置或检索伸缩盒对象的子元素的排列方式*/
+            -webkit-box-orient: vertical;
+        }
+
+        #txt-overflow {
+            width: 80px;
+            height: 40px;
+            background-color: pink;
+            /*1.先强制一行内显示文本 (默认 normal 自动换行)*/
+            white-space: nowrap;
+            /*2.超出的部分隐藏 */
+            overflow: hidden;
+            /*3.文字用省略号替代超出的部分 */
+            text-overflow: ellipsis;
+        }
+
         img {
             border: 1px solid #000;
         }
@@ -153,9 +182,12 @@
             display: inline-block;
             width: 0px;
             height: 0px;
-            line-height: 0;   /* 为了兼容低版本浏览器 */
-            font-size: 0;    /* 为了兼容低版本浏览器 */
-            border: 50px solid transparent;    /* 透明色 */
+            line-height: 0;
+            /* 为了兼容低版本浏览器 */
+            font-size: 0;
+            /* 为了兼容低版本浏览器 */
+            border: 50px solid transparent;
+            /* 透明色 */
             border-right-color: red;
 
         }
@@ -2812,7 +2844,7 @@
     <br>
 
     <a href="https://www.bilibili.com/video/av80149248?p=257"><strong>2.字体图标的引入(引入到我们 html 页面中)</strong></a> <br>
-    1.font 文件夹复制到 网页.html 同级，打开 style.css ，将 @font-face{...}  的内容复制到 自己的 style 中<br>
+    1.font 文件夹复制到 网页.html 同级，打开 style.css ，将 @font-face{...} 的内容复制到 自己的 style 中<br>
     2.打开 demo.html ，复制字体的字符"四方格"使用<br>
     3.设置对应的 font-family 为 @font-face 对内的 font-family<br>
     <br>
@@ -2823,7 +2855,7 @@
 
 
     <h3> <a href="#border4-3">css 三角形写法</a> </h3>
-<br>
+    <br>
 
     <h3>css 用户样式</h3>
     <h4>鼠标样式</h4>
@@ -2866,6 +2898,106 @@
             </tr>
         </tbody>
     </table>
+
+    <h4>轮廓线 outline</h4>
+    给表单添加 outline:0; 或者 outline:none; 样式之后，就可以去掉默认的蓝色边框。<br>
+    <input type="text" style="outline: none;">
+    <div class="code">
+        input{outline:none;}
+    </div>
+    <br>
+
+    实际开发中，我们文本域右下角是不可以拖动的。<br>
+    <textarea style="resize: none;outline: none;" name="" id="" cols="30" rows="10"></textarea><br>
+    textarea 要一行写，分行的话，中间有空格<br>
+    <div class="code">
+        textarea{resize:none;}
+    </div>
+
+    <h4>vertical-align 属性应用</h4>
+    CSS 的 <span>vertical-align</span> 属性使用场景：经常用于设置图片或者表单(行内块元素)和文字垂直对齐。<br>
+    官方解释：用于设置一个元素的<span>垂直对齐方式</span>，但是它只针对行内元素或者行内块元素有效。
+    <div class="code">
+        vertical-align: baseline | top | middle | bottom
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>值</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>baseline</td>
+                <td>默认。元素放置在父元素的<span>基线</span>上。</td>
+            </tr>
+
+            <tr>
+                <td>top</td>
+                <td>把元素的顶端与行中最高元素的<span>顶端对齐</span> </td>
+            </tr>
+
+            <tr>
+                <td>middle</td>
+                <td>把此元素旋转在父元素的<span>中部</span> </td>
+            </tr>
+
+            <tr>
+                <td>bottom</td>
+                <td>把元素的顶端与行中最低的元素的<span>顶端对齐</span>。</td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><img src="images/vertical-align.jpg" alt=""> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>解决图片底部默认空白缝隙问题</h4>
+    bug:图片底侧会有一个空白缝隙,原因是行内块元素会和文字的基线对齐。<br>
+    主要解决方法有两种:<br>
+    1.给图片添加 <span>vertical-align:middle | top | bottom</span> 等。(提倡使用的)<br>
+    2.把图片转换为块级元素 <span>display: block;</span><br>
+
+    <h4>单选文本溢出显示省略号--必须满足三个条件</h4>
+    <div class="code">
+        width: 80px;<br>
+        height: 40px;<br>
+        background-color: pink;<br>
+        /*1.先强制一行内显示文本 (默认 normal 自动换行)*/<br>
+        white-space: nowrap;<br>
+        /*2.超出的部分隐藏 */<br>
+        overflow: hidden;<br>
+        /*3.文字用省略号替代超出的部分 */<br>
+        text-overflow: ellipsis;<br>
+    </div>
+    <div id="txt-overflow">
+        中华人民共和国中华人民共和国中华人民共和国中华人民共和国
+    </div>
+
+    <h4>多行文本溢出显示省略号</h4>
+    多行文本溢出显示省略号，有较大兼容性问题，适合于 webKit 浏览器或移动端(移动端大部分是 webkit 内核)<br>
+    <span>须将 height 设置成合适的高度</span>
+    <div class="code">
+        overflow: hidden;<br>
+        text-overflow: ellipsis;<br>
+        <br>
+        /*弹性伸缩盒子模型显示*/<br>
+        display:-webkit-box;<br>
+        /*限制在一个块元素显示的文本的行数--第2行收缩文字*/<br>
+        -webkit-line-clamp: 2;<br>
+        /*设置或检索伸缩盒对象的子元素的排列方式*/<br>
+        -webkit-box-orient: vertical;<br>
+    </div>
+
+    <div id="txt-overflowMore">
+        中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国
+    </div>
+    <span>更推荐让后台人员来做这个效果，因为后台人员可以设置显示多少个字，操作更简单。</span>
+
 
 </body>
 
