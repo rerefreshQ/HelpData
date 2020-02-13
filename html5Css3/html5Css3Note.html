@@ -19,7 +19,7 @@
             text-overflow: ellipsis;
 
             /*弹性伸缩盒子模型显示*/
-            display:-webkit-box;
+            display: -webkit-box;
             /*限制在一个块元素显示的文本的行数--第2行收缩文字*/
             -webkit-line-clamp: 2;
             /*设置或检索伸缩盒对象的子元素的排列方式*/
@@ -1740,7 +1740,7 @@
     <img src="images/box-en.jpg" alt="" width="700px">
 
     <h4>边框(border)</h4>
-    <span>特别：可以给 &lt;hX&gt; 设置边框，估计其他都得</span><br>
+    <span>特别：可以给 &lt;hX&gt; 设置边框</span><br>
     border 可以设置元素的边框。边框有三部分组成：边框宽度(粗细) 边框样式 边框颜色<br>
     <span>border : border-width || border-style || border-color(具体值参考 help)</span><br>
     <table>
@@ -2997,6 +2997,49 @@
         中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国
     </div>
     <span>更推荐让后台人员来做这个效果，因为后台人员可以设置显示多少个字，操作更简单。</span>
+    <br>
+
+    <style>
+        .marginCut li{
+            float: left;
+            list-style: none;
+            width: 150px;
+            height: 200px;
+            border:1px solid red;
+        }
+
+        .marginCut .marginCutUl li{
+            margin-left: -1px;
+        }
+    </style>
+    <h4>margin 负值运用</h4>
+    <table class="marginCut">
+        <tr>
+            <td>原样：</td>
+            <td>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>margin -1px 令边框线无左右各加 1px：</td>
+            <td>
+                <ul class="marginCutUl">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
 
 </body>
