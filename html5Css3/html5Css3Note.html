@@ -9,6 +9,25 @@
     <title>html css 笔记</title>
 
     <style>
+        .marginCut li {
+            float: left;
+            list-style: none;
+            width: 150px;
+            height: 200px;
+            border: 1px solid red;
+        }
+
+        .marginCut .marginCutUl li {
+            margin-left: -1px;
+        }
+
+        .marginCut .marginCutUl li:hover {
+            /* z-index: 1; */
+            position: relative;
+            border: 1px solid blue;
+        }
+
+
         #txt-overflowMore {
             width: 80px;
             height: 60px;
@@ -2597,11 +2616,7 @@
     </div>
 
 
-    <style>
-        a {
-            target: _blank;
-        }
-    </style>
+
 
     <h4><a href="https://www.bilibili.com/video/av80149248?p=232">粘性定位 sticky(了解)</a> --由于浏览器支持差，所以此效果一般是用 JavaScript 实现
     </h4>
@@ -2999,20 +3014,10 @@
     <span>更推荐让后台人员来做这个效果，因为后台人员可以设置显示多少个字，操作更简单。</span>
     <br>
 
-    <style>
-        .marginCut li{
-            float: left;
-            list-style: none;
-            width: 150px;
-            height: 200px;
-            border:1px solid red;
-        }
 
-        .marginCut .marginCutUl li{
-            margin-left: -1px;
-        }
-    </style>
     <h4>margin 负值运用</h4>
+    1.让每个盒子 margin往左侧移动 -1px 正好压住相邻盒子边框<br>
+    2.鼠标经过某个盒子的时候,提高当前盒子的层级即可(如果没有有定位,则加相对定位(保留位置),如果有定位,则加 z-index)
     <table class="marginCut">
         <tr>
             <td>原样：</td>
@@ -3040,7 +3045,71 @@
             </td>
         </tr>
     </table>
+    <h3>文字围绕浮动元素</h3>
 
+
+    <style>
+        .box270 a{
+            display:inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .box270{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .box270 .prev,
+        .box270 .next{
+            width: 85px;
+        }
+
+        .box270 .current,
+        .box270 .elp{
+            border: none;
+        }
+
+        .box270 input{
+            height: 36px;
+            width: 45px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .box270 button{
+            width: 60px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+
+        }
+    </style>
+
+
+    <h3>行内块巧妙运用(页码)</h3>
+    <div class="box270">
+        <a href="#" class="prev">&lt;&lt;上一页</a>
+        <a href="#">1</a>
+        <a href="#" class="current">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#" class="elp">...</a>
+        <a href="#" class="next">&gt;&gt;下一页</a>
+        到 <input type="text"> 页
+        <button>确定</button>
+    </div>
 
 </body>
 
