@@ -9,8 +9,8 @@
     <title>html css 笔记</title>
 
     <style>
-        .boxP270 a{
-            display:inline-block;
+        .boxP270 a {
+            display: inline-block;
             width: 36px;
             height: 36px;
             background-color: #f7f7f7;
@@ -23,29 +23,30 @@
             font-size: 14px;
         }
 
-        .boxP270{
+        .boxP270 {
             margin: 0;
             padding: 0;
             text-align: center;
         }
+
         .boxP270 .prev,
-        .boxP270 .next{
+        .boxP270 .next {
             width: 85px;
         }
 
         .boxP270 .current,
-        .boxP270 .elp{
+        .boxP270 .elp {
             border: none;
         }
 
-        .boxP270 input{
+        .boxP270 input {
             height: 36px;
             width: 45px;
             border: 1px solid #ccc;
             outline: none;
         }
 
-        .boxP270 button{
+        .boxP270 button {
             width: 60px;
             height: 36px;
             background-color: #f7f7f7;
@@ -284,7 +285,7 @@
             color: #ff6700;
         }
 
-        span {
+        .red {
             color: red;
             font-weight: 700;
             /* font-weight: 900; */
@@ -329,14 +330,14 @@
         target="_blank">https://blog.csdn.net/xiongdaandxiaomi/article/details/96115538</a>
 
     <h1 id="HtmlTop">HTML 常用标签</h1>
-    <h2>这是黑马基础班课程，以后要找<span> 就业班 </span>课程</h2>
+    <h2>这是黑马基础班课程，以后要找<span class="red"> 就业班 </span>课程</h2>
     <h3>标题标签 &#60;h1&#62;-&#60;h6&#62;(重要)</h3>
     <table border="1">
         <thead>
             <tr>
                 <th>标签</th>
                 <th>说明</th>
-                <th><span>标签语义:</span></th>
+                <th><span class="red">标签语义:</span></th>
                 <th>特点:</th>
             </tr>
         </thead>
@@ -345,7 +346,7 @@
         <tbody>
             <tr>
                 <td> &#60;h1&#62;我是一级标题&#60;/h1&#62 </td>
-                <td>单词 <span> head </span> 的缩写，意为头部、标题</td>
+                <td>单词 <span class="red"> head </span> 的缩写，意为头部、标题</td>
                 <td>作为标题使用，并且依据重要性递减</td>
                 <td>
                     1.加了标题的文字会变的加粗，字号也会依次变大。<br>
@@ -372,7 +373,7 @@
             <tr>
                 <th>标签</th>
                 <th>说明</th>
-                <th><span>标签语义:</span></th>
+                <th><span class="red">标签语义:</span></th>
                 <th>特点:</th>
             </tr>
         </thead>
@@ -447,7 +448,7 @@
             <tr>
                 <th>标签</th>
                 <th>说明</th>
-                <th><span>标签语义:</span></th>
+                <th><span class="red">标签语义:</span></th>
                 <th>特点:</th>
             </tr>
         </thead>
@@ -462,8 +463,8 @@
                 <td>div 是 division 的缩写，表示分割、分区。<br>span 意为跨度、跨距。</td>
                 <td>没有语义</td>
                 <td>
-                    1.&#60;div&#62;标签用来<span>布局</span>，但是现在一行只能放一个&#60;div&#62;。大盒子<br>
-                    2.&#60;span&#62;标签用来<span>布局</span>，一行上可以多个&#60;span&#62;。小盒子<br>
+                    1.&#60;div&#62;标签用来<span class="red">布局</span>，但是现在一行只能放一个&#60;div&#62;。大盒子<br>
+                    2.&#60;span&#62;标签用来<span class="red">布局</span>，一行上可以多个&#60;span&#62;。小盒子<br>
                 </td>
             </tr>
         </tbody>
@@ -477,7 +478,7 @@
             <tr>
                 <th>标签</th>
                 <th>说明</th>
-                <th><span>标签语义:</span></th>
+                <th><span class="red">标签语义:</span></th>
                 <th>特点:</th>
             </tr>
         </thead>
@@ -488,8 +489,9 @@
                     &#60;img src="图像URL" /&#62;
                 </td>
                 <td>单词 image 的缩写，意为图像。</td>
-                <td><span>src</span>是&#60;img&#62;标签的<span>必须属性</span>，它用于<span>指定图像文件的路径和文件名</span>。</td>
-                <td>所谓属性：简单理解就是<span>属</span>于这个图像标签的特<span>性</span>。</td>
+                <td><span class="red">src</span>是&#60;img&#62;标签的<span class="red">必须属性</span>，它用于<span
+                        class="red">指定图像文件的路径和文件名</span>。</td>
+                <td>所谓属性：简单理解就是<span class="red">属</span>于这个图像标签的特<span class="red">性</span>。</td>
             </tr>
 
         </tbody>
@@ -507,7 +509,7 @@
 
         <tbody>
             <tr>
-                <td><span>src</span></td>
+                <td><span class="red">src</span></td>
                 <td>图片路径</td>
                 <td>必须属性</td>
             </tr>
@@ -564,11 +566,11 @@
                 </td>
                 <td>单词 anchor 的缩写，意为：锚</td>
                 <td>
-                    <span>href</span><br>
+                    <span class="red">href</span><br>
                     target
                 </td>
                 <td>
-                    用于指定链接目标的 url 地址，<span>(必要属性)</span>当为标签应用 href 属性时，它就具有了超链接的功能<br>
+                    用于指定链接目标的 url 地址，<span class="red">(必要属性)</span>当为标签应用 href 属性时，它就具有了超链接的功能<br>
                     用于指定链页面的打开方式，其中 _self 为默认值，_blank 为在新窗口中打开方式。
                 </td>
             </tr>
@@ -577,9 +579,9 @@
     </table>
 
     锚点链接:点击链接，可以快速定位到页面中的某个位置。<br>
-    在链接文本的 href 属性中，设置属性值为 <span>#名字</span> 的形式，如 &#60;a href="#two"&#62;第2集&#60;/a&#62;<br>
+    在链接文本的 href 属性中，设置属性值为 <span class="red">#名字</span> 的形式，如 &#60;a href="#two"&#62;第2集&#60;/a&#62;<br>
     找到目标位置标签，里面添加一个 id 属性=刚才的名字，如:&#60;h3 id="two"&#62;第2集介绍&#60;/h3&#62;<br>
-    <span>通过 id <a href="#HtmlTop">(回到顶部)</a> <br></span>
+    <span class="red">通过 id <a href="#HtmlTop">(回到顶部)</a> <br></span>
 
 
 
@@ -649,13 +651,13 @@
             <tr>
                 <td>cellpadding</td>
                 <td>像素值</td>
-                <td>规定<span>单元格边沿与其内容之间</span>的空白，默认1像素。(<span>即单元格内文字与边框之间的距离</span>)</td>
+                <td>规定<span class="red">单元格边沿与其内容之间</span>的空白，默认1像素。(<span class="red">即单元格内文字与边框之间的距离</span>)</td>
             </tr>
 
             <tr>
                 <td>cellspacing</td>
                 <td>像素值</td>
-                <td>规定<span>单元格之间</span>的空白，默认2像素。(<span>即 td 与 td 之间的距离</span>)</td>
+                <td>规定<span class="red">单元格之间</span>的空白，默认2像素。(<span class="red">即 td 与 td 之间的距离</span>)</td>
             </tr>
         </tbody>
     </table>
@@ -664,7 +666,7 @@
     跨行合并:rowspan="合并单元格的个数"<br>
     跨列合并:colspan="合并单元格的个数"<br><br>
     <h4>合并单元格三步曲：</h4>
-    1.先确定是跨行(上下格行合并:<span>rowspan</span>)还是跨列合并(左右格列合并:<span>colspan</span>)。<br>
+    1.先确定是跨行(上下格行合并:<span class="red">rowspan</span>)还是跨列合并(左右格列合并:<span class="red">colspan</span>)。<br>
     2.找到目标单元格，写上合并方式=合并的单元格数量。比如 &lt;td colspan="2"&gt;&lt;/td&gt;<br>
     3.删除多余的单元格。<br>
     <table border="1" width="1000px" height="200px">
@@ -745,34 +747,34 @@
 
             <tr>
                 <td>
-                    无序列表 <span> ul > li </span>
+                    无序列表 <span class="red"> ul > li </span>
                     <ul>
-                        <li>无序列表 <span>(li)</span></li>
-                        <li>无序列表 <span>(li)</span></li>
-                        <li>无序列表 <span>(li)</span></li>
-                        <li>无序列表 <span>(li)</span></li>
-                        <li>无序列表 <span>(li)</span></li>
+                        <li>无序列表 <span class="red">(li)</span></li>
+                        <li>无序列表 <span class="red">(li)</span></li>
+                        <li>无序列表 <span class="red">(li)</span></li>
+                        <li>无序列表 <span class="red">(li)</span></li>
+                        <li>无序列表 <span class="red">(li)</span></li>
                     </ul>
                 </td>
 
                 <td>
-                    有序列表<span> ol > li</span>
+                    有序列表<span class="red"> ol > li</span>
                     <ol>
-                        <li>有序列表 <span>(li)</span> </li>
-                        <li>有序列表 <span>(li)</span></li>
-                        <li>有序列表 <span>(li)</span></li>
-                        <li>有序列表 <span>(li)</span></li>
-                        <li>有序列表 <span>(li)</span></li>
+                        <li>有序列表 <span class="red">(li)</span> </li>
+                        <li>有序列表 <span class="red">(li)</span></li>
+                        <li>有序列表 <span class="red">(li)</span></li>
+                        <li>有序列表 <span class="red">(li)</span></li>
+                        <li>有序列表 <span class="red">(li)</span></li>
                     </ol>
                 </td>
 
                 <td>
-                    自定义列表<span> dl > dt|dd</span>
+                    自定义列表<span class="red"> dl > dt|dd</span>
                     <dl>
-                        <dt><span> 注意(<span>dt</span>)：</span></dt>
-                        <dd>1.学会什么时候用无序列表，什么时候用自定义列表。 <span>(dd)</span></dd>
-                        <dd>2.无序列表和自定义列表代码怎么写？<span>(dd)</span></dd>
-                        <dd>3.列表布局在学习完 CSS 后再来完成。<span>(dd)</span></dd>
+                        <dt><span class="red"> 注意(<span class="red">dt</span>)：</span></dt>
+                        <dd>1.学会什么时候用无序列表，什么时候用自定义列表。 <span class="red">(dd)</span></dd>
+                        <dd>2.无序列表和自定义列表代码怎么写？<span class="red">(dd)</span></dd>
+                        <dd>3.列表布局在学习完 CSS 后再来完成。<span class="red">(dd)</span></dd>
                     </dl>
                     </dl>
                 </td>
@@ -781,7 +783,7 @@
     </table>
 
 
-    <h3><span>表单域</span>是一个包含表单元素的区域。(&lt;form&gt;)</h3>
+    <h3><span class="red">表单域</span>是一个包含表单元素的区域。(&lt;form&gt;)</h3>
     &lt;form&gt;会把它范围内的表单元素信息提交给服务器。
     <h4>常用属性</h4>
     <form action="xxx.aspx" method="POST" name="dataUpdate">
@@ -932,8 +934,8 @@
 
         <h3>&lt;input&gt;表单属性</h3>
         1.name 和 value 是每个表单元素都有的属性值，主要是给后台人员使用。<br>
-        2.name 表单元素的名字，要求<span>单选按钮和复选框要有相同的name值</span>。<br>
-        <span>3.checked 属性主要针对于单选按钮和复选框</span>，主要作用一打开页面，就要可以默认选中某个表单元素。<br>
+        2.name 表单元素的名字，要求<span class="red">单选按钮和复选框要有相同的name值</span>。<br>
+        <span class="red">3.checked 属性主要针对于单选按钮和复选框</span>，主要作用一打开页面，就要可以默认选中某个表单元素。<br>
         4.maxlength 是用户可以在表单元素输入的最大字符数，一般较少使用。
         <table border="1">
             <thead>
@@ -946,13 +948,13 @@
 
             <tbody>
                 <tr>
-                    <td><span> name </span></td>
+                    <td><span class="red"> name </span></td>
                     <td>由用户自定义</td>
                     <td>定义 input 元素的名称</td>
                 </tr>
 
                 <tr>
-                    <td><span>value</span></td>
+                    <td><span class="red">value</span></td>
                     <td>由用户自定义</td>
                     <td>input 元素的值</td>
                 </tr>
@@ -974,8 +976,9 @@
 
 
         <h3>&lt;label&gt;标签</h3>
-        <span>&lt;label&gt;</span>标签用于绑定一个表单元素，当点击&lt;label&gt;标签内的文本时，浏览器就会自动将焦点(光标)转到对应的表单元素上，用来增加用户体验。<br>
-        核心：&lt;label&gt;标签的 <span>for 属性</span>应当与相关元素的 <span>id 属性相同</span>。
+        <span
+            class="red">&lt;label&gt;</span>标签用于绑定一个表单元素，当点击&lt;label&gt;标签内的文本时，浏览器就会自动将焦点(光标)转到对应的表单元素上，用来增加用户体验。<br>
+        核心：&lt;label&gt;标签的 <span class="red">for 属性</span>应当与相关元素的 <span class="red">id 属性相同</span>。
     </form>
 
     <h1>CSS</h1>
@@ -1040,10 +1043,12 @@
             </tr>
 
             <tr>
-                <td>font: font-style font-weight <span>font-size</span>/line-height <span>font-family;</span></td>
+                <td>font: font-style font-weight <span class="red">font-size</span>/line-height <span
+                        class="red">font-family;</span></td>
                 <td>字体连写</td>
-                <td><span>字体连写(复合属性)</span>(有顺序，不能更换顺序，要空格隔开 <span>font-size(字号大小) font-family(字体) </span>
-                    </span>必须有，其他可省略): 样式(斜体) 粗细 <span>字号大小</span>/行高 <span>字体</span></td>
+                <td><span class="red">字体连写(复合属性)</span>(有顺序，不能更换顺序，要空格隔开 <span class="red">font-size(字号大小)
+                        font-family(字体) </span>
+                    </span>必须有，其他可省略): 样式(斜体) 粗细 <span class="red">字号大小</span>/行高 <span class="red">字体</span></td>
             </tr>
 
             <tr>
@@ -1053,7 +1058,7 @@
                 </td>
                 <td>字号大小</td>
                 <td>
-                    字体大小: 16像素<span>(一般在body直接统一文字大小)</span><br>
+                    字体大小: 16像素<span class="red">(一般在body直接统一文字大小)</span><br>
                     标题标签比较特殊，需要单独指定文字大小
                 </td>
             </tr>
@@ -1069,7 +1074,7 @@
                     字体: 宋体<br>
                     字体: 微软雅黑<br>
                     常用字体：多个单词组成一个的字体，最好用''括起，写多个字体是为了顺序使用(每个字体间用','隔开)，如第一个字体没就用第二个，以此类推('Hiragino Sans
-                    GB'是苹果电脑字体)，如果都没有就用浏览器默认字体。<span>(一般在body直接统一字体)</span>
+                    GB'是苹果电脑字体)，如果都没有就用浏览器默认字体。<span class="red">(一般在body直接统一字体)</span>
                 </td>
             </tr>
 
@@ -1083,7 +1088,7 @@
                 <td>
                     文字样式: 默认值<br>
                     文字样式: 斜体<br>
-                    <span>注意：平时我们很少给文字加斜体，反而要给斜体标签(em,i)改为不倾斜字体。</span>
+                    <span class="red">注意：平时我们很少给文字加斜体，反而要给斜体标签(em,i)改为不倾斜字体。</span>
                 </td>
             </tr>
 
@@ -1101,7 +1106,7 @@
                     默认;<br>
                     更粗;<br>
                     更细;<br>
-                    定义由细到粗的字符，400等于 normal，700等于 bold(粗体)<span>(开发中提倡用数字)</span> <br>
+                    定义由细到粗的字符，400等于 normal，700等于 bold(粗体)<span class="red">(开发中提倡用数字)</span> <br>
                 </td>
             </tr>
 
@@ -1120,8 +1125,8 @@
                 <td>文本颜色</td>
 
                 <td>
-                    预定义的颜色值<span>(测试demo常用)</span><br>
-                    十六进制<span>(开发常用，通过吸管工具得到)</span><br>
+                    预定义的颜色值<span class="red">(测试demo常用)</span><br>
+                    十六进制<span class="red">(开发常用，通过吸管工具得到)</span><br>
                     RGB代码
                 </td>
             </tr>
@@ -1175,7 +1180,7 @@
             </tr>
 
             <tr>
-                <td>p {line-height: 26px;}<span>(26px=5px+16px+5px)</span></td>
+                <td>p {line-height: 26px;}<span class="red">(26px=5px+16px+5px)</span></td>
                 <td>行间距</td>
                 <td>
                     上间距 5px<br>
@@ -1191,11 +1196,12 @@
     <table border="1">
         <tr>
             <td>
-                1.行内样式表(行内式)<span>标签内部写</span>
+                1.行内样式表(行内式)<span class="red">标签内部写</span>
             </td>
 
             <td>
-                &lt;p style="color: red; font-size: 12px;"&gt;我是文本&lt;/p&gt; <span>style 是标签属性，在双引号中间写，写法要符合 css
+                &lt;p style="color: red; font-size: 12px;"&gt;我是文本&lt;/p&gt; <span class="red">style 是标签属性，在双引号中间写，写法要符合
+                    css
                     规范</span>
             </td>
         </tr>
@@ -1223,8 +1229,9 @@
 
 
     <h3>css 选择器</h3>
-    id选择器(#id)注意：不能有同 id ，如果有同 id ，css 只会对第 1个 id 作修改。(相当于 id选择器只能用一次)<span>唯一元素，主要与 JavaScript 搭配使用。</span> <br>
-    类选择器(.类名)注意：可以同时使用多个 类选择器，每个 类选择器 之间用 (空格)分开。(相当于 类选择器可以不限次使用)<span>主要与 CSS 搭配使用。</span><br>
+    id选择器(#id)注意：不能有同 id ，如果有同 id ，css 只会对第 1个 id 作修改。(相当于 id选择器只能用一次)<span class="red">唯一元素，主要与 JavaScript 搭配使用。</span>
+    <br>
+    类选择器(.类名)注意：可以同时使用多个 类选择器，每个 类选择器 之间用 (空格)分开。(相当于 类选择器可以不限次使用)<span class="red">主要与 CSS 搭配使用。</span><br>
 
 
     <h3>Emmet语法</h3>
@@ -1310,12 +1317,12 @@
     </table>
 
     <h3>快速格式化代码</h3>
-    vscode 快速格式化代码：<span>shift+alt+f</span>(即鼠标右键快速格式化代码功能)
+    vscode 快速格式化代码：<span class="red">shift+alt+f</span>(即鼠标右键快速格式化代码功能)
     <h3>也可以设置当我们保存页面的时候自动格式化代码：</h3>
     文件-->首选项-->设置(即左下方的"齿轮")<br>
     搜索 emmet.include<br>
     在 settings.json 下的[用户]中添加以下语句：<br>
-    <span>
+    <span class="red">
         "editor.formatOnType": true,<br>
         "editor.formatOnSave": true,<br>
     </span>
@@ -1333,9 +1340,10 @@
         <tbody>
             <tr>
                 <td colspan="3">
-                    <span>后代选择器</span>又称为<span>包含选择器</span>，可以选择父元素里面子元素，其写法就是把外层标签写在前面，面层标签写在后面，中间用空格分隔。<br>
+                    <span class="red">后代选择器</span>又称为<span
+                        class="red">包含选择器</span>，可以选择父元素里面子元素，其写法就是把外层标签写在前面，面层标签写在后面，中间用空格分隔。<br>
                     元素1 和 元素2 中间用空格隔开<br>
-                    元素1 是父级，元素2 是子级，最终选择的是 <span>元素2</span>
+                    元素1 是父级，元素2 是子级，最终选择的是 <span class="red">元素2</span>
                 </td>
             </tr>
 
@@ -1381,9 +1389,9 @@
         <thead>
             <tr>
                 <td colspan="3">
-                    <span>子元素选择器(子选择器)</span>只能选择子元素<br>
-                    元素1 是父级，元素2 是子级，最终选择的是 <span>元素2</span><br>
-                    元素2必须是<span>子元素</span>，其孙子、重孙子之类都不归他管。
+                    <span class="red">子元素选择器(子选择器)</span>只能选择子元素<br>
+                    元素1 是父级，元素2 是子级，最终选择的是 <span class="red">元素2</span><br>
+                    元素2必须是<span class="red">子元素</span>，其孙子、重孙子之类都不归他管。
                 </td>
 
             </tr>
@@ -1403,10 +1411,11 @@
         <thead>
             <tr>
                 <td colspan="3">
-                    <span>并集选择器可以选择多组标签，同时为他们定义相同的样式</span>。通常用于集体声明。<br>
-                    <span>并集选择器</span>是各选择器<span>通过英文逗号(,)连接而成</span>，任何形式的选择器都可以作为并集选择器的一部分。<br>
-                    元素1 和 元素2 中间用<span>逗号隔开</span><br>
-                    逗号可以理解为<span>和</span>的意思<br>
+                    <span class="red">并集选择器可以选择多组标签，同时为他们定义相同的样式</span>。通常用于集体声明。<br>
+                    <span class="red">并集选择器</span>是各选择器<span
+                        class="red">通过英文逗号(,)连接而成</span>，任何形式的选择器都可以作为并集选择器的一部分。<br>
+                    元素1 和 元素2 中间用<span class="red">逗号隔开</span><br>
+                    逗号可以理解为<span class="red">和</span>的意思<br>
                     并集选择器通常用于集体声明
                 </td>
             </tr>
@@ -1431,7 +1440,7 @@
         </tbody>
     </table>
 
-    <h3>链接伪类选择器--<span>所有标签都可以做，不止&lt;a&gt;</span> </h3>
+    <h3>链接伪类选择器--<span class="red">所有标签都可以做，不止&lt;a&gt;</span> </h3>
     <table>
         <tbody>
             <tr>
@@ -1456,11 +1465,11 @@
         </tbody>
     </table>
 
-    <span>链接伪类选择器注意事项</span><br>
-    1.为了确保生效，请按照<span> LVHA </span>的顺序声明:link :visited : hover :active。<br>
+    <span class="red">链接伪类选择器注意事项</span><br>
+    1.为了确保生效，请按照<span class="red"> LVHA </span>的顺序声明:link :visited : hover :active。<br>
     2.记忆法： LVHA (LV[包包]好啊)<br>
     3.因为 a 链接在浏览器中具有默认样式，所以我们实际工作中都需要给链接单独指定样式。<br>
-    <span>链接伪类选择器实际工作开发中的写法：</span><br>
+    <span class="red">链接伪类选择器实际工作开发中的写法：</span><br>
     /* a 是标签选择器 所有连接 */<br>
     a {<br>
     color: gray;<br>
@@ -1473,7 +1482,7 @@
 
 
     <h3>:focus 伪类选择器</h3>
-    <span>:focus 伪类选择器</span> 是用于选取获得焦点的表单元素。<br>
+    <span class="red">:focus 伪类选择器</span> 是用于选取获得焦点的表单元素。<br>
     焦点就是光标，一般情况<input>类表单元素才能获取，因此这个选择器也主要针对于表单元素来说。<br>
     input:focus{<br>
     background-color:yellow;<br>
@@ -1493,7 +1502,7 @@
 
         <tbody>
             <tr>
-                <td><span>后代选择器</span></td>
+                <td><span class="red">后代选择器</span></td>
                 <td>用来选择后代元素</td>
                 <td>可以是子孙后代</td>
                 <td>较多</td>
@@ -1509,7 +1518,7 @@
             </tr>
 
             <tr>
-                <td><span>并集选择器</span></td>
+                <td><span class="red">并集选择器</span></td>
                 <td>选择某些相同样式的元素</td>
                 <td>可以用于集体声明</td>
                 <td>较多</td>
@@ -1517,7 +1526,7 @@
             </tr>
 
             <tr>
-                <td><span>链接伪类选择器</span></td>
+                <td><span class="red">链接伪类选择器</span></td>
                 <td>选择不同状态的链接</td>
                 <td>跟链接相关</td>
                 <td>较多</td>
@@ -1535,32 +1544,35 @@
     </table>
 
     <h3>什么是元素显示模式</h3>
-    元素显示模式就是<span>元素(标签)以什么方式进行显示</span>,比如&lt;div&gt;自己占一行，比如一行可以放多个&lt;span&gt;。<br>
-    HTML 元素一般分为<span>块元素</span>和<span>行内元素</span>两种元素。
+    元素显示模式就是<span class="red">元素(标签)以什么方式进行显示</span>,比如&lt;div&gt;自己占一行，比如一行可以放多个&lt;span&gt;。<br>
+    HTML 元素一般分为<span class="red">块元素</span>和<span class="red">行内元素</span>两种元素。
 
     <h3>块元素</h3>
-    常见的块元素有&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、&lt;ul&gt;、&lt;ol&gt;、&lt;li&gt;等，其中<span>&lt;div&gt;</span>标签是<span>最典型的块元素</span>。<br>
+    常见的块元素有&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、&lt;ul&gt;、&lt;ol&gt;、&lt;li&gt;等，其中<span
+        class="red">&lt;div&gt;</span>标签是<span class="red">最典型的块元素</span>。<br>
     块级元素的特点：<br>
     1.比较霸道，自己独占一行。<br>
     2.高度、宽度、外边距以及内边距都可以控制。<br>
     3.宽度默认是容器(父级宽度)的 100%。<br>
     4.是一个容器及盒子，里面可以放行内或者块级元素。<br>
     <dl>
-        <dt><span>注意：</span></dt>
+        <dt><span class="red">注意：</span></dt>
         <dd>文字类的元素内不能使用块级元素</dd>
         <dd>&lt;p&gt;标签主要用于存放文字，因此&lt;p&gt;里面不能放块级元素，特别是不能放&lt;div&gt;</dd>
         <dd>同理，&lt;h1&gt;~&lt;h6&gt;等都是文字类块级标签，里面也不能放其他块级元素</dd>
     </dl>
 
     <h3>行内元素</h3>
-    常见的块元素有&lt;a&gt;、&lt;strong&gt;、&lt;b&gt;、&lt;em&gt;、&lt;i&gt;、&lt;del&gt;、&lt;s&gt;&lt;ins&gt;、&lt;u&gt;、&lt;span&gt;等，其中<span>&lt;span&gt;</span>标签是<span>最典型的行内元素</span>。有的地方也将行内元素称为<span>内联元素</span>。<br>
+    常见的块元素有&lt;a&gt;、&lt;strong&gt;、&lt;b&gt;、&lt;em&gt;、&lt;i&gt;、&lt;del&gt;、&lt;s&gt;&lt;ins&gt;、&lt;u&gt;、&lt;span&gt;等，其中<span
+        class="red">&lt;span&gt;</span>标签是<span class="red">最典型的行内元素</span>。有的地方也将行内元素称为<span
+        class="red">内联元素</span>。<br>
     行内元素的特点：<br>
     1.相邻行内元素在同一行上，一行可以显示多个。<br>
     2.高、宽直接设置是无效的。<br>
     3.默认宽度就是它本身内容的宽度。<br>
     4.行内元素只能容纳文本或其他行内元素。<br>
     <dl>
-        <dt><span>注意：</span></dt>
+        <dt><span class="red">注意：</span></dt>
         <dd>链接里面不能再放链接</dd>
         <dd>特殊情况链接&lt;a&gt;里面可以放块级元素，但是给&lt;a&gt;转换一下块级模式最安全</dd>
     </dl>
@@ -1568,13 +1580,13 @@
 
     <h3>行内块元素</h3>
     在行内元素中有几个特殊的标签----&lt;ing /&gt;、&lt;input
-    /&gt;、&lt;td&gt;，它们<span>同时具有块元素和行内元素的特点</span>。有些资料称它们为<span>行内块元素</span>。<br>
+    /&gt;、&lt;td&gt;，它们<span class="red">同时具有块元素和行内元素的特点</span>。有些资料称它们为<span class="red">行内块元素</span>。<br>
     行内块元素的特点：<br>
     1.和相邻行内元素(行内块)在一行上，但是他们之前会有空白缝隙。一行可以显示多个(行内元素特点)。<br>
     2.默认宽度就是它本身内容的宽度(行内元素特点)。<br>
     3.高度、行高、外边距以及内边距都可以控制(行内元素特点)。<br>
     <dl>
-        <dt><span>注意：</span></dt>
+        <dt><span class="red">注意：</span></dt>
         <dd>链接里面不能再放链接</dd>
         <dd>特殊情况链接&lt;a&gt;里面可以放块级元素，但是给&lt;a&gt;转换一下块级模式最安全</dd>
     </dl>
@@ -1623,9 +1635,9 @@
     比如想要增加链接&lt;a&gt;的触发范围。
     <ul>
 
-        <li><span>转换为块级元素：display:block;</span></li>
+        <li><span class="red">转换为块级元素：display:block;</span></li>
         <li>转换为行内元素：display:inline;</li>
-        <li><span>转换为行内块：display:inline-block;</span></li>
+        <li><span class="red">转换为行内块：display:inline-block;</span></li>
     </ul>
 
     <h3>单选文字垂直居中</h3>
@@ -1710,7 +1722,7 @@
     <h4>层叠性</h4>
     <dl>
         <dt>层叠性原则：</dt>
-        <dd>样式冲突，遵循的原则就是<span>就近原则</span>，哪个样式离结构近，就执行哪个样式</dd>
+        <dd>样式冲突，遵循的原则就是<span class="red">就近原则</span>，哪个样式离结构近，就执行哪个样式</dd>
         <dd>样式不冲突，不会层叠</dd>
     </dl>
 
@@ -1733,7 +1745,7 @@
         <dd>行高可以跟单位也可以不跟单位</dd>
         <dd>如果子元素没有设置行高，则会继承父元素的行高为 1.5 倍</dd>
         <dd>此时子元素的行高是：当前子元素的文字大小 * 1.5 倍</dd>
-        <dd><span>body 行高 1.5 这样的写法最大的优势就是里面子元素可以根据自己文字大小自动调整行高</span> </dd>
+        <dd><span class="red">body 行高 1.5 这样的写法最大的优势就是里面子元素可以根据自己文字大小自动调整行高</span> </dd>
     </dl>
 
     <h4>优先级</h4>
@@ -1779,7 +1791,7 @@
         </tbody>
     </table>
     <dl>
-        <dt><span>权重叠加:</span>如果是复合选择器，则会有权重叠加，需要计算权重。</dt>
+        <dt><span class="red">权重叠加:</span>如果是复合选择器，则会有权重叠加，需要计算权重。</dt>
         <dd>div ul li ------> 0,0,0,3</dd>
         <dd>.nav ul li ------> 0,0,1,2</dd>
         <dd>a:hover ------> 0,0,1,1(a[0,0,0,1] + :hover[0,0,1,0])</dd>
@@ -1798,15 +1810,16 @@
     <h3>盒子模型</h3>
     <h4>盒子模型(Box Model)组成</h4><br>
     <img src="images/box-cn.jpg" alt="" width="700px"><br>
-    所谓<span>盒子模型</span>：就是把 HTML 页面中的布局元素入会费作是一个矩形的盒子，也就是一个盛装内容的容器。<br>
+    所谓<span class="red">盒子模型</span>：就是把 HTML 页面中的布局元素入会费作是一个矩形的盒子，也就是一个盛装内容的容器。<br>
     CSS 盒子模型本质上是一个盒子，封装周围的 HTML
-    元素，它包括：边框(<span>border</span>)、外边距(<span>margin</span>)、内边距(<span>padding</span>)、和实际内容(<span>content</span>)<br>
+    元素，它包括：边框(<span class="red">border</span>)、外边距(<span class="red">margin</span>)、内边距(<span
+        class="red">padding</span>)、和实际内容(<span class="red">content</span>)<br>
     <img src="images/box-en.jpg" alt="" width="700px">
 
     <h4>边框(border)</h4>
-    <span>特别：可以给 &lt;hX&gt; 设置边框</span><br>
+    <span class="red">特别：可以给 &lt;hX&gt; 设置边框</span><br>
     border 可以设置元素的边框。边框有三部分组成：边框宽度(粗细) 边框样式 边框颜色<br>
-    <span>border : border-width || border-style || border-color(具体值参考 help)</span><br>
+    <span class="red">border : border-width || border-style || border-color(具体值参考 help)</span><br>
     <table>
         <thead>
             <tr>
@@ -1871,7 +1884,7 @@
         </tbody>
     </table>
 
-    <strong>边框会影响<span>盒子实际大小</span></strong><br>
+    <strong>边框会影响<span class="red">盒子实际大小</span></strong><br>
     因此我们有两种方案解决：<br>
     1.测量盒子大小的时候，不量边框<br>
     2.如果测量的时候包含了边框，则需要 width/height 减云边框宽度<br>
@@ -1909,7 +1922,7 @@
         </tbody>
     </table>
 
-    <span>padding</span><strong>属性(简写属性)可以有一到四个值</strong>
+    <span class="red">padding</span><strong>属性(简写属性)可以有一到四个值</strong>
     <table>
 
         <thead>
@@ -1943,9 +1956,9 @@
     </table>
 
 
-    <strong>内边距会影响<span>盒子实际大小</span></strong><br>
+    <strong>内边距会影响<span class="red">盒子实际大小</span></strong><br>
     <strong>解决方案：</strong><br>
-    如果保证盒子跟效果图大小保持一致，则让<span>width/height 减去多出来的内边距大小</span>即可<br>
+    如果保证盒子跟效果图大小保持一致，则让<span class="red">width/height 减去多出来的内边距大小</span>即可<br>
     如果盒子本身没有指定 width/height 属性，则此时 padding 不会撑开盒子大小
 
 
@@ -1984,9 +1997,9 @@
     margin 简写方式代表的意义跟 padding 完全一致
 
     <h4>外边距典型应用</h4>
-    外边距可以让<strong>块级盒子</strong><span>水平居中</span>，但是必须满足两个条件：<br>
+    外边距可以让<strong>块级盒子</strong><span class="red">水平居中</span>，但是必须满足两个条件：<br>
     1.盒子必须指定了宽度(width)。<br>
-    2.盒子<span>左右的外边距</span>都设置为 auto。<br>
+    2.盒子<span class="red">左右的外边距</span>都设置为 auto。<br>
     <div class="code">
         .header{<br>
         width:96px;<br>
@@ -1998,14 +2011,14 @@
         <dt>常见的写法，以下三种都可以：</dt>
         <dd>margin-left: auto; margin-right: auto;</dd>
         <dd>margin: auto;</dd>
-        <dd><span>margin: 0 auto;</span></dd>
+        <dd><span class="red">margin: 0 auto;</span></dd>
     </dl>
-    <span>注意：</span>以上方法是让块级元素水平居中，<span>行内元素或者行内块元素水平居中给其父元素添加 text-align:center 即可</span>
+    <span class="red">注意：</span>以上方法是让块级元素水平居中，<span class="red">行内元素或者行内块元素水平居中给其父元素添加 text-align:center 即可</span>
 
 
     <h4>嵌套块元素垂直外边距的塌陷(浮动盒子不会有外边距合并的问题)</h4>
-    <span>只要父盒子包含子盒子，子盒子使用 margin，必定会发生"外边距塌陷"！</span><br>
-    对于两个嵌套关系(父子关系)的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。<span>即是：子div margin(外边距)代替了父 div
+    <span class="red">只要父盒子包含子盒子，子盒子使用 margin，必定会发生"外边距塌陷"！</span><br>
+    对于两个嵌套关系(父子关系)的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值。<span class="red">即是：子div margin(外边距)代替了父 div
         margin(外边距)谁大就谁发生了作用：</span>
 
     <div class="father">
@@ -2060,33 +2073,34 @@
         }
     </div>
 
-    <span>注意:行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内元素就可以了</span>
+    <span class="red">注意:行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距。但是转换为块级和行内元素就可以了</span>
 
     <h3><a target="_blank" href="https://www.bilibili.com/video/av80149248?p=155">PS(PhotoShop) 基本操作</a></h3>
-    因为网页美工大部分效果图都是利用<span> PS (PhotoShop) </span>来做的，所以以后我们大部分切图工作都是在<span> PS </span>里面完成。
+    因为网页美工大部分效果图都是利用<span class="red"> PS (PhotoShop) </span>来做的，所以以后我们大部分切图工作都是在<span class="red"> PS </span>里面完成。
     <ul>
-        <li><span>文件--&gt;</span>：可以打开我们要测量的图片</li>
-        <li><span>Ctrl+R</span>：可以打开标尺，或者<span>视图--&gt;标尺</span></li>
-        <li>右击标尺，把里面的单位改为<span>像素</span></li>
-        <li><span>Ctrl+加号(+)</span>可以放大视图，<span>Ctrl+减号(-)</span>可以缩小视图</li>
-        <li><span>按住空格键</span>��鼠标可以变成小手，拖动 PS 视图</li>
-        <li>用<span>选区</span>拖动 可以测量大小</li>
-        <li><span>Ctrl+D</span>可以取消选区，或者在<span>旁边空白处点击一下</span>也可以取消选区</li>
+        <li><span class="red">文件--&gt;</span>：可以打开我们要测量的图片</li>
+        <li><span class="red">Ctrl+R</span>：可以打开标尺，或者<span class="red">视图--&gt;标尺</span></li>
+        <li>右击标尺，把里面的单位改为<span class="red">像素</span></li>
+        <li><span class="red">Ctrl+加号(+)</span>可以放大视图，<span class="red">Ctrl+减号(-)</span>可以缩小视图</li>
+        <li><span class="red">按住空格键</span>��鼠标可以变成小手，拖动 PS 视图</li>
+        <li>用<span class="red">选区</span>拖动 可以测量大小</li>
+        <li><span class="red">Ctrl+D</span>可以取消选区，或者在<span class="red">旁边空白处点击一下</span>也可以取消选区</li>
     </ul>
 
     <h3><a href="https://www.bilibili.com/video/av80149248?p=189" target="_blank">PS(PhotoShop) 常见的图片格式(切图)</a></h3>
-    1.jpg图像格式:JPEG(JPG)对色彩的信息保留较好,高清,颜色较多,我们<span>产品类的图片经常用jpg格式的</span><br>
-    2.gif图像格式:GF格式最多只能储存256色,所以通常用来显示简单图形及字体,但是可以保存透明背景和动画效果,<span>实际经常用于一些图片小动画效果</span><br>
-    3.png图像格式:是一种新兴的网络图形格式,结合了GIF和JPEG的优点,具有存储形式丰富的特点,能够保持透明背景.<span>如果想要切成背景透明的图片请选择png格式</span>.<br>
-    4.PSD图像格式:PSD格式是 Photoshop 的专用格式,里面可以存放图层、通道、遮罩等多种设计稿.<span>对我们前端人员来说最大的优点:我们可以直接从上面复制文字,获得图片,还可以测量大小和距离</span>
+    1.jpg图像格式:JPEG(JPG)对色彩的信息保留较好,高清,颜色较多,我们<span class="red">产品类的图片经常用jpg格式的</span><br>
+    2.gif图像格式:GF格式最多只能储存256色,所以通常用来显示简单图形及字体,但是可以保存透明背景和动画效果,<span class="red">实际经常用于一些图片小动画效果</span><br>
+    3.png图像格式:是一种新兴的网络图形格式,结合了GIF和JPEG的优点,具有存储形式丰富的特点,能够保持透明背景.<span class="red">如果想要切成背景透明的图片请选择png格式</span>.<br>
+    4.PSD图像格式:PSD格式是 Photoshop 的专用格式,里面可以存放图层、通道、遮罩等多种设计稿.<span
+        class="red">对我们前端人员来说最大的优点:我们可以直接从上面复制文字,获得图片,还可以测量大小和距离</span>
 
     <h4>新知识点：去掉 li 前面的项目符号(小圆点)</h4>
     语法：
     <div class="code">li {list-style: none;}</div>
 
     <h3>圆角边框-常用</h3>
-    在 CSS3 中，新增了<span>圆角边框</span>样式，这样我们的盒子就可以变圆角了。
-    <span>border-radius</span>属性用于设置元素的外框圆角。
+    在 CSS3 中，新增了<span class="red">圆角边框</span>样式，这样我们的盒子就可以变圆角了。
+    <span class="red">border-radius</span>属性用于设置元素的外框圆角。
     语法：
     <div class="code">
         border-radius:length;(数值px 或 百分比)<br>
@@ -2096,11 +2110,12 @@
 
 
     <ul>
-        <li class="bgcYellow">如果是<span>正方形</span>，想要设置为一个圆，把数值修改为<span>高度或者宽度的一半</span>即可，或者直接写<span>50%</span></li>
-        <li class="bgcYellow"><span>如果是矩形，设置为高度的一半就可以做</span> <a href="#" class="Change">我是圆角边框</a></li>
-        <li>该属性是一个<span>简写属性</span>，可以跟四个值，分别代表<span>左上角、右上角、右下角、左下角</span></li>
+        <li class="bgcYellow">如果是<span class="red">正方形</span>，想要设置为一个圆，把数值修改为<span
+                class="red">高度或者宽度的一半</span>即可，或者直接写<span class="red">50%</span></li>
+        <li class="bgcYellow"><span class="red">如果是矩形，设置为高度的一半就可以做</span> <a href="#" class="Change">我是圆角边框</a></li>
+        <li>该属性是一个<span class="red">简写属性</span>，可以跟四个值，分别代表<span class="red">左上角、右上角、右下角、左下角</span></li>
         <li>分开写：<br>
-            <span>
+            <span class="red">
                 border-top-left-radius、<br>
                 border-top-right-radius、<br>
                 border-bottom-right-radius、<br>
@@ -2169,7 +2184,7 @@
     </table>
 
     <dl>
-        <span>
+        <span class="red">
             <dt>注意:</dt>
             <dd>1.默认是外阴影(outset)，但是不可以写这个单词，否则导致阴影无效</dd>
             <dd>2.盒子阴影不占用空间，不会影响其他盒子排列</dd>
@@ -2223,14 +2238,14 @@
 
     <h4>标准流(普通流/文档流)----我认为浮动、定位外的就是标准流</h4>
     这三种布局方式都是用来摆放盒子的，盒子摆放到合适位置，布局自然就完成了。
-    <span>注意：实际开发中，一个页面基本都包含了这三种布局方式(后面移动端学习新的布局方式)</span>
+    <span class="red">注意：实际开发中，一个页面基本都包含了这三种布局方式(后面移动端学习新的布局方式)</span>
 
 
     <h4>浮动(float)</h4>
     总结：有很多的布局效果，标准流没有办法完成，此时可以利用浮动完成布局。因为浮动可以改变元素标签默认的排列方式<br>
     浮动最典型的应用：可以让多个块级元素一行内排列显示<br>
-    <strong>网页布局第一准则：<span>多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动</span></strong>
-    <span>float </span>属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘。
+    <strong>网页布局第一准则：<span class="red">多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动</span></strong>
+    <span class="red">float </span>属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘。
     语法：
     <div class="code">选择器 { float: 属性值;}</div>
     <table>
@@ -2268,16 +2283,16 @@
 
     <h4>浮动特性(重难点)</h4>
     <dl>
-        <dt><span>1.浮动元素会脱离标准流(脱标)</span></dt>
-        <dd>1.脱离标准普通流的控制(浮)移动到指定位置(动)，(俗称<span>脱标</span>)</dd>
-        <dd>2.浮动的盒子<span>不再保留原先的位置--(浮动元素会压住不浮动的元素)</span></dd>
+        <dt><span class="red">1.浮动元素会脱离标准流(脱标)</span></dt>
+        <dd>1.脱离标准普通流的控制(浮)移动到指定位置(动)，(俗称<span class="red">脱标</span>)</dd>
+        <dd>2.浮动的盒子<span class="red">不再保留原先的位置--(浮动元素会压住不浮动的元素)</span></dd>
     </dl>
 
     2.浮动的元素会一行内显示并且元素顶部对齐<br>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;注意：浮动的元素是互相贴靠在一起的(不会有缝隙)，如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐</span><br>
+    <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;注意：浮动的元素是互相贴靠在一起的(不会有缝隙)，如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐</span><br>
     3.浮动的元素会具有行内块元素的特性<br>
     <dl>
-        <dt>任何元素都可以浮动。不管原先是什么模式的元素，添加浮动之后具有<span>行内块元素</span>相似的特性</dt>
+        <dt>任何元素都可以浮动。不管原先是什么模式的元素，添加浮动之后具有<span class="red">行内块元素</span>相似的特性</dt>
         <dd>如果块级盒子没有设置宽度，默认宽度和父级一样宽，但是添加浮动后，它的大小根据内容来决定</dd>
         <dd>浮动的盒子中间是没有缝隙的，是紧挨着一起的</dd>
         <dd>行内元素同理</dd>
@@ -2285,14 +2300,14 @@
 
 
     <h4>浮动元素经常和标准流父级搭配使用</h4>
-    <span>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置，符合网页布局第一准则</span>
+    <span class="red">先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置，符合网页布局第一准则</span>
 
     <h3>浮动布局注意点</h3>
     <h4>1.浮动和标准流的父盒子搭配</h4>
-    <span>先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</span>
+    <span class="red">先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置</span>
     <h4>2.一个元素浮动了，理论上其余的兄弟元素也要浮动</h4>
     一个盒子里面有多个子盒子，如果其中一个盒子浮动了，那么其他兄弟也应该浮动，以防止引起问题<br>
-    <span>浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流</span>
+    <span class="red">浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流</span>
 
     <h3>清除浮动</h3>
     语法：
@@ -2325,17 +2340,18 @@
 
     </table>
 
-    我们实际工作中，几乎只用 <span>clear:both</span>;<br>
-    <span>消除浮动的策略是：闭合浮动</span>
+    我们实际工作中，几乎只用 <span class="red">clear:both</span>;<br>
+    <span class="red">消除浮动的策略是：闭合浮动</span>
 
     <h4>消除浮动方法</h4>
     <strong>1.额外标签法</strong>也称为隔墙法，是 W3C 推荐的做法。<br>
     <dl>
-        <dt><span>额外标签法</span>会在浮动元素末尾添加一个<span>空的标签</span>。例如<span>&lt;div style="clear:both"
+        <dt><span class="red">额外标签法</span>会在浮动元素末尾添加一个<span class="red">空的标签</span>。例如<span class="red">&lt;div
+                style="clear:both"
                 &gt;&lt;/div&gt;</span>，或者其他标签(如&lt;br&gt;等)</dt>
         <dd>优点：通俗易懂，书写方便</dd>
         <dd>缺点：添加许多无意义的标签，结构化较差</dd>
-        <dd><span>注意：要求这个新的空标签必须是块级元素</span></dd>
+        <dd><span class="red">注意：要求这个新的空标签必须是块级元素</span></dd>
     </dl>
 
 
@@ -2352,18 +2368,18 @@
 
     总结：<br>
     1.清除浮动本质是？<br>
-    <span>清除浮动的本质是清除浮动元素脱离标准流造成的影响</span><br>
+    <span class="red">清除浮动的本质是清除浮动元素脱离标准流造成的影响</span><br>
     2.清除浮动策略是？<br>
-    <span>闭合浮动。只让浮动在父盒子内部影响，不影响父盒子外面的其他盒子</span><br>
+    <span class="red">闭合浮动。只让浮动在父盒子内部影响，不影响父盒子外面的其他盒子</span><br>
     3.额外标签法？<br>
-    <span>
+    <span class="red">
         隔墙法，就是在最后一个浮动的子元素后面添加一个额外标签，添加清除浮动样式<br>
         实际工作可能会遇到，但是不常用<br>
     </span>
 
 
     <br>
-    <span>2.父级添加 overflow 属性</span><br>
+    <span class="red">2.父级添加 overflow 属性</span><br>
     <div class="divTestFlatFather" id="divTestFlatFather1">
         <div class="divTestFlat">1</div>
         <div class="divTestFlat">2</div>
@@ -2377,7 +2393,7 @@
         <li>缺点：无法显示溢出部分</li>
     </ul>
 
-    <span>3.父级添加 :after 伪元素</span>(原理是-额外标签法，增加 after) <br>
+    <span class="red">3.父级添加 :after 伪元素</span>(原理是-额外标签法，增加 after) <br>
     <div class="code">
         建立 .clearfix:after 和 .clearfix ，详见 &lt;style&gt; 代码
     </div>
@@ -2397,7 +2413,7 @@
     </ul>
 
 
-    <span>4.父级添加双伪元素</span>(原理是-额外标签法，增加 after 和 before) <br>
+    <span class="red">4.父级添加双伪元素</span>(原理是-额外标签法，增加 after 和 before) <br>
     <div class="code">
         建立 [.clearfix4:before,.clearfix4:after] [.clearfix4:after] 和 [.clearfix4] ，详见 &lt;style&gt; 代码
     </div>
@@ -2504,11 +2520,12 @@
 
     <h3>CSS 定位</h3>
     <h3>定位的组成</h3>
-    <span>定位</span>:将盒子<span>定</span>在某一个位置,所以<span>定位也是在摆放盒子,按照定位的方式移动盒子。</span><br>
+    <span class="red">定位</span>:将盒子<span class="red">定</span>在某一个位置,所以<span
+        class="red">定位也是在摆放盒子,按照定位的方式移动盒子。</span><br>
     定位=定位模式+边偏移<br>
-    <span>定位模式</span>用于指定—个元素在文档中的定位方式。<span>边偏移</span>则决定了该元素的最终位置。<br>
+    <span class="red">定位模式</span>用于指定—个元素在文档中的定位方式。<span class="red">边偏移</span>则决定了该元素的最终位置。<br>
     <h4>定位模式</h4><br>
-    定位模式决定元素的定位方式,它通过CSS的 <span>position</span> 属性来设置,其值可以分为四个:
+    定位模式决定元素的定位方式,它通过CSS的 <span class="red">position</span> 属性来设置,其值可以分为四个:
     <table>
         <thead>
             <tr>
@@ -2587,48 +2604,49 @@
     <div class="code">
         选择器{position:static;}
     </div>
-    静态定位按照标准流特性摆放位置，它<span>没有边偏移</span><br>
+    静态定位按照标准流特性摆放位置，它<span class="red">没有边偏移</span><br>
     静态定位在布局时很少用到
 
     <h4>相对定位 relative (重要)</h4>
-    <span>相对定位</span>是元素在移动位置的时候，是相对它<span>原来的位置</span>来说的(自恋型)。<br>
+    <span class="red">相对定位</span>是元素在移动位置的时候，是相对它<span class="red">原来的位置</span>来说的(自恋型)。<br>
     语法：
     <div class="code">
         选择器{position:relative}
     </div>
     相对定位的特点：(务必记住)<br>
-    1.它是相对于自己原来的位置来移动的(<span>移动位置的时候参照点是自己原来的位置</span>)。<br>
-    2.<span>原来</span>在标准流的<span>位置</span>继续占有，后面的盒子仍然以标准流的方式对待它(<span>不脱标，继续保留原来位置</span>)。<br>
+    1.它是相对于自己原来的位置来移动的(<span class="red">移动位置的时候参照点是自己原来的位置</span>)。<br>
+    2.<span class="red">原来</span>在标准流的<span class="red">位置</span>继续占有，后面的盒子仍然以标准流的方式对待它(<span
+        class="red">不脱标，继续保留原来位置</span>)。<br>
     因此，相对定位并没有脱标。它最典型的应用是给绝对定位当爹的……
 
 
 
     <h4>绝对定位 absolute (重要)</h4>
-    <span>绝对定位</span>是元素在移动位置的时候，是相对于它<span>祖先元素</span>来说的(拼爹型)。<br>
+    <span class="red">绝对定位</span>是元素在移动位置的时候，是相对于它<span class="red">祖先元素</span>来说的(拼爹型)。<br>
     语法：
     <div class="code">
         选择器{position:absolute;}
     </div>
     绝对定位的特点：(务必记住)<br>
-    1.如果<span>没有祖先元素</span>或者<span>祖先元素没有定位</span>，则以浏览器为准定位(Document文档)。<br>
+    1.如果<span class="red">没有祖先元素</span>或者<span class="red">祖先元素没有定位</span>，则以浏览器为准定位(Document文档)。<br>
     2.如果祖先元素有定位(相对、绝对、固定定位)，则以最近一级的有定位祖先元素为参考点移动位置。<br>
-    3.绝对定位<span>不再占有原先的位置</span>。(脱标)
+    3.绝对定位<span class="red">不再占有原先的位置</span>。(脱标)
 
     <h4>子绝父相的由来</h4>
     弄清楚这个口诀，就明白了绝对定位和相对定位的使用场景。<br>
-    这个"子绝父相"太重要了，是我们学习定位的口诀，是定位中最常用的一种方式，这句话的意思是：<span>子级是绝对定位的话，父级要用相对定位</span>。
+    这个"子绝父相"太重要了，是我们学习定位的口诀，是定位中最常用的一种方式，这句话的意思是：<span class="red">子级是绝对定位的话，父级要用相对定位</span>。
 
     1.子级绝对定位，不会占有位置，可以放到父盒子里面的任何一个地方，不会影响其他兄弟盒子。<br>
     2.父盒子需要加定位限制子盒子在父盒子内显示。<br>
     3.父盒子布局时，需要占有位置，因此父亲只能是相对定位。<br>
     <br>
-    这就是子绝父相的由来，所以<span>相对定位经常用来作为绝对定位的父级</span>。<br>
-    总结：<span>因为父级需要占有位置，因此是相对定位，子盒子不需要占有位置，则是绝对定位</span><br>
-    当然，子绝父相不是永远不变的，如果父元素不需要占有位置，<span>子绝父绝</span>也会遇到。
+    这就是子绝父相的由来，所以<span class="red">相对定位经常用来作为绝对定位的父级</span>。<br>
+    总结：<span class="red">因为父级需要占有位置，因此是相对定位，子盒子不需要占有位置，则是绝对定位</span><br>
+    当然，子绝父相不是永远不变的，如果父元素不需要占有位置，<span class="red">子绝父绝</span>也会遇到。
 
 
     <h4>固定定位 fixed (重要)</h4>
-    <span>固定定位</span>是元素<span>固定于浏览器可视欧的位置</span>。主要使用场景：可以在浏览器页面滚动时元素的位置不会改变。<br>
+    <span class="red">固定定位</span>是元素<span class="red">固定于浏览器可视欧的位置</span>。主要使用场景：可以在浏览器页面滚动时元素的位置不会改变。<br>
     语法：
     <div class="code">选择器{position:fixed;}</div>
     固定定位的特点：(务必记住)<br>
@@ -2638,11 +2656,11 @@
         <dd>不随滚动条滚动</dd>
     </dl>
     <dl>
-        <dt>2.固定定位<span>不在占有原先的位置</span>。</dt>
+        <dt>2.固定定位<span class="red">不在占有原先的位置</span>。</dt>
         <dd>固定定位也是脱标的，其实固定定位也可以看做是一种特殊的绝对定位。</dd>
     </dl>
 
-    <span>固定定位小技巧：固定在版心右侧位置。</span><br>
+    <span class="red">固定定位小技巧：固定在版心右侧位置。</span><br>
     小算法：
     1.让固定定位的盒子 left:50%，走到浏览器可视区(也可以看做版心)的一半位置。<br>
     2.让固定定位的盒子 margin-left:版心宽度的一半距离。多走版心宽度的一半位置<br>
@@ -2671,7 +2689,7 @@
     </div>
     粘性定位的特点：
     1.以浏览器的可视窗口为参照点移动元素(固定定位特点)<br>
-    2.粘性定位<span>占有原先的位置</span>(相对定位特点)<br>
+    2.粘性定位<span class="red">占有原先的位置</span>(相对定位特点)<br>
     3.必须添加 top、left、right、bottom 其中一个才有效<br>
     跟页面滚动搭配使用。兼容性较差，IE 不支持。
 
@@ -2695,24 +2713,24 @@
             </tr>
 
             <tr>
-                <td><span>relative 相对定位</span></td>
-                <td><span>否(占有位置)</span></td>
-                <td><span>相对于自身位置移动</span></td>
-                <td><span>常用</span></td>
+                <td><span class="red">relative 相对定位</span></td>
+                <td><span class="red">否(占有位置)</span></td>
+                <td><span class="red">相对于自身位置移动</span></td>
+                <td><span class="red">常用</span></td>
             </tr>
 
             <tr>
-                <td><span>absolute 绝对定位</span></td>
-                <td><span>是(不占有位置)</span></td>
-                <td><span>带有定位的父级</span></td>
-                <td><span>常用</span></td>
+                <td><span class="red">absolute 绝对定位</span></td>
+                <td><span class="red">是(不占有位置)</span></td>
+                <td><span class="red">带有定位的父级</span></td>
+                <td><span class="red">常用</span></td>
             </tr>
 
             <tr>
-                <td><span>fix 固定定位</span></td>
-                <td><span>是(不占有位置)</span></td>
-                <td><span>浏览器可视区</span></td>
-                <td><span>常用</span></td>
+                <td><span class="red">fix 固定定位</span></td>
+                <td><span class="red">是(不占有位置)</span></td>
+                <td><span class="red">浏览器可视区</span></td>
+                <td><span class="red">常用</span></td>
             </tr>
 
             <tr>
@@ -2732,7 +2750,7 @@
     2.学习定位重点学会子绝父相。
 
     <h4>定位叠放次序 z-index</h4>
-    在使用定位布局时，可能会出现盒子重叠的情况。此时，可以使用<span> z-index </span>来控制盒子的前后次序(z轴)<br>
+    在使用定位布局时，可能会出现盒子重叠的情况。此时，可以使用<span class="red"> z-index </span>来控制盒子的前后次序(z轴)<br>
     语法：
     <div class="code">
         选择器{ z-index: 1;}
@@ -2744,7 +2762,7 @@
 
     <h4>定位的拓展</h4>
     <strong>1.绝对定位的盒子居中</strong><br>
-    加了绝对定位的盒子不能通过 <span>margin:0 Auto</span> 水平居中,但是可以通过以下计算方法实现水平和垂直居中<br>
+    加了绝对定位的盒子不能通过 <span class="red">margin:0 Auto</span> 水平居中,但是可以通过以下计算方法实现水平和垂直居中<br>
     1.lef:50%; :让盒子的左侧移动到父级元素的水平中心位置<br>
     2.margin-lef:-100px :让盒子向左移动自身宽度的半。
 
@@ -2773,15 +2791,15 @@
     通过 CSS 浮动、定位可以让每个盒子排列成为网页。<br>
     一个完整的网页,是标准流、浮动、定位一起完成布局的,每个都有自己的专门用法。<br>
     1.标准流<br>
-    可以让盒子上下排列或者左右排列,<span>垂直的块级盒子显示就用标准流布局</span><br>
+    可以让盒子上下排列或者左右排列,<span class="red">垂直的块级盒子显示就用标准流布局</span><br>
     2.浮动<br>
-    可以让多个块级元素行显示或者左右对齐盒子,<span>多个块级盒子水平显示就用浮动布局</span>。<br>
+    可以让多个块级元素行显示或者左右对齐盒子,<span class="red">多个块级盒子水平显示就用浮动布局</span>。<br>
     3.定位<br>
-    定位最大的特点是有层叠的概念,就是可以让多个盒子前后桑压来显示。<span>如果元素自由在某个盒子内移动就用定位布局</span>。<br>
+    定位最大的特点是有层叠的概念,就是可以让多个盒子前后桑压来显示。<span class="red">如果元素自由在某个盒子内移动就用定位布局</span>。<br>
 
     <h3>元素的显示与隐藏</h3>
     类似网站广告,当我们点击关闭就不见了,但是我们重新刷新页面,会重新出现!<br>
-    本质:<span>让一个元素在页面中隐藏或者显示出来</span><br>
+    本质:<span class="red">让一个元素在页面中隐藏或者显示出来</span><br>
     <strong>1. display 显示隐藏 </strong><br>
     <dl>
         <dt>display属性用于设置一个元素应如何显示。</dt>
@@ -2789,7 +2807,7 @@
         <dd>display: block;除了转换为块级元素之外,同时还有显示元素的意思</dd>
     </dl>
 
-    <span> display隐藏元素后,不再占有原来的位置</span><br>
+    <span class="red"> display隐藏元素后,不再占有原来的位置</span><br>
     后面应用及其广泛,搭配JS可以做很多的网页特效。<br>
     <br>
 
@@ -2801,13 +2819,13 @@
     </dl>
 
 
-    <span>visibility隐藏元素后,继续占有原来的位置</span><br>
+    <span class="red">visibility隐藏元素后,继续占有原来的位置</span><br>
     如果隐藏元素想要原来位置,就用 visibility: hidden<br>
     如果隐藏元素不想要原来位置,就用 display:none(用处更多重点)<br>
     <br>
 
     <strong> 3. overflow 溢出显示隐藏</strong><br>
-    <span>overflow</span> 属性指定了如果内容溢出一个元素的框(超过其指定高度及宽度)时，会发生什么。
+    <span class="red">overflow</span> 属性指定了如果内容溢出一个元素的框(超过其指定高度及宽度)时，会发生什么。
     <table>
         <thead>
             <tr>
@@ -2855,15 +2873,15 @@
     <hr>
 
     <h3>精灵图</h3>
-    <span>
+    <span class="red">
         精灵技术目的：<br>
         为了有效地减少服务器接收和发送请求的次数，提高页面的加载速度
     </span><br>
     <strong>使用精灵图核心：</strong><br>
     1.精灵技术主要针对于背景图片使用。就是把多个小背景图片整合到一张大图片中<br>
     2.这个大图片也称为 sprites 精灵图 或者 雪碧图<br>
-    3.移动背景图片位置,此时可以使用 <span>background-position</span>。<br>
-    4.移动的距离就是这个目标图片的 <span>x</span> 和 <span>y</span> 坐标。注意网页中的坐标有所不同<br>
+    3.移动背景图片位置,此时可以使用 <span class="red">background-position</span>。<br>
+    4.移动的距离就是这个目标图片的 <span class="red">x</span> 和 <span class="red">y</span> 坐标。注意网页中的坐标有所不同<br>
     5.因为一般情况下都是往上往左移动,所以数值是负值<br>
     6.使用精灵图的时候需要精确测量,每个小背景图片的大小和位置<br>
 
@@ -2871,7 +2889,7 @@
 
     <strong>使用精灵图核心总结</strong><br>
     1.精灵图主要针对于小的背景图片使用。<br>
-    2.主要借助于背景位置来实现 -- <span>background-position</span>。<br>
+    2.主要借助于背景位置来实现 -- <span class="red">background-position</span>。<br>
     3.一般情兄下精灵图都是负值。(千万注意网页中的坐标:x轴右边走是正值,左边走是负值,y轴同理。)<br>
 
     <h3>字体图标的产生</h3>
@@ -2880,8 +2898,8 @@
     1.图片文件还是比较大的。<br>
     2.图片本身放大和缩小会失真。<br>
     3.一旦图片制作完毕想要更换非常复杂。<br>
-    此时,有一种技术的出现很好的解决了以上问题,就是<span>字体图标 iconfont</span>。<br>
-    <span>字体图标</span>可以为前端工程师提供一种方便高效的图标使用方式,<span>展示的是图标,本质属于字体</span><br>
+    此时,有一种技术的出现很好的解决了以上问题,就是<span class="red">字体图标 iconfont</span>。<br>
+    <span class="red">字体图标</span>可以为前端工程师提供一种方便高效的图标使用方式,<span class="red">展示的是图标,本质属于字体</span><br>
 
     <dl>
         <dt>字体图标的优点</dt>
@@ -2975,8 +2993,8 @@
     </div>
 
     <h4>vertical-align 属性应用</h4>
-    CSS 的 <span>vertical-align</span> 属性使用场景：经常用于设置图片或者表单(行内块元素)和文字垂直对齐。<br>
-    官方解释：用于设置一个元素的<span>垂直对齐方式</span>，但是它只针对行内元素或者行内块元素有效。
+    CSS 的 <span class="red">vertical-align</span> 属性使用场景：经常用于设置图片或者表单(行内块元素)和文字垂直对齐。<br>
+    官方解释：用于设置一个元素的<span class="red">垂直对齐方式</span>，但是它只针对行内元素或者行内块元素有效。
     <div class="code">
         vertical-align: baseline | top | middle | bottom
     </div>
@@ -2992,22 +3010,22 @@
         <tbody>
             <tr>
                 <td>baseline</td>
-                <td>默认。元素放置在父元素的<span>基线</span>上。</td>
+                <td>默认。元素放置在父元素的<span class="red">基线</span>上。</td>
             </tr>
 
             <tr>
                 <td>top</td>
-                <td>把元素的顶端与行中最高元素的<span>顶端对齐</span> </td>
+                <td>把元素的顶端与行中最高元素的<span class="red">顶端对齐</span> </td>
             </tr>
 
             <tr>
                 <td>middle</td>
-                <td>把此元素旋转在父元素的<span>中部</span> </td>
+                <td>把此元素旋转在父元素的<span class="red">中部</span> </td>
             </tr>
 
             <tr>
                 <td>bottom</td>
-                <td>把元素的顶端与行中最低的元素的<span>顶端对齐</span>。</td>
+                <td>把元素的顶端与行中最低的元素的<span class="red">顶端对齐</span>。</td>
             </tr>
 
             <tr>
@@ -3019,8 +3037,8 @@
     <h4>解决图片底部默认空白缝隙问题</h4>
     bug:图片底侧会有一个空白缝隙,原因是行内块元素会和文字的基线对齐。<br>
     主要解决方法有两种:<br>
-    1.给图片添加 <span>vertical-align:middle | top | bottom</span> 等。(提倡使用的)<br>
-    2.把图片转换为块级元素 <span>display: block;</span><br>
+    1.给图片添加 <span class="red">vertical-align:middle | top | bottom</span> 等。(提倡使用的)<br>
+    2.把图片转换为块级元素 <span class="red">display: block;</span><br>
 
     <h4>单选文本溢出显示省略号--必须满足三个条件</h4>
     <div class="code">
@@ -3040,7 +3058,7 @@
 
     <h4>多行文本溢出显示省略号</h4>
     多行文本溢出显示省略号，有较大兼容性问题，适合于 webKit 浏览器或移动端(移动端大部分是 webkit 内核)<br>
-    <span>须将 height 设置成合适的高度</span>
+    <span class="red">须将 height 设置成合适的高度</span>
     <div class="code">
         overflow: hidden;<br>
         text-overflow: ellipsis;<br>
@@ -3056,7 +3074,7 @@
     <div id="txt-overflowMore">
         中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国
     </div>
-    <span>更推荐让后台人员来做这个效果，因为后台人员可以设置显示多少个字，操作更简单。</span>
+    <span class="red">更推荐让后台人员来做这个效果，因为后台人员可以设置显示多少个字，操作更简单。</span>
     <br>
 
 
@@ -3111,17 +3129,198 @@
         <button>确定</button>
     </div>
 
-<style>
-    .triangle{
-        width: 0;
-        height: 0;
-        border-top: 100px solid pink;
-        border-right: 50px solid skyblue;
-    }
-</style>
+    <style>
+        .triangle {
+            width: 0;
+            height: 0;
+
+            border-top: 100px solid skyblue;
+            border-right: 50px solid red;
+
+        }
+
+        .tdTriangle .divTempLeft,
+        .tdTriangle .divTempRight {
+            float: left;
+            width: 150px;
+            height: 50px;
+            background-color: skyblue;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .tdTriangle .triangle {
+            float: left;
+            border-top: 50px solid skyblue;
+            border-right: 25px solid red;
+        }
+
+        .tdTriangle .divTempRight {
+            background-color: red;
+        }
+
+
+        .triangle-2 {
+            width: 0;
+            height: 0;
+
+            /* 简写： */
+            /* 1.只保留右边的边框有颜色 */
+            border-color: transparent red transparent transparent;
+            /* 2.样式都是 solid */
+            border-style: solid;
+            /* 3.上边框宽度要大，右边框宽度稍小，其余的边框改为 0 */
+            border-width: 100px 50px 0 0;
+        }
+
+        .price {
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 24px;
+        }
+
+        .miaosha {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .miaosha i {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+        }
+
+        .origin {
+            font-size: 12px;
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
 
     <h4>三角形巧妙运用</h4>
-    <div class="triangle"></div>
+    <table>
+        <tr>
+            <td>我的普通代码</td>
+            <td>
+                <div class="triangle"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>简写代码</td>
+            <td>
+                <div class="triangle-2"></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>我原来用 div 写的应用开发</td>
+            <td class="tdTriangle">
+                <div class="divTempLeft">$1000.00</div>
+                <div class="triangle"></div>
+                <div class="divTempRight"> <del>$5000.00</del> </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                老师例子的应用开发<br>
+                利用浮动，文字围绕
+            </td>
+            <td class="tdTriangle">
+                <div class="price">
+                    <span class="miaosha">
+                        ￥1650
+                        <i></i>
+                    </span>
+                    <span class="origin">￥5650</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>应该用我自己的方法再做一次，应该用字符标签</td>
+            <td class="red">未做</td>
+        </tr>
+    </table>
+
+    <h4><a href="https://www.bilibili.com/video/av80149248?p=273">CSS 初始化</a> </h4>
+    不同浏览器对有些标签的默认值是不同的,为了消除不同浏览器对HML文本呈现的差异,照顾浏览器的兼容,我们需要对CSS初始化<br>
+    <strong>简单理解</strong>:CSS初始化是指重设浏览器的样式。(也称为 CSS reset)<br>
+    每个网页都必须首先进行CSS初始化<br>
+    这里我们以 京东css 初始化代码为例。<br>
+    <strong>Unicode编码字体</strong><br>
+    把中文字体的名称用相应的 Unicode编码来代替,这样就可以有效的避免浏览器解释CSS代码时候出现乱码的问题<br>
+    比如：<br>
+    黑体\9ED1\4F53<br>
+    宋体\5B8B\4F53<br>
+    微软雅黑\5FAE\8F6F\96C5\9ED1<br>
+
+    <hr>
+    <h3>HTML5 的新特性</h3>
+    <span class="red">HTML5</span> 的新增特性主要是针对于以前的不足,增加了一些<span class="red">新的标签、新的表单和新的表单属性等</span><br>
+    这些新特性都有兼容性问题,基本是 IE9+ 以上版本的浏览器才支持,如果不考虑兼容性问题,可以大量使用这些新特性。<br>
+    声明：<br>
+    1.新特性增加了很多,但是我们专注于开发常用的新待性。<br>
+    2.基础班我们讲解部分新特性,到了就业班还会继续讲解其他新特性<br>
+
+    <h4>HTML5 新增的语义化标签</h4>
+    <table>
+        <tr>
+            <td>&lt;header&gt;</td>
+            <td>头部标签</td>
+            <td rowspan="6"><img src="images/URLLabel.jpg" alt=""></td>
+        </tr>
+
+        <tr>
+            <td>&lt;nav&gt;</td>
+            <td>导航标签</td>
+        </tr>
+
+        <tr>
+            <td>&lt;article&gt;</td>
+            <td>内容标签</td>
+        </tr>
+
+        <tr>
+            <td>&lt;section&gt;</td>
+            <td>定义文档某个区域</td>
+        </tr>
+
+        <tr>
+            <td>&lt;aside&gt;</td>
+            <td>侧边栏标签</td>
+        </tr>
+
+        <tr>
+            <td>&lt;footer&gt;</td>
+            <td>尾部标签</td>
+        </tr>
+    </table>
+
+    <strong class="red">注意</strong>:<br>
+    这种语义化标准主要是针对<strong class="red">搜索引孳</strong>的<br>
+    这些新标签页面中可以使用<strong class="red">多次</strong><br>
+    在 IE9 中,需要把这些元素转换为<strong class="red">块级元素</strong><br>
+    其实,我们移动端更喜欢使用这些标签<br>
+    HTML5还增加了很多其他标签,我们后面再慢慢学<br>
+
 </body>
 
 </html>
