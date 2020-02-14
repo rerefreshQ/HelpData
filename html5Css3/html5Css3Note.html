@@ -9,6 +9,51 @@
     <title>html css 笔记</title>
 
     <style>
+        .boxP270 a{
+            display:inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .boxP270{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .boxP270 .prev,
+        .boxP270 .next{
+            width: 85px;
+        }
+
+        .boxP270 .current,
+        .boxP270 .elp{
+            border: none;
+        }
+
+        .boxP270 input{
+            height: 36px;
+            width: 45px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .boxP270 button{
+            width: 60px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+
+        }
+
+
         .marginCut li {
             float: left;
             list-style: none;
@@ -3048,69 +3093,35 @@
     <h3>文字围绕浮动元素</h3>
 
 
-    <style>
-        .box270 a{
-            display:inline-block;
-            width: 36px;
-            height: 36px;
-            background-color: #f7f7f7;
-            border: 1px solid #ccc;
-
-            text-align: center;
-            line-height: 36px;
-            text-decoration: none;
-            color: #333;
-            font-size: 14px;
-        }
-
-        .box270{
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .box270 .prev,
-        .box270 .next{
-            width: 85px;
-        }
-
-        .box270 .current,
-        .box270 .elp{
-            border: none;
-        }
-
-        .box270 input{
-            height: 36px;
-            width: 45px;
-            border: 1px solid #ccc;
-            outline: none;
-        }
-
-        .box270 button{
-            width: 60px;
-            height: 36px;
-            background-color: #f7f7f7;
-            border: 1px solid #ccc;
-
-        }
-    </style>
 
 
     <h3>行内块巧妙运用(页码)</h3>
-    <div class="box270">
-        <a href="#" class="prev">&lt;&lt;上一页</a>
-        <a href="#">1</a>
-        <a href="#" class="current">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
-        <a href="#">7</a>
-        <a href="#" class="elp">...</a>
-        <a href="#" class="next">&gt;&gt;下一页</a>
+    <div class="boxP270">
+        <a href="javascript:;" class="prev">&lt;&lt;上一页</a>
+        <a href="javascript:;">1</a>
+        <a href="javascript:;" class="current">2</a>
+        <a href="javascript:;">3</a>
+        <a href="javascript:;">4</a>
+        <a href="javascript:;">5</a>
+        <a href="javascript:;">6</a>
+        <a href="javascript:;">7</a>
+        <a href="javascript:;" class="elp">...</a>
+        <a href="javascript:;" class="next">&gt;&gt;下一页</a>
         到 <input type="text"> 页
         <button>确定</button>
     </div>
 
+<style>
+    .triangle{
+        width: 0;
+        height: 0;
+        border-top: 100px solid pink;
+        border-right: 50px solid skyblue;
+    }
+</style>
+
+    <h4>三角形巧妙运用</h4>
+    <div class="triangle"></div>
 </body>
 
 </html>
