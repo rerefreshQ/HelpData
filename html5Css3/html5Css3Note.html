@@ -9,6 +9,119 @@
     <title>html css 笔记</title>
 
     <style>
+        .classSelect ul li:last-child,
+        .classSelect ul li:first-child {
+            background-color: yellow;
+        }
+
+        .classSelect ul li:nth-child(3) {
+            background-color: blue;
+        }
+
+
+        .css3New input[value] {
+            color: pink;
+        }
+
+        .css3New input[type=password] {
+            color: yellowgreen;
+        }
+
+        .css3New div[class^=icon] {
+            background-color: yellow;
+        }
+
+        .css3New section[class$=data] {
+            background-color: blue;
+        }
+
+
+
+        .triangle {
+            width: 0;
+            height: 0;
+
+            border-top: 100px solid skyblue;
+            border-right: 50px solid red;
+
+        }
+
+        .tdTriangle .divTempLeft,
+        .tdTriangle .divTempRight {
+            float: left;
+            width: 150px;
+            height: 50px;
+            background-color: skyblue;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .tdTriangle .triangle {
+            float: left;
+            border-top: 50px solid skyblue;
+            border-right: 25px solid red;
+        }
+
+        .tdTriangle .divTempRight {
+            background-color: red;
+        }
+
+
+        .triangle-2 {
+            width: 0;
+            height: 0;
+
+            /* 简写： */
+            /* 1.只保留右边的边框有颜色 */
+            border-color: transparent red transparent transparent;
+            /* 2.样式都是 solid */
+            border-style: solid;
+            /* 3.上边框宽度要大，右边框宽度稍小，其余的边框改为 0 */
+            border-width: 100px 50px 0 0;
+        }
+
+        .price {
+            width: 160px;
+            height: 24px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 24px;
+        }
+
+        .miaosha {
+            position: relative;
+            float: left;
+            width: 90px;
+            height: 100%;
+            background-color: red;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .miaosha i {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-color: transparent #fff transparent transparent;
+            border-style: solid;
+            border-width: 24px 10px 0 0;
+        }
+
+        .origin {
+            font-size: 12px;
+            color: gray;
+            text-decoration: line-through;
+        }
+
+
+
+
         .boxP270 a {
             display: inline-block;
             width: 36px;
@@ -265,7 +378,7 @@
         }
 
 
-        input:focus {
+        .inputFocus input:focus {
             background-color: yellow;
         }
 
@@ -309,6 +422,9 @@
 </head>
 
 <body>
+    <a href="https://rerefreshQ.github.io/HelpData/html5Css3/html5Css3Note.html">github 本页 </a><br>
+    <br>
+
     <a href="https://www.runoob.com/html/html-colorvalues.html" target="_blank">html 常用颜色</a><br>
     量屏幕 px的标尺工具:FSCapture.exe <a href="https://www.bilibili.com/video/av80149248?p=82"
         target="_blank">5分钟左右有使用方法</a><br>
@@ -818,7 +934,7 @@
         </table>
 
         <h4>表单标签&lt;input&gt;</h4>
-        <table border="1">
+        <table class="inputFocus">
             <thead>
                 <tr>
                     <th>属性值</th>
@@ -1440,6 +1556,9 @@
         </tbody>
     </table>
 
+    <h3>交集选择器:---------------课程无见到...</h3>
+
+
     <h3>链接伪类选择器--<span class="red">所有标签都可以做，不止&lt;a&gt;</span> </h3>
     <table>
         <tbody>
@@ -1770,7 +1889,7 @@
             </tr>
 
             <tr>
-                <td>类选择器，伪类选择器</td>
+                <td>类选择器，伪类选择器，<span class="red">属性选择器(CSS3 新增)</span></td>
                 <td>0,0,1,0</td>
             </tr>
 
@@ -3129,89 +3248,6 @@
         <button>确定</button>
     </div>
 
-    <style>
-        .triangle {
-            width: 0;
-            height: 0;
-
-            border-top: 100px solid skyblue;
-            border-right: 50px solid red;
-
-        }
-
-        .tdTriangle .divTempLeft,
-        .tdTriangle .divTempRight {
-            float: left;
-            width: 150px;
-            height: 50px;
-            background-color: skyblue;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 20px;
-            text-align: center;
-            line-height: 50px;
-        }
-
-        .tdTriangle .triangle {
-            float: left;
-            border-top: 50px solid skyblue;
-            border-right: 25px solid red;
-        }
-
-        .tdTriangle .divTempRight {
-            background-color: red;
-        }
-
-
-        .triangle-2 {
-            width: 0;
-            height: 0;
-
-            /* 简写： */
-            /* 1.只保留右边的边框有颜色 */
-            border-color: transparent red transparent transparent;
-            /* 2.样式都是 solid */
-            border-style: solid;
-            /* 3.上边框宽度要大，右边框宽度稍小，其余的边框改为 0 */
-            border-width: 100px 50px 0 0;
-        }
-
-        .price {
-            width: 160px;
-            height: 24px;
-            border: 1px solid red;
-            text-align: center;
-            line-height: 24px;
-        }
-
-        .miaosha {
-            position: relative;
-            float: left;
-            width: 90px;
-            height: 100%;
-            background-color: red;
-            text-align: center;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .miaosha i {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 0;
-            height: 0;
-            border-color: transparent #fff transparent transparent;
-            border-style: solid;
-            border-width: 24px 10px 0 0;
-        }
-
-        .origin {
-            font-size: 12px;
-            color: gray;
-            text-decoration: line-through;
-        }
-    </style>
 
     <h4>三角形巧妙运用</h4>
     <table>
@@ -3558,10 +3594,183 @@
     <span class="red">可以通过设置方式修改 placeholder 里面的字体颜色：</span>
     <div class="code">
         input::placeholder{<br>
-            color:pink;<br>
+        color:pink;<br>
         }<br>
     </div>
 
+
+    <h3>CSS3 新特性</h3>
+    属性选择器
+    <table class="css3New">
+        <thead>
+            <tr>
+                <th>选择符</th>
+                <th>简介</th>
+                <th>代码</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>E[att]</td>
+                <td>选择具有 att 属性的 E 元素</td>
+                <td>
+                    <input type="text" value="请输入用户名">
+                    <input type="text">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="red">E[att="val"]</td>
+                <td class="red">选择具有 att 属性且属性值等于 val　的 E 元素</td>
+                <td>
+                    <input type="text" name="" id="">
+                    <input type="password" name="" id="">
+                </td>
+            </tr>
+
+            <tr>
+                <td>E[att^="val"]</td>
+                <td>匹配具有 att 属性且值以 val　开关的 E 元素</td>
+                <td>
+                    <div class="icon1">小图标1</div>
+                    <div class="icon2">小图标2</div>
+                    <div class="icon3">小图标3</div>
+                    <div class="icon4">小图标4</div>
+                    <div>我是打酱油的</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>E[att$="val"]</td>
+                <td>匹配具有 att 属性且值以 val　结尾的 E 元素</td>
+                <td>
+                    <section class="icon1-data">我是安其拉</section>
+                    <section class="icon2-data">我是可斯拉</section>
+                    <section class="icon3-ico">哪我是谁</section>
+                </td>
+            </tr>
+
+            <tr>
+                <td>E[att*="val"]</td>
+                <td>匹配具有 att 属性的且值中含有 val　的 E 元素</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <h3>结构伪类选择器</h3>
+    <table class="classSelect">
+        <thead>
+            <tr>
+                <th>选择符</th>
+                <th>简介</th>
+                <th>例子</th>
+            </tr>
+        </thead>
+
+
+
+
+        <tbody>
+            <tr>
+                <td style="background-color: yellow;">E:first-child</td>
+                <td>匹配父元素中的第一个子元素 E</td>
+                <td rowspan="3">
+                    <ul>
+                        <li>我是第1个</li>
+                        <li>我是第2个</li>
+                        <li>我是第3个</li>
+                        <li>我是第4个</li>
+                        <li>我是第5个</li>
+                        <li>我是第6个</li>
+                        <li>我是第7个</li>
+                        <li>我是第8个</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="background-color: yellow;">E:last-child</td>
+                <td>匹配父元素中的最后一个子元素E</td>
+            </tr>
+
+            <tr>
+                <td style="background-color: blue;">E:nth-child(n)</td>
+                <td>匹配父元素中的第 n 个子元素E</td>
+            </tr>
+
+            <tr>
+                <td>E:first-of-type</td>
+                <td>指定类型 E 的第一个</td>
+            </tr>
+
+            <tr>
+                <td>E:last-of-type</td>
+                <td>指定类型 E 的最后一个</td>
+            </tr>
+
+            <tr>
+                <td>E:nth-of-type(n)</td>
+                <td>指定类型 E 的第 n 个</td>
+            </tr>
+
+        </tbody>
+    </table>
+<br>
+
+    <strong>nth-child(n)</strong>选择某个父元素的一个或多个特定的子元素
+    <ul class="liTemp">
+        <li class="red">n 可以是数字，关键字和公式</li>
+        <li>n 如果是数字，就是选择第 n 个子元素，里面数字从1开始...</li>
+        <li>n 可以是关键字：even 偶数，odd 奇数</li>
+        <li>n 可以是公式：常见的公式如下(如果 n 是公式，则从0开始计算，但是第0个元素或者超出了元素的个数会被忽略)</li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>公式</th>
+                <th>取值</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>2n</td>
+                <td>偶数</td>
+            </tr>
+
+            <tr>
+                <td>2n+1</td>
+                <td>奇数</td>
+            </tr>
+
+            <tr>
+                <td>5n</td>
+                <td>5 10 15...</td>
+            </tr>
+
+            <tr>
+                <td>n+5</td>
+                <td>从第5个开始(包含第五个)到最后</td>
+            </tr>
+
+            <tr>
+                <td>-n+5</td>
+                <td>前5个(包含第5个)</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
+
+    <style>
+        .liTemp li:nth-child(odd){
+            background-color: gray; 
+        }
+    </style>
 
 
 </body>
