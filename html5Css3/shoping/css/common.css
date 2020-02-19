@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+      url('../fonts/icomoon.woff?tomleg') format('woff'),
+      url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+
 /* 版心： */
 .w{
     width: 1200px;
@@ -36,7 +49,7 @@
 .header{
     position: relative;
     height: 105px;
-    /* background-color: orange; */
+    background-color: orange;
 }
 .header .logo{
     position: absolute;
@@ -59,6 +72,38 @@
     /* 淘宝做法： */
     /* text-indent: -99999px;
     overflow: hidden; */
+}
 
-    
+.header .search{
+    position: absolute;
+    top: 25px;
+    left:346px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+
+.header .search input{
+    height: 100%;
+}
+
+.header .search input[type="search"]{
+    width: 455px;
+    padding-left: 10px;
+}
+
+.header .search input[type="button"]{
+    width: 79px;
+    background-color: #b1191a;
+    font-size: 16px;
+    color:#FFF;
+}
+
+.header .hotwords{
+    position: absolute;
+    top:66px;
+    left:346px;
+}
+.header .hotwords a{
+    margin: 0 10px;
 }
