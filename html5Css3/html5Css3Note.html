@@ -4324,12 +4324,22 @@
     1. logo里面首先放一个 <span class="red">h1</span> 标签,目的是为了提权,告诉搜索引擎,这个地方很重要。<br>
     2. h1 里面再放一个 <span class="red">链接</span> ,可以返回首页的,把logo的背景图片给链接即可。<br>
     3. 为了搜索引擎收录我们,我们链接里面要放 <span class="red">文字(网站名称)</span> ,但是文字不要显示出来。<br>
-    <p>方法1: <span class="red">text-indent</span> 移到盒子外面( <span class="red">text-indent:-9999px</span> ),然后 <span class="red">overflow:hidden</span>,淘宝的做法</p>
-    <p>方法2:直接给 <span class="red">font-size:0;</span>  就看不到文字了,京东的做法。</p>
+    <p>方法1: <span class="red">text-indent</span> 移到盒子外面( <span class="red">text-indent:-9999px</span> ),然后 <span
+            class="red">overflow:hidden</span>,淘宝的做法</p>
+    <p>方法2:直接给 <span class="red">font-size:0;</span> 就看不到文字了,京东的做法。</p>
     4. 最后给链接一个 <span class="red">title</span> 属性, 这样鼠标放到logo上就可以看到提示文字了。<br>
     <p>count 统计部分用绝对定位做</p>
     <p>count 统计部分不要给宽度，因为可能买的件数比较多，让件数撑开就好了，给一个高度</p>
     <p>一定注意左下角不是圆角，其余3个是圆角 写法：border-radius:7px 7px 7px 0</p>
+
+    <h3>2.4 nav 导航制作</h3>
+    <img src="images/P317.jpg" alt=""><br>
+    nav 盒子通栏有高度,而且有个下边框<br>
+    1号盒子左侧浮动, dropdown<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;1号盒子有讲究，根据相关性 里面包含 .dt 和 .dd 两个盒子<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/P318.jpg" alt=""><br>
+    2号盒子左侧浮动, navitems 导航栏组<br>
+
 
 </body>
 
