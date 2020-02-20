@@ -26,14 +26,17 @@
     color: #c81623;
 }
 
+
+/* 快捷导航模块 */
 .shortcut .fr ul li:nth-child(even){
     width: 1px;
     height: 12px;
     background-color: #666;
     margin: 9px 15px;
 }
-
-/* 快捷导航模块 */
+.shortcut .fr ul li:nth-child(odd){
+    cursor: pointer;
+}
 .shortcut{
     height: 31px;
     background-color: #f1f1f1;
@@ -44,12 +47,17 @@
     float: left;
 }
 
+.shortcut ul .arrow-icon::after{
+    font-family: 'icomoon';
+    content: "\e91e";
+}
 
 /* header 模块 */
 .header{
     position: relative;
     height: 105px;
-    background-color: orange;
+    /* background-color: orange; */
+    border: 1px solid orange;
 }
 .header .logo{
     position: absolute;
@@ -106,4 +114,49 @@
 }
 .header .hotwords a{
     margin: 0 10px;
+}
+
+.header .shopcar{
+    position: absolute;
+    top: 25px;
+    right: 60px;
+    width: 140px;
+    height: 35px;
+    border: 1px solid #dfdfdf;
+    background-color: #f7f7f7;
+    line-height: 35px;
+    text-align: center;
+}
+.header .shopcar::before{
+    font-family: 'icomoon';
+    content: "\e93a";
+    color:#b1191a;
+    margin-right: 5px;
+}
+.header .shopcar::after{
+    font-family: 'icomoon';
+    content: "\e920";
+    margin-left: 10px;
+}
+.header .shopcar .count{
+    position: absolute;
+    top:-5px;
+    /* right: 20px;  这里如果用 right ，当件数 80000000 时会向左张开，所以用 left 避免这种情况 */
+    left:105px;
+    height: 14px;
+    padding: 0 5px;
+    line-height: 14px;
+    border-radius:7px 7px 7px 0;
+    background-color:#e60012;
+    /* font-size: 1px; */
+    color: #fff;
+}
+
+/* nav 导航栏 */
+.nav{
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+}
+.nav .w{
+    background-color: orange;
 }
