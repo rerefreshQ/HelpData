@@ -171,7 +171,7 @@
     font-size: 16px;
 }
 .nav .w .dorpdown .dd{
-    display: none;
+    /* display: none; */
     height: 465px;
     background-color: #c81623;
     margin-top: 2px;
@@ -216,8 +216,7 @@
     height: 45px;
     /* text-align: center; */
     line-height: 45px;
-    background-color: yellow;
-    padding: 0 25px;
+    padding: 0 30px;
     font-size: 13px;
 }
 
@@ -251,10 +250,14 @@
     background:url("../images/icons.png") no-repeat -252px -2px;
 }
 .footer .mod_service ul li:nth-child(2) h5{
-    background:url("../images/icons.png") no-repeat -374px -11px;
+    background:url("../images/icons.png") no-repeat -255px -54px;
 }
-
-
+.footer .mod_service ul li:nth-child(3) h5{
+    background:url("../images/icons.png") no-repeat -257px -106px;
+}
+.footer .mod_service ul li:nth-child(4) h5{
+    background:url("../images/icons.png") no-repeat -257px -158px;
+}
 
 
 .footer .mod_service ul li h4{
@@ -289,4 +292,16 @@
 .footer .mod_help dl:last-child{
     width: 90px;
     text-align: center;
+}
+
+
+.footer .mod_copyright{
+    text-align: center;
+    padding-top: 20px;
+}
+.footer .mod_copyright .links a{
+    margin: 0 15px;
+}
+.footer .mod_copyright .copyright{
+    margin-top: 10px;
 }
