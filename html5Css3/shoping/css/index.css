@@ -1,8 +1,21 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+      url('../fonts/icomoon.woff?tomleg') format('woff'),
+      url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
 .main{
+    margin-top: 10px;
     /* margin-left: 220px; */
     width: 980px;
     height: 455px;
-    background-color: orange;
+    /* background-color: orange; */
     margin-left: 220px;
 }
 
@@ -10,7 +23,7 @@
     float: left;
     width: 721px;
     height: 455px;
-    background-color: yellow;
+    
     /* margin-right: 5px; */
 }
 
@@ -18,5 +31,147 @@
     float: right;
     width: 250px;
     height: 455px;
-    background-color: blue;
+    /* background-color: blue; */
+}
+
+.main .newflash .news{
+    height: 165px;
+    /* background-color: yellow; */
+    border: 1px solid #e4e4e4;
+
+}
+
+
+.main .newflash .news .news-head{
+    border-bottom: 1px dotted #e4e4e4;
+    height: 33px;
+    line-height: 33px;
+    padding: 0 15px;
+}
+.main .newflash .news .news-head h5{
+    float: left;
+    font-size: 14px;
+}
+.main .newflash .news .news-head a{
+    float: right;
+}
+.main .newflash .news .news-head a::after{
+    font-family: 'icomoon';
+    content: "\e920";
+}
+
+
+.main .newflash .news .news-body{
+    height: 24px;
+    line-height: 24px;
+    padding: 0 15px;
+    margin-top: 5px;
+}
+
+
+.main .newflash .lifeservice{
+    overflow: hidden;
+    height: 209px;
+    border: 1px solid #e4e4e4 ;
+    border-top: 0;
+}
+
+/* 解决 .lifeservice 12个格的方法：
+0 .lifeservice 的 width 是 250px
+1 给 .lifeservice 加左右下边框
+2 .lifeservice ul li 加下、右边框，这时会超出，一行只出3个，第4个掉下
+3 给 .lifeservice ul 增加足够容纳 4个li 的宽度 63*4=252px 就可以装开 4个 li，超过 .lifeservice 的 width:250px，但不会掉下
+4 此时 .lifeservice 会有2条边框，其中 1条边框是 .lifeservice ul li 的超出边框，需在 .lifeservice 剪走:overflow: hidden;
+ */
+
+.main .newflash .lifeservice ul{
+    width: 252px;
+}
+
+.main .newflash .lifeservice ul li{
+    float: left;
+    width: 63px;
+    height: 71px;
+    
+    border-right: 1px solid #e4e4e4 ;
+    border-bottom: 1px solid #e4e4e4 ;
+}
+
+
+.main .newflash .lifeservice ul li{
+    text-align: center;
+}
+
+.main .newflash .lifeservice ul li a{
+    display: block;
+    position: relative;
+}
+
+.main .newflash .lifeservice ul li a section{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    line-height: 13px;
+    background-color: green;
+    color: honeydew;
+    top:0;
+    right: 0;
+}
+
+.main .newflash .lifeservice ul li a div{
+    display: inline-block;
+    width: 24px;
+    height: 28px;
+    background-color: yellow;
+    margin-top: 12px;
+}
+.main .newflash .lifeservice ul li:nth-child(1) a div{
+    background: url("../images/icons.png") no-repeat -19px -15px;
+}
+.main .newflash .lifeservice ul li:nth-child(2) a div{
+    background: url("../images/icons.png") no-repeat -80px -15px;
+}
+.main .newflash .lifeservice ul li:nth-child(3) a div{
+    background: url("../images/icons.png") no-repeat -141px -15px;
+}
+.main .newflash .lifeservice ul li:nth-child(4) a div{
+    background: url("../images/icons.png") no-repeat -206px -15px;
+}
+.main .newflash .lifeservice ul li:nth-child(5) a div{
+    background: url("../images/icons.png") no-repeat -19px -88px;
+}
+.main .newflash .lifeservice ul li:nth-child(6) a div{
+    background: url("../images/icons.png") no-repeat -80px -88px;
+}
+.main .newflash .lifeservice ul li:nth-child(7) a div{
+    background: url("../images/icons.png") no-repeat -141px -88px;
+}
+.main .newflash .lifeservice ul li:nth-child(8) a div{
+    background: url("../images/icons.png") no-repeat -206px -88px;
+}
+.main .newflash .lifeservice ul li:nth-child(9) a div{
+    background: url("../images/icons.png") no-repeat -19px -155px;
+}
+.main .newflash .lifeservice ul li:nth-child(10) a div{
+    background: url("../images/icons.png") no-repeat -80px -155px;
+}
+.main .newflash .lifeservice ul li:nth-child(11) a div{
+    background: url("../images/icons.png") no-repeat -141px -155px;
+}
+.main .newflash .lifeservice ul li:nth-child(12) a div{
+    background: url("../images/icons.png") no-repeat -206px -155px;
+}
+
+/* .main .newflash .lifeservice ul li a p{
+    margin-top: 5px;
+    
+} */
+
+
+
+
+
+
+.main .newflash .bargain{
+    margin-top: 5px;
 }
