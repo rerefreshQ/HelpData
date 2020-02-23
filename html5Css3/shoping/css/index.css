@@ -66,6 +66,13 @@
     line-height: 24px;
     padding: 0 15px;
     margin-top: 5px;
+
+
+}
+.main .newflash .news .news-body ul li{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -187,16 +194,28 @@
     background: url("../images/icons.png") no-repeat -206px -155px;
 }
 
-/* .main .newflash .lifeservice ul li a p{
-    margin-top: 5px;
-    
-} */
-
-
-
 
 
 
 .main .newflash .bargain{
     margin-top: 5px;
+}
+
+
+/* 推荐模块 */
+.recom{
+    margin-top: 12px ;
+    height: 163px;
+    background-color: red;
+}
+.recom .recom_hd{
+    float: left;
+    /* width: 220px; */
+    /* height: 150px; */
+    background-color: orange;
+}
+.recom .recom_bd{
+    float: left;
+    width: 900px;
+    background-color: blue;
 }
