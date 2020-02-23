@@ -463,7 +463,8 @@
             /* 透明色 */
             border-right-color: red;
         }
-        #border4-3-2{
+
+        #border4-3-2 {
             width: 0;
             height: 0;
             /* top:13px;
@@ -479,6 +480,35 @@
             border-left: 8px dashed chartreuse;
             border-right: 7px solid blue;
         }
+        #Triangle_Up {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid red;
+        }
+        #Triangle_Down {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 100px solid red;
+        }
+        #Triangle_Left {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-right: 100px solid red;
+            border-bottom: 50px solid transparent;
+        }
+        #Triangle_Right {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-left: 100px solid red;
+            border-bottom: 50px solid transparent;
+        }
+
 
 
         .inputFocus input:focus {
@@ -2095,6 +2125,7 @@
                     <div class="code">
                         (三角形写法: #border4-3-1)<br>
                         (直角三角形写法: #border4-3-2)<br>
+                        其他三角形:
                     </div>
 
                 </td>
@@ -2105,11 +2136,13 @@
                         border-left: 8px dashed purple; /* 只设定左边框，其余同理 */<br>
                         border-right: 7px solid bule; /* 只设定左边框，其余同理 */<br>
                     </div>
-
                     <div id="border4-3"></div>
                     <div id="border4-3-1"></div>
                     <div id="border4-3-2"></div>
-
+                    <div id="Triangle_Up"></div>
+                    <div id="Triangle_Down"></div>
+                    <div id="Triangle_Left"></div>
+                    <div id="Triangle_Right"></div>
                 </td>
             </tr>
 
@@ -4428,7 +4461,8 @@
 
     <h3>main 主体模块制作</h3>
     以前书写的就是模块化中的公共部分。<br>
-    <span class="red">main</span> 主体模块是 <span class="red">index 里面专有的</span>，注意需要新的样式文件 <span class="red"> index.css</span><br>
+    <span class="red">main</span> 主体模块是 <span class="red">index 里面专有的</span>，注意需要新的样式文件 <span class="red">
+        index.css</span><br>
 
     <ul>
         <li>main 盒子宽度为 980像素,位置距离左边 220px(margin-left),给高度就不用清除浮动</li>
@@ -4453,11 +4487,28 @@
         <li>2号盒子 recom-bd,注意里面的小竖线</li>
     </ul>
 
+    <h3>楼层区 floor 制作</h3>
+    注意这个 floor ，不要给高度，内容有多少，算多少<br>
+    第一楼是家用电器模块：里面包含两个盒子<br>
+    <ul>
+        <li>1号盒子 box_hd，给一个高度，有个下边框，里面分为左右2个盒子</li>
+        <li>2号盒子 box_bd，不要给高度</li>
+    </ul>
+    <strong>1. box_hd 模块</strong><br>
+    <ul>
+        <li>有高度可以不用清除浮动</li>
+        <li>左边 h3，盒子左浮动</li>
+        <li>右边 tab-list，右浮动，因为用到 tab 切换效果，所以里面要用 ul 和 li 来做</li>
+    </ul>
+    <strong>2. Tab 栏原理-布局需求</strong><br>
+    <img src="images/P337.jpg" alt=""><br>
 
-    
-    
-    
-    
+
+
+
+
+
+
 </body>
 
 </html>

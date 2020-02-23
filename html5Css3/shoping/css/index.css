@@ -206,16 +206,73 @@
 .recom{
     margin-top: 12px ;
     height: 163px;
-    background-color: red;
+    background-color: #ebebeb;
 }
 .recom .recom_hd{
     float: left;
-    /* width: 220px; */
-    /* height: 150px; */
-    background-color: orange;
+    width: 205px;
+    height: 163px;
+    background-color:  #5c5251 ;
+    text-align: center;
+    padding-top: 30px;
 }
+
 .recom .recom_bd{
     float: left;
-    width: 900px;
-    background-color: blue;
+    /* width: 1200px; */
+    /* margin-left: 1px; */
+    /* background-color: blue; */
+}
+.recom .recom_bd ul li{
+    position: relative;
+    float: left;
+}
+.recom .recom_bd ul li{
+    width: 248px;
+    height: 163px;
+}
+.recom .recom_bd ul li:nth-child(-n+3)::after{
+    /* 选出前3个 li */
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 145px;
+    top: 10px;
+    right: 0;
+    background-color: #ddd;
+
+}
+
+
+
+
+/* 家用电器模块 */
+.floor .w{
+    margin-top: 30px;
+}
+.box_hd{
+    height: 30px;
+    border-bottom:2px solid #c81623;
+}
+.box_hd h3{
+    float: left;
+    font-size: 18px;
+    color:#c81623;
+    font-weight: 400;
+}
+.tab_list{
+    float: right;
+    line-height: 30px;
+}
+.tab_list ul li{
+    float: left;
+}
+.tab_list ul li a{
+    margin: 0 15px;
+}
+.tab_list ul li a:hover{
+    color: #c81623;
+}
+.box_bd{
+    height: 361px;
 }
