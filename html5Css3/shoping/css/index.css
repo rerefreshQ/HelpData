@@ -107,16 +107,41 @@
     position: relative;
 }
 
-.main .newflash .lifeservice ul li a section{
+.main .newflash .lifeservice ul li a .box{
+    position: absolute;
+    top:0;
+    right: 13px;
+}
+.main .newflash .lifeservice ul li a .box .text{
     position: absolute;
     width: 13px;
     height: 13px;
     line-height: 13px;
     background-color: green;
     color: honeydew;
-    top:0;
-    right: 0;
+    top: 0;
+    font-size: 11px;
+    /* right: 0; */
+    left: 0;
 }
+.main .newflash .lifeservice ul li a .box .triang-left{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:13px;
+    border-top: 6.5px solid green;
+    border-right: 6.5px solid transparent;
+}
+.main .newflash .lifeservice ul li a .box .triang-right{
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:13px;
+    left:6.5px;
+    border-top: 6.5px solid green;
+    border-left: 6.5px solid transparent;
+}
+
 
 .main .newflash .lifeservice ul li a div{
     display: inline-block;
