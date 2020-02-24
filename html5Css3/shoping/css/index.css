@@ -276,3 +276,52 @@
 .box_bd{
     height: 361px;
 }
+.box_bd div{
+    float: left;
+}
+.box_bd .tab_content .col_1{
+    text-align: center;
+    width: 210px;
+    height: 361px;
+    background-color: #f9f9f9;
+}
+.box_bd .tab_content .col_1 ul{
+    margin-left: 12px;
+}
+.box_bd .tab_content .col_1 ul li{
+    float: left;
+    width: 85px;
+    height: 34px;
+    margin-right: 10px;
+    border-bottom: 1px solid #ccc;
+    line-height: 33px;
+}
+.box_bd .tab_content .col_2{
+    width: 329px;
+    height: 361px;
+    
+}
+.box_bd .tab_content .col_3{
+    width: 221px;
+    height: 361px;
+    border-right: 1px solid #ccc;
+}
+
+.border_Bottom{
+    /* 一般情况下，a 如果包含有宽度的盒子，a需要转为块级元素 */
+    display: block;
+    border-bottom: 1px solid #ccc;
+}
+.box_bd .tab_content .col_4{
+    width: 221px;
+    height: 361px;
+    border-right: 1px solid #ccc;
+}
+.box_bd .tab_content .col_5{
+    width: 219px;
+    height: 361px;
+}
+.box_bd .tab_content .col_1{
+    width: 210px;
+    height: 361px;
+}
