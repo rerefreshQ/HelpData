@@ -1,0 +1,19 @@
+header{
+    height: 84px;
+    border-bottom: 2px solid #c81523;
+
+}
+header img{
+    padding-top: 18px;
+}
+
+
+/* 注册主体 */
+.registerarea{
+    height: 522px;
+
+    /* background-color:orange; */
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
