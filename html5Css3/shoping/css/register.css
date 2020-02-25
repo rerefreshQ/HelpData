@@ -16,4 +16,16 @@ header img{
     border: 1px solid #ccc;
     margin-top: 20px;
 }
-
+.registerarea h3{
+    height: 42px;
+    border-bottom: 1px solid #ccc;
+    background-color: #ececec;
+    line-height: 42px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 10px;
+}
+.registerarea span{
+    float: right;
+    font-size: 14px;
+}
