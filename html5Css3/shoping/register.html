@@ -22,9 +22,56 @@
         <div class="registerarea">
             <h3>
                 注册新用户
-                <span>我有帐户，去<a href="#" class="style_red">登录</a> </! 
+                <span>我有帐户，去<a href="#" class="style_red">登录</a> </span>
             </h3>
+
+
+            <form action="">
+                <ul>
+                    <li>
+                        <label for="txtPhone">手机号：</label> <input type="tel" name="txtPhone" id="txtPhone">
+                        <span class="error style_red"><i class="error_icon"></i> 手机号码格式不正确，请重新输入</span>
+                    </li>
+
+                    <li>
+                        <label for="txtMsg">短信验证码：</label> <input type="text" name="txtMsg" id="txtMsg">
+                        <span class="success"><i class="success_icon"></i> 验证正确</span>
+                    </li>
+
+                    <li>
+                        <label for="txtPWS">登陆密码：</label> <input type="password" name="txtPWS" id="txtPWS">
+                        <span class="error style_red"><i class="error_icon"></i> 密码不少于6位数，请重新输入</span>
+                    </li>
+
+                    <li class="safe">
+                        安全程度
+                        <em class="red">弱</em>
+                        <em class="green">中</em>
+                        <em class="yellow">强</em>
+                    </li>
+
+                    <li>
+                        <label for="txtPWS2">确认密码：</label> <input type="password" name="txtPWS2" id="txtPWS2">
+                        <span class="error style_red"><i class="error_icon"></i> 密码不一致，请重新输入</span>
+                    </li>
+
+                    <li class="agree">
+                        <input type="checkbox" name="cbx_agree" id="cbx_agree" checked="checked">
+                        <label for="cbx_agree">
+                            同意协议并注册<a href="#">《用户协议》</a>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="submit" value="完成注册">
+                    </li>
+
+                </ul>
+
+            </form>
         </div>
+
+
 
         <footer></footer>
     </div>
