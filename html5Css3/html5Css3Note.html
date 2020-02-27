@@ -11,6 +11,93 @@
     <link rel="shortcut icon" href="S.ico" />
 
     <style>
+        div[class*="box365"]{
+            width: 200px;
+            height: 200px;
+            background-color: palegreen;
+            transition: all .5s;
+        }
+        .box365-err:hover{
+            transform: rotate(180deg) translate(150px,50px);
+        }
+        .box365:hover{
+            transform:translate(150px,50px) rotate(180deg) scale(2);
+        }
+
+        .ul-box364 li {
+            width: 25px;
+            float: left;
+            border: 1px solid orange;
+            border-radius: 50%;
+            list-style: none;
+            text-align: center;
+            margin: 10px;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .ul-box364 li:hover {
+            transform: scale(1.2);
+        }
+
+        /* .box363-Mr 是老师写的，和我写的不同 */
+        .box363-Mr {
+            overflow: hidden;
+            float: left;
+            margin: 10px;
+        }
+
+        .box363-Mr img {
+            width: 200px;
+            transition: all 0.4s;
+        }
+
+        .box363-Mr img:hover {
+            transform: scale(1.1);
+        }
+
+        /* .box363 是我写的，和老师写的不同 */
+        .box363 {
+            overflow: hidden;
+            float: left;
+            margin: 10px;
+        }
+
+        .box363:hover img {
+            transform: scale(1.1);
+        }
+
+        .box363 img {
+            width: 200px;
+            transition: all 1s;
+        }
+
+        .box361 {
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            border: 1px solid orange;
+            /* margin: 100px auto; */
+            margin: 10px;
+            float: left;
+        }
+
+        .box361::before {
+            display: block;
+            content: "测试";
+            width: 100%;
+            height: 100%;
+            background-color: orangered;
+            transform: rotate(180deg);
+            transform-origin: left bottom;
+            transition: all 0.1s;
+        }
+
+        .box361:hover::before {
+            transform: rotate(0deg);
+        }
+
+
         div[class^="origin"] {
             width: 200px;
             height: 200px;
@@ -21,10 +108,12 @@
         .origin1 {
             transform-origin: left bottom;
         }
+
         .origin2 {
             /* transform-origin: 50% 50%; */
             transform-origin: center center;
         }
+
         .origin3 {
             transform-origin: 50px 50px;
         }
@@ -4748,7 +4837,129 @@
         </tbody>
     </table>
 
+    实际案例：<br>
+    <div class="clearfix">
+        <div class="box361"></div>
+        <div class="box361"></div>
+        <div class="box361"></div>
+    </div>
+    <div></div>
 
+    <h3>2D 转换之缩放 <span class="red">scale</span> </h3>
+    <h4>1.语法：</h4>
+    <div class="code">
+        transform:scale(x,y)
+    </div>
+    <h4>2.注意</h4>
+    <ul>
+        <li>注意其中的 x 和 y 用逗号分隔</li>
+        <li>transform:scale(1,1):宽和高都放大一倍,相当于没有放大</li>
+        <li>transform:scale(2,2):宽和高都放大了2倍</li>
+        <li>transform:scale(2):只写一个参数,第二个参数则和第一个参数一样,相当于 scale(2,2)</li>
+        <li>transform:scale(0.5,0.5):缩小</li>
+        <li>sacle 缩放最大的优势:可以设置转换中心点缩放,默认以中心点缩放的,而且不影响其他盒子</li>
+    </ul>
+
+    实际网页案例：<br>
+    我写的：经过 div 放大 img
+    <div class="clearfix">
+        <div class="box363"><a href="#"><img src="images/Penguins.jpg" alt=""></a></div>
+        <div class="box363"><a href="#"><img src="images/Penguins.jpg" alt=""></a></div>
+        <div class="box363"><a href="#"><img src="images/Penguins.jpg" alt=""></a></div>
+    </div>
+    老师写的：经过 img 放大 img <span class="red">(觉得老师写的从道理上来说合适d)</span>
+    <div class="clearfix">
+        <div class="box363-Mr"><a href="#"><img src="images/Koala.jpg" alt=""></a></div>
+        <div class="box363-Mr"><a href="#"><img src="images/Koala.jpg" alt=""></a></div>
+        <div class="box363-Mr"><a href="#"><img src="images/Koala.jpg" alt=""></a></div>
+    </div>
+
+    分页按钮案例：
+    <div class="clearfix">
+        <ul class="ul-box364">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+
+            <li><input type="button" value="5"></li>
+            <li><input type="button" value="6"></li>
+            <li><input type="button" value="7"></li>
+            <li><input type="button" value="8"></li>
+
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+
+    <h3>2D 转换综合写法</h3>
+    <span class="red">注意</span>
+    <ol>
+        <li>同时使用多个转换,其格式为: transform:translate() rotate() scale()…等</li>
+        <li>其顺序会影响转换的效果。(先旋转会改变坐标轴方向)</li>
+        <strong>
+            <li>当我们同时有位移和其他属性的时候,记得要将位移放到最前</li>
+        </strong>
+    </ol>
+
+    <div class="box365-err">这是位移 translate(x,y) 放后，错了的示范</div>
+    <div class="box365">这是正确的示范</div>
+
+    <h3>2D 转换小结</h3>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>说明</th>
+                <th>代码</th>
+                <th>参数说明</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td rowspan="3">transform:</td>
+                <td>
+                    移动、位移<br>
+                    translate(x,y)<br>
+                    translateX(x)<br>
+                    translateY(y)<br>
+                </td>
+                <td>
+                    transform:translate(50px,10px)
+                </td>
+                <td>参数可用 px 或 %(相对自身宽度和高度计算)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    旋转<br>
+                    rotate(度数)
+                </td>
+                <td>
+                    transform:rotate(180deg)
+                </td>
+                <td>
+                    度数的单位是 deg
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    缩放<br>
+                    sacle(x,y)
+                </td>
+                <td>
+                    transform:sacle(1.1)
+                </td>
+
+                <td>
+                    参数是数字不跟单位，小数是缩小<br>
+                    放大 1.1 倍
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 
 </body>
