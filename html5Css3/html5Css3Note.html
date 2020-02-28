@@ -11,17 +11,139 @@
     <link rel="shortcut icon" href="S.ico" />
 
     <style>
-        div[class*="box365"]{
+        .box373{
+            font-size: 20px;
+            overflow: hidden;
+            width: 0;
+            background-color:yellow;
+            white-space: nowrap;
+            animation: width2long 1s steps(12) infinite;
+        }
+        @keyframes width2long{
+            100%{
+                width: 240px;
+            }
+        }
+
+
+        .map {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            /* background: url(images/Lighthouse.jpg) repeat; */
+            background-color: #000;
+        }
+
+        .city {
+            position: absolute;
+            top: 332px;
+            left: 317px;
+        }
+        .gz{
+            top:380px;
+            left: 340px;
+        }
+
+        .dotted {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #09f;
+        }
+
+        .city div[class*="pulse"] {
+            /* 以下4行：保证我们小波纹在父盒子里面水平垂直居中 放大后就会中心向四周发散 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #009dfd;
+            animation: pulse 1.8s linear infinite;
+        }
+        .city div.pulse2{
+            animation-delay:0.7s
+        }
+        .city div.pulse3{
+            animation-delay: .14s;
+        }
+        @keyframes pulse{
+            70%{
+                /* 我们不要用 scale 因为会让 阴影变大 */
+                /* transform:scale(2); */
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+            100%{
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+
+            }
+        }
+
+        /* P367 动画使用基本示例 start */
+        /* 1. 自定义动画名称 move */
+        @keyframes move {
+
+            /* from 和 to 等价于 0% 和 100% */
+            /* 开始状态 (0% 可以不写) 100% 不写就回复原位*/
+            /* 0%{
+                transform: translateX(0);
+            } */
+            /* 结束状态 */
+            25% {
+                transform: translate(1000px, 0);
+            }
+
+            50% {
+                transform: translate(1000px, -100%);
+            }
+
+            75% {
+                transform: translate(0, -100%);
+            }
+
+            /* 100%{
+                transform: translateX(1000px);
+                background-color: red;
+            } */
+        }
+
+        .box367 {
+            width: 200px;
+            height: 200px;
+            background-color: paleturquoise;
+            /* 2. 调用动画 */
+            animation-name: move;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .box367:hover {
+            animation-play-state: paused;
+        }
+
+        /* P367 动画使用基本示例 end */
+
+
+        div[class*="box365"] {
             width: 200px;
             height: 200px;
             background-color: palegreen;
             transition: all .5s;
         }
-        .box365-err:hover{
-            transform: rotate(180deg) translate(150px,50px);
+
+        .box365-err:hover {
+            transform: rotate(180deg) translate(150px, 50px);
         }
-        .box365:hover{
-            transform:translate(150px,50px) rotate(180deg) scale(2);
+
+        .box365:hover {
+            transform: translate(150px, 50px) rotate(180deg) scale(2);
         }
 
         .ul-box364 li {
@@ -4967,10 +5089,130 @@
     相比较过渡,动画可以实现更多变化,更多控制,连续自动播放等效果<br>
 
     <h4>5.1 动画的的基本使用</h4>
+    <dl>
+        <dt>制作动画分两步：</dt>
+        <dd>1.先定义动画</dd>
+        <dd>2.再使用(调用)动画</dd>
+    </dl>
+
+    <dl>
+        <dt><strong>动画序列</strong></dt>
+        <dd>0% 是动画的<span class="red">开始</span>,100%是动画的<span class="red">完成</span>。这样的规则就是动画序列。</dd>
+        <dd>在 <span class="red">@keyframes</span> 中规定某项CSS样式,就能创建由当前样式逐渐改为新样式的动画效果</dd>
+        <dd>动画是使元素从一种样式逐渐变化为另一种样式的效果。您可以改变任意多的样式任意多的<span class="red">次数</span>。</dd>
+        <dd>请用百分比来规定变化发生的时间,或用关键词 "<span class="red">from</span>" 和 "<span class="red">to</span>" ,等同于 <span
+                class="red">0%</span> 和 <span class="red">100%</span>。</dd>
+    </dl>
+
+    <div class="box367">
+        有做鼠标暂停<br>
+        动画使用基本示例<br>
+        .box367
+    </div>
+
+    <h4>动画常用属性</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>@keyframes</td>
+                <td>规定动画。</td>
+            </tr>
+
+            <tr>
+                <td>animation</td>
+                <td>所有动画属性的简写属性,除了 animation-play-state 属性。</td>
+            </tr>
+
+            <tr>
+                <td>animation-name</td>
+                <td>规定@ keyframes动画的名称。(必须的)</td>
+            </tr>
+
+            <tr>
+                <td>animation-duration</td>
+                <td>规定动画完成一个周期所花费的秒或亳秒,默认是0。(必须的)</td>
+            </tr>
+
+            <tr>
+                <td>animation-timing-function</td>
+                <td>规定动画的速度曲线,默认是"ease"。</td>
+            </tr>
+
+            <tr>
+                <td>animation-delay</td>
+                <td>规定动画何时开始,默认是0。</td>
+            </tr>
+
+            <tr>
+                <td>animation-iteration-count</td>
+                <td>规定动画被播放的次数,默认是1,还有 infinite</td>
+            </tr>
+
+            <tr>
+                <td>animation-direction</td>
+                <td>规定动画是否在下一周期逆向播放,默认是" normal", alternate逆播放</td>
+            </tr>
+
+            <tr>
+                <td>animation-play-state</td>
+                <td>规定动画是否正在运行或暂停。默认是 "running" 还有 "paused"</td>
+            </tr>
+
+            <tr>
+                <td>animation-fill-mode</td>
+                <td>规定动画结束后状态,保持 forwards 回到起始 backwards</td>
+            </tr>
+        </tbody>
+    </table>
+
+    简写顺序：
+    <div class="code">
+        animation: <span class="red">name duration</span> timing-function delay iteration-count direction fill-mode;<br>
+        <br>
+        animation: <span class="red">动画名称 持续时间</span> 运动曲线 何时开始 播放次数 是否反方向 动画起始或者结束的状态<br>
+        <br>
+        animation: <span class="red">name(动画名称--必写!!!)</span> <span class="red">duration(完成周期时间--必写!!!!)</span>
+        timing-function(速度曲线) delay(动画开始时间) iteration-count(动画播放次数,1 或 infinite) direction(alternate是播放完毕后逆向播放)
+        fill-mode(结束后保持 forwards);<br>
+        <br>
+
+    </div>
+
+    <br>
+
+    <ul>
+        <li>简写属性里面不包含 animation-play-state</li>
+        <li>暂停动画: animation-play-state: puased; 经常和鼠标经过等其他配合使用</li>
+        <li>想要动画走回来,而不是直接跳回来: animation-direction: alternate</li>
+        <li>盒子动画结束后,停在结束位置: animation-fill-mode: forwards</li>
+    </ul>
+
+    位置波纹案例：
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="gz city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
     
-
-
-
+    打字效果案例：
+    <div class="box373">--字数1字数字数字2数字数--</div>
+    <div class="box373">我一共有十二个字给你看看</div>
 
 </body>
 
