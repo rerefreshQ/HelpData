@@ -11,9 +11,178 @@
     <link rel="shortcut icon" href="S.ico" />
 
     <style>
-        .box382{
+        .box386{
+            perspective: 1000px;
+        }
+
+        .box386margin {
+            transform-style: preserve-3d;
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 200px auto;
+            animation: rotate 10s linear infinite;
+            background: url(images/Penguins.jpg) no-repeat;
+        }
+        .box386margin:hover{
+            animation-play-state:paused ;
+        }
+        @keyframes rotate{
+            100%{
+                transform: rotateY(360deg);
+            }
+        }
+        .box386margin div {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/Koala.jpg) no-repeat;
+        }
+
+        .box386margin div:nth-child(1) {
+            transform: translateZ(300px);
+        }
+        .box386margin div:nth-child(2) {
+            transform: rotateY(60deg) translateZ(300px) ;
+        }
+        .box386margin div:nth-child(3) {
+            transform: rotateY(120deg) translateZ(300px) ;
+        }
+        .box386margin div:nth-child(4) {
+            transform: rotateY(180deg) translateZ(300px) ;
+        }
+        .box386margin div:nth-child(5) {
+            transform: rotateY(240deg) translateZ(300px) ;
+        }
+        .box386margin div:nth-child(6) {
+            transform: rotateY(300deg) translateZ(300px) ;
+        }
+
+
+
+
+
+
+
+
+
+
+        .imgPhoto {
+            vertical-align: top;
+        }
+
+        .box384 * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+        .box384 ul {
+            margin: 100px;
+        }
+
+        .box384 ul li {
+            float: left;
+            width: 120px;
+            height: 35px;
+            list-style: none;
+            margin: 10px;
             perspective: 500px;
-            
+            text-align: center;
+            line-height: 35px;
+        }
+
+        .box384 ul li:hover .box384margin {
+            transform: rotateX(90deg);
+        }
+
+        .box384margin {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+
+        .box384front,
+        .box384down {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .box384front {
+            transform: translateZ(17.5px);
+            background-color: cornflowerblue;
+        }
+
+        .box384down {
+            background-color: darkorange;
+            transform: translateY(17.5px) rotateX(-90deg);
+        }
+
+
+
+
+
+
+
+        .box383 {
+            perspective: 700px;
+        }
+
+        .box383margin {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: #333;
+            margin: 0 auto;
+            transition: all 1s;
+            transform-style: preserve-3d;
+        }
+
+        .box383:hover .box383margin {
+            transform: rotateY(180deg);
+        }
+
+        .box383front,
+        .box383back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            font-size: 30px;
+            color: #f7f7f7;
+            text-align: center;
+            line-height: 300px;
+
+        }
+
+        .box383back {
+            background-color: #ff6700;
+            transform: rotateY(180deg);
+        }
+
+        .box383front {
+            z-index: 1;
+            background-color: chartreuse;
+        }
+
+
+
+
+        .box382 {
+            perspective: 500px;
+            background-color: #888;
+            /* 因为无写 width 所以宽度 auto 无生效 */
+            /* margin: 0 auto; */
         }
 
         .box382margin {
@@ -23,7 +192,7 @@
             margin: 0 auto;
             transform-style: preserve-3d;
             transform: rotateY(30deg);
-            transition:all 1s;
+            transition: all 1s;
         }
 
         .box382margin div {
@@ -40,10 +209,10 @@
             transform: rotateX(60deg);
         }
 
-        .box382:hover .box382margin{
+        .box382:hover .box382margin {
             transform: rotateY(0);
         }
-   
+
 
 
 
@@ -898,6 +1067,7 @@
 </head>
 
 <body>
+    思维导图软件：xmind<br>
     <a href="https://rerefreshQ.github.io/HelpData/html5Css3/html5Css3Note.html">github 本页 </a><br>
     <br>
 
@@ -3615,7 +3785,9 @@
     CSS 的 <span class="red">vertical-align</span> 属性使用场景：经常用于设置图片或者表单(行内块元素)和文字垂直对齐。<br>
     官方解释：用于设置一个元素的<span class="red">垂直对齐方式</span>，但是它只针对行内元素或者行内块元素有效。
     <div class="code">
-        vertical-align: baseline | top | middle | bottom
+        img{<br>
+        vertical-align: baseline | top | middle | bottom<br>
+        }
     </div>
 
     <table>
@@ -5293,14 +5465,15 @@
 
             <tr>
                 <td>
-                    父元素或再上级元素{<br>
+                    <span class="red">父元素</span> (或再上级元素-再上级元素会有奇怪显示){<br>
                     perspective: 500px;<br>
                     }
                 </td>
-                
+
                 <td>
                     透视(视距-眼睛到屏幕之间的距离)<br>
-                    500px 比较适合
+                    500px 比较适合<br>
+                    <span class="red">数字小会令浏览器侧边栏增加，所以数字不要太小</span>
                 </td>
             </tr>
 
@@ -5314,10 +5487,10 @@
             </tr>
         </tbody>
     </table>
-    
 
 
-    <h3>3D案例：</h3>
+
+    <h4>3D案例--3D呈现：</h4>
     用 body 做 perspective(透视) 失败，变得好长好奇怪，原因未知。<br>
     外层再加个 div 做 perspective(透视) 解决<br>
     <div class="box382">
@@ -5325,8 +5498,83 @@
             <div class="box382green"></div>
             <div class="box382blue"></div>
         </div>
-
     </div>
+
+    <h4>3D案例2--两面翻转盒子：</h4>
+    分析： <a href="https://www.bilibili.com/video/av80149248?p=388"><img class="imgPhoto" src="images/P383分析.jpg"
+            alt=""></a>
+    <div class="box383">
+        <div class="box383margin">
+            <div class="box383front">我是正面</div>
+            <div class="box383back">我是背面</div>
+        </div>
+    </div>
+
+    <h4>3D案例：3D Menu</h4>
+    分析：<img class="imgPhoto" src="images/P385分析.jpg" alt=""><br>
+    下面盒子向下移动一半<br>
+    正面盒子向前移动一半<br>
+    这样旋转时就会形成四方盒子中心旋转
+    <div class="box384 clearfix">
+        <ul>
+            <li>
+                <div class="box384margin">
+                    <div class="box384front">Menu1-正面</div>
+                    <div class="box384down">Menu1-下层</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box384margin">
+                    <div class="box384front">Menu2-正面</div>
+                    <div class="box384down">Menu2-下层</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box384margin">
+                    <div class="box384front">Menu2-正面</div>
+                    <div class="box384down">Menu2-下层</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box384margin">
+                    <div class="box384front">Menu2-正面</div>
+                    <div class="box384down">Menu2-下层</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box384margin">
+                    <div class="box384front">Menu2-正面</div>
+                    <div class="box384down">Menu2-下层</div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box384margin">
+                    <div class="box384front">Menu2-正面</div>
+                    <div class="box384down">Menu2-下层</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <h4>3D 案例：旋转木马</h4>
+    分析：<img class="imgPhoto" src="images/P386分析.jpg" alt="">
+    <section class="box386">
+        <section class="box386margin">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+    </section>
+
+
 </body>
 
 </html>
