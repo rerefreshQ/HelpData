@@ -11,16 +11,57 @@
     <link rel="shortcut icon" href="S.ico" />
 
     <style>
-        .box373{
+        .box382{
+            perspective: 500px;
+            
+        }
+
+        .box382margin {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            transform: rotateY(30deg);
+            transition:all 1s;
+        }
+
+        .box382margin div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: pink;
+        }
+
+        .box382margin div:last-child {
+            background-color: purple;
+            transform: rotateX(60deg);
+        }
+
+        .box382:hover .box382margin{
+            transform: rotateY(0);
+        }
+   
+
+
+
+
+
+
+
+        .box373 {
             font-size: 20px;
             overflow: hidden;
             width: 0;
-            background-color:yellow;
+            background-color: yellow;
             white-space: nowrap;
             animation: width2long 1s steps(12) infinite;
         }
-        @keyframes width2long{
-            100%{
+
+        @keyframes width2long {
+            100% {
                 width: 240px;
             }
         }
@@ -39,8 +80,9 @@
             top: 332px;
             left: 317px;
         }
-        .gz{
-            top:380px;
+
+        .gz {
+            top: 380px;
             left: 340px;
         }
 
@@ -56,7 +98,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
 
             width: 8px;
             height: 8px;
@@ -64,21 +106,25 @@
             box-shadow: 0 0 12px #009dfd;
             animation: pulse 1.8s linear infinite;
         }
-        .city div.pulse2{
-            animation-delay:0.7s
+
+        .city div.pulse2 {
+            animation-delay: 0.7s
         }
-        .city div.pulse3{
+
+        .city div.pulse3 {
             animation-delay: .14s;
         }
-        @keyframes pulse{
-            70%{
+
+        @keyframes pulse {
+            70% {
                 /* 我们不要用 scale 因为会让 阴影变大 */
                 /* transform:scale(2); */
                 width: 40px;
                 height: 40px;
                 opacity: 1;
             }
-            100%{
+
+            100% {
                 width: 70px;
                 height: 70px;
                 opacity: 0;
@@ -5209,11 +5255,78 @@
             <div class="pulse3"></div>
         </div>
     </div>
-    
+
     打字效果案例：
     <div class="box373">--字数1字数字数字2数字数--</div>
     <div class="box373">我一共有十二个字给你看看</div>
 
+    <hr>
+
+    <h3>3D:</h3>
+    <h3>主要知识点</h3>
+
+    <table>
+        <thead>
+            <tr></tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    transform: translate3d(x,y,z,deg);<br>
+                    transform: translateX();<br>
+                    transform: translateY();<br>
+                    transform: translateZ();<br>
+                </td>
+                <td>3D位移(单位一般用px)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    transform: rotate3d(x,y,z,deg)<br>
+                    transform: rotateX(60deg);<br>
+                    transform: rotateY(60deg);<br>
+                    transform: rotateZ(60deg);
+                </td>
+                <td>3D旋转</td>
+            </tr>
+
+            <tr>
+                <td>
+                    父元素或再上级元素{<br>
+                    perspective: 500px;<br>
+                    }
+                </td>
+                
+                <td>
+                    透视(视距-眼睛到屏幕之间的距离)<br>
+                    500px 比较适合
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    进行3D呈现的大层{<br>
+                    transform-style: preserve-3d;<br>
+                    }
+                </td>
+                <td>3D呈现</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+
+    <h3>3D案例：</h3>
+    用 body 做 perspective(透视) 失败，变得好长好奇怪，原因未知。<br>
+    外层再加个 div 做 perspective(透视) 解决<br>
+    <div class="box382">
+        <div class="box382margin">
+            <div class="box382green"></div>
+            <div class="box382blue"></div>
+        </div>
+
+    </div>
 </body>
 
 </html>
