@@ -5453,12 +5453,15 @@
         <tbody>
             <tr>
                 <td>
-                    transform: translate3d(x,y,z,deg);<br>
+                    transform: translate3d(x,y,z);<br>
                     transform: translateX();<br>
                     transform: translateY();<br>
                     transform: translateZ();<br>
                 </td>
-                <td>3D位移(单位一般用px)</td>
+                <td>
+                    translate3d(100px,100px,100px)<br>
+                    3D位移(单位一般用px)
+                </td>
             </tr>
 
             <tr>
@@ -5468,7 +5471,10 @@
                     transform: rotateY(60deg);<br>
                     transform: rotateZ(60deg);
                 </td>
-                <td>3D旋转</td>
+                <td>
+                    transform: rotate3d(1,0,0,60deg)<br>
+                    3D旋转
+                </td>
             </tr>
 
             <tr>
