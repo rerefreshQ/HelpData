@@ -525,32 +525,42 @@
 
 
 
-
-
-        .divP296-Picture:hover div {
-            top: -40px;
-        }
-
-        .divP296-Picture div {
-            position: absolute;
-
-        }
-
-        .divP296-Picture {
+        .divP296-Picture{
             position: relative;
+            width: 100px;
+            height: 100px;
             overflow: hidden;
-            width: 50px;
-            height: 47px;
-            /* height: 500px; */
-            border: 1px solid darkmagenta;
+        }
+        .divP296-Picture div{
+            position: absolute;
+            width: 201px;
+            transition: all 0.05s;
+            
+        }
+        .divP296-Picture:hover div {
+            transform:translateX(-102px);
+            /* background-color: #ff6700; */
         }
 
-        .divP296-Picture img {
-            /* position: absolute; */
-            width: 100%;
-            /* left: 10px; */
-            /* width: 50px; */
+        .divP296-Picture div img {
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 0;
+            border: 0px;
+            margin: -1px;
         }
+        .divP296-Picture div img:nth-child(2){
+            left:100px;
+            
+        }
+
+   
+
+
+
+
+
 
 
 
@@ -4610,11 +4620,14 @@
 
         <tr>
             <td>
-                <a href="https://www.bilibili.com/video/av80149248?p=296">我用定位(失败--我未做到横向) 04:27 的习题：</a>
+                <a href="https://www.bilibili.com/video/av80149248?p=296">定位(小米左上角标志) 04:27 的习题：</a>
                 <div class="divP296-Picture clearfix4">
                     <div>
-                        <img src="images/Lighthouse.jpg" alt="">
-                        <img src="images/Desert.jpg" alt="">
+                        <!-- <img src="images/Lighthouse.jpg" alt="">
+                        <img src="images/Desert.jpg" alt=""> -->
+                        <img src="images/F.png" alt="">
+                        <img src="images/S.png" alt="">
+
                     </div>
                 </div>
             </td>
