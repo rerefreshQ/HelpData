@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax 笔记</title>
+    <link rel="shortcut icon" href="S.ico" />
+
+    <style>
+        .red {
+            font-weight: 700;
+            color: red;
+        }
+        
+        img {
+            display: block;
+            border: 1px dotted black;
+        }
+        
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h2>Ajax 被认为是(Asynchronous JavaScript and XML 的缩写)<br> 现在，
+        <span class="red">允许浏览器与服务器通信而无须刷新当前页面的技术</span>都被叫做 Ajax。<br> Ajax:一种 <span class="red">不用刷新整个页面便可以与服务器通讯的办法</span><br>
+        <span class="red">数据在客户端与服务器之间独立传输。服务器不再返回整个页面</span>
+    </h2>
+    <span class="red">XMLHttpRequest</span>:该对象是对 JavaScript 的一个扩展，可使网页与服务器进行通信。是创建 Ajax 应用的最佳选择。<br>
+    <span class="red">实际上通常把 Ajax 当成 XMLHttpRequest 对象的代名词</span><br>
+
+    <h3>Ajax 工作原理：</h3>
+    <img src="images/P1.jpg" alt="">
+
+    <h3>Ajax 工具包</h3>
+    <span class="red">Ajax 并不是一项新技术</span> ,它实际上是几种技术,每种技术各尽其职,以一种全新的方式聚合在一起<br>
+    <span class="red">服务器端语言</span> :服务器需要具备向浏览器发送特定信息的能力。<span class="red">Ajax 与服务器端语言无关。</span><br>
+    <span class="red">XML</span> ( eXtensible Markup language,可扩展标记语言)是一种描述数据的格式。<span class="red">Ajax 程序需要某种格式化的格式来在服务器和客户端之间传递信息,XML是其中的一种选择</span><br>
+    <span class="red">XHTML</span> (eXtended Hypertext Markup Language,使用扩展超媒体标记语言)和 <span class="red">CSS</span> ( Cascading Style Sheet,级联样式单) <span class="red">标准化呈现</span> ;<br>
+    <span class="red">DOM</span> ( Document Object Model,文档对象模型) <span class="red">实现动态显示和交互;</span><br> 使用 XMLHTTP 组件 <span class="red">XMLHttpRequest对象</span> 进行 <span class="red">异步数据读取</span><br> 使用 <span class="red">JavaScript绑定和处理所有数据</span><br>
+
+    <h3>XMLHttpRequest 的方法</h3>
+    <table>
+        <thead>
+            <th>方法</th>
+            <th>描述</th>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>abort()</td>
+                <td>停止当前请求</td>
+            </tr>
+
+            <tr>
+                <td>getAllResponseHeaders()</td>
+                <td>把 HTTP 请求的所有响应都部作为 键/值对 返回</td>
+            </tr>
+
+            <tr>
+                <td>getResponseHeader("header")</td>
+                <td>返回指定首部的串值</td>
+            </tr>
+
+            <tr class="red">
+                <td>open("method", "url")</td>
+                <td>建立对服务器的调用。Method 参数可以是 GET. POST 或 PUT. url参数可以是相对 URL 或绝对 URL</td>
+            </tr>
+
+            <tr class="red">
+                <td>send(content)</td>
+                <td>向服务器发送请求</td>
+            </tr>
+
+            <tr class="red">
+                <td>setRequestHeader("header", "value")--[POST请求时使用]</td>
+                <td>把指定首部设置为所提供的值。在设置任何首部之前必须先调用 open()</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>XMLHttpRequest 的属性</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>属性</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="red">
+                <td>onreadystatechange</td>
+                <td>每个状态改变时都会触发这个事件处理器，通常会调用一个 JavaScript 函数</td>
+            </tr>
+
+            <tr class="red">
+                <td>readyState</td>
+                <td>
+                    请求的状态，有5个可取值:<br> 0=未初始化
+                    <br> 1=正在加载
+                    <br> 2=已经加载
+                    <br> 3=交互中
+                    <br> 4=完成
+                </td>
+            </tr>
+
+            <tr class="red">
+                <td>responseText</td>
+                <td>服务器的响应，表示为一个串。</td>
+            </tr>
+
+            <tr class="red">
+                <td>responseXML</td>
+                <td>服务器的响应，表示为 XML。这个对象可以解析为 DOM 对象。</td>
+            </tr>
+
+            <tr class="red">
+                <td>status</td>
+                <td>
+                    服务器的 HTTP 状态码(<br> 200对应 OK<br> 404对应 NotFound<br> 等)
+                    <br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>statusText</td>
+                <td>HTTP 状态码的相应文本(OK 或 NotFound 等)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>
+        发送请求<br> 利用 XMLHttpRequest 实例与服务器进行通信包含以下3个关键部分：
+    </h3>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>onreadystatechange 事件处理函数</td>
+                <td>
+                    该事件处理函数 <span class="red">由服务器触发</span>，而不是用户 <br> 在 Ajax 执行过程中，服务器会通知客户端当前的通信状态。这依靠更新 XMLHttpRequest对象的 readyState 来实现。<span class="red">改变 readyState 属性是服务器对客户端连接操作的一种方式。每次 readyState 属性的改变都会触发 readystatechange 事件</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>open (method,url,asynch)</td>
+                <td>
+                    XMLHttpRequest对象的 <span class="red">open 方法允许程序员用一个Aax调用向服务器发送请求。</span><br>
+                    <br> method: <span class="red">请求类型</span> ,类似"GET"或"POST"的字符串。<br> 若只想从服务器检索一个文件,而不需要发送任何数据,使用GET(可以在GET请求里通过附加在URL上的查询字符串来发送数据,不过数据大小限制为2000个字符)。
+                    <br> 若需要向服务器发送数据,用 POST。<br>
+                    <br> 在某些情况下,有些浏览器会把多个 XMLHttpRequest 请求的结果缓存在同一个URL。<br> 如果对每个请求的响应不同,就会带来不好的结果。
+                    <br>
+                    <span class="red">在此将时间戳追加到URL的最后,就能确保URL的唯一性,从而避免浏览器缓存结果。</span><br>
+
+                    <br> url:路径字符串,指向你所请求的服务器上的那个文件。可以是绝对路径或相对路径。
+                    <br>
+                    <br> asynch:表示请求是否要异步传输,默认值为tue。
+                    <br> 指定true,在读取后面的脚本之前,不需要等待服务器的响应。
+                    <br> 指定false,当脚本处理过程经过这点时,会停下来,一直等到Aax请求执行完毕再继续执行。
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    send 方法<br>
+
+</body>
+
+</html>
