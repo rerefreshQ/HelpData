@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1小时学 jquery for Ajax 数据读取</title>
+    <base target="_blank" />
+
+    <style>
+        table,td{
+            border: 1px solid #000;
+        }
+    </style>
+
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <a href="https://www.bilibili.com/video/av49214567?from=search&seid=6733575438727026456">课程从 120:16 开始看</a>
+    <h2>jQuery 对 ajax 的支持</h2>
+    <h3>(1)$.ajax()方法 -- 视频 120:16 开始   166:00 结束</h3>
+    用法：<br>
+    $.ajax({});<br>
+    说明：<br>
+    {}是一个用来描述请求选项参数的对象。常见的选项参数有如下几个：
+    <table>
+        <tbody>
+            <tr>
+                <td>url:</td>
+                <td>请求地址</td>
+                <td rowspan="6">
+                    function quoto(){<br>
+                        //利用 jQuery 提供的方法来向服务器发送异步请求<br>
+                        $.ajax({<br>
+                            "url":"quoto.do",<br>
+                            "type":"post",<br>
+                            "dataType":"json",<br>
+                            "success":function(stocks){<br>
+                                // success 等同于 onreadystatechange<br>
+                                // stocks 是自定义用来接收的参数<br>
+                                // 每次更新前要先清空 tbody<br>
+                                $('#tb1').empty();<br>
+                                for(i=0;i &lt; stocks.lenght;i++){<br>
+                                    var s = stocks[i];<br>
+                                    // 更新表格<br>
+                                    $('#tb1').append(<br>
+                                        '&lt;tr&gt; &lt;td&gt;' + s.code <br>
+                                        + '&lt;/td&gt; &lt;td&gt;' + s.name <br>
+                                        + '&lt;/td&gt; &lt;td&gt;' + s.price <br>
+                                        + '&lt;/td&gt; &lt;/tr&gt;'); <br>
+                                }<br>
+                            }<br>
+                        });<br>
+                    }<br>
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>data:</td>
+                <td>
+                    请求参数，有两种格式：<br>
+                    1.请求字符串，比如 "adminCode=Sally"<br>
+                    2.对象，比如{"adminCode":"Sally"}
+                </td>
+            </tr>
+
+            <tr>
+                <td>type:</td>
+                <td>get/post</td>
+            </tr>
+
+            <tr>
+                <td>dataType:</td>
+                <td>
+                    服务器返回的数据类型：<br>
+                    text:文本数据<br>
+                    json:json字符串<br>
+                    html:html文档<br>
+                    xml:xml文档<br>
+                    script:javascript脚本<br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>success:</td>
+                <td>
+                    事件处理函数(当服务器处理正常，用来处理服务器返回的数据)
+                </td>
+            </tr>
+
+            <tr>
+                <td>error:</td>
+                <td>
+                    事件处理函数(当服务器处理异常，用来处理服务器返回的数据)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>(2)load() -- 视频 192:00 开始</h3>
+    作用：向服务器发送异步请求，然后将服务器返回的数据直接添加到符合要求的节点之上。<br>
+    用法：<br>
+    $obj.load(url,[data]);<br>
+    <table>
+        <tbody>
+            <tr>
+                <td>url</td>
+                <td>请求地址</td>
+                <td rowspan="2">
+                    // #a1 是 超链接，#d1 是 div<br>
+                    // 通过 #a1 的 URL ，将得到的随机数直接写入 #d1<br>
+                    $(function(){<br>
+                        $('a1').click(showNumber);<br>
+                    });<br>
+                    function showNumber(){<br>
+                        $('#d1').load('luck.do');    // 直接将结果写入 div 中<br>
+                    }<br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>data:</td>
+                <td>
+                    请求参数，有两种格式：(与上面相同)<br>
+                    1.请求字符串，比如 "adminCode=Sally"<br>
+                    2.对象，比如{"adminCode":"Sally"}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

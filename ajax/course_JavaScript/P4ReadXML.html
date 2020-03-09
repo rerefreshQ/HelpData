@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初步实现 Ajax 数据读取</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('a').click(function () {
+                var request = new XMLHttpRequest();
+
+                var url = this.href + "?time=" + new Date();
+                var method = "Get";
+                request.open(method, url);
+
+                request.send(null);
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4) {
+                        if (request.status == 200 || request.status == 304) {
+                            // 1. 结果为 XML 格式，所以需要使用 responseXML 来获取
+                            var result = request.responseXML;
+
+                            // 2. 结果不能直接使用，必须先创建对应的节点，再把节点加入到 #details 中
+                            // 目标格式为:
+                            // <h2><a href="mailto:xx@xxxx.com">xx</a></h2>
+                            // <a href="http://xx.com">http://xx.com</a>                        
+
+                            var name=result.getElementsByTagName("name")[0].firstChild.nodeValue;
+                            var website=result.getElementsByTagName("website")[0].firstChild.nodeValue;
+                            var email=result.getElementsByTagName("email")[0].firstChild.nodeValue;
+
+                            // console.log(name);
+                            // console.log(website);
+                            // console.log(email);
+
+                            var aNode=document.createElement("a");
+                            aNode.appendChild(document.createTextNode(name));
+                            aNode.href="mailto:"+email;
+
+                            var h2Node=document.createElement("h2");
+                            h2Node.appendChild(aNode);
+
+                            var aNode2=document.createElement("a");
+                            aNode2.appendChild(document.createTextNode(website));
+                            aNode2.href=website;
+
+                            // console.log(h2Node);
+                            // console.log(aNode2);
+
+                            var detailsNode=document.getElementById("details");
+                            detailsNode.innerHTML="";
+                            detailsNode.appendChild(h2Node);
+                            detailsNode.appendChild(aNode2);
+                        }
+                    }
+                }
+
+
+                return false;
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    按链接URL 添加目标xml的信息，老师的例子是每个 xml 只有1个人的资料，我前2个xml每个1个人资料，第3个多人资料：
+    
+    <ul>
+        <li><a href="DataForAjax/P4xmlDataJeremy.xml">Jeremy</a></li>
+        <li><a href="DataForAjax/P4xmlDataRichard.xml">Richard</a></li>
+    </ul>
+    
+    
+
+    <div id="details"></div>
+
+
+</body>
+
+</html>
