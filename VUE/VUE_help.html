@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>VUE 学习</title>
+
+
+    <style>
+        img {
+            display: block;
+            border: 1px solid #000;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .code {
+            width: 80%;
+            background-color: rgb(182, 227, 248);
+            padding: 15px;
+            /* 颜色一般不用纯黑色，老师用了半透明的黑色 */
+            box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.3);
+            margin: 15px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <h1><a href="https://www.bilibili.com/video/av75420619?p=2">VUE 学习来源</a> </h1>
+
+    总结学习到的指令：
+    <table>
+        <thead>
+            <tr>
+                <th>哪个视频</th>
+                <th>指令</th>
+                <th>用法</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>P7</td>
+                <td>v-text</td>
+                <td>{{data中的变量}}</td>
+                <td>文本替换：不能解析为 html 标签，即写 &lt;a&gt; 可以会照出 &lt;a&gt; </td>
+            </tr>
+
+            <tr>
+                <td>P8</td>
+                <td>v-html</td>
+                <td>标签内写 v-html="data中的变量"</td>
+                <td>以 html 方式解析替换，即写 &lt;a&gt; 可以替换成超链接</td>
+            </tr>
+
+            <tr>
+                <td>P9</td>
+                <td>v-on</td>
+                <td>
+                    标签内写 v-on:mouseenter="b1"<br>
+                    简写：<strong class="red">@:mouseenter="b1"</strong>
+                </td>
+                <td>
+                    为元素绑定事件"b1" <strong class="red">methods:{}</strong>
+                </td>
+            </tr>
+
+            <tr>
+                <td>P11</td>
+                <td>v-show</td>
+                <td>标签内写 v-show="true 或 变量 或 表达式 (的结果指定真假)" (<strong class="red">true 出现,false 消失</strong>)</td>
+                <td>控制 display=none 方式隐藏内容，<strong class="red">使用的内存资源小，适合频繁显示/隐藏</strong></td>
+            </tr>
+
+            <tr>
+                <td>P12</td>
+                <td>v-if</td>
+                <td>标签内写 v-if="true 或 变量 或 表达式 (的结果指定真假)" (<strong class="red">true 出现,false 消失</strong>)</td>
+                <td>&lt;!-- --&gt;方式隐藏内容，<strong class="red">使用的内存资源大，不适合频繁显示/隐藏</strong></td>
+            </tr>
+
+            <tr>
+                <td>P13</td>
+                <td>v-bind</td>
+                <td>
+                    标签内写 v-bind:title="t_value" :class={classP13:isRed} //对象方式-类名取决于真假<br>
+                    简写：<strong class="red">:</strong>
+                </td>
+                <td>为元素绑定属性</td>
+
+            <tr>
+                <td>P15</td>
+                <td>v-for</td>
+                <td>标签内写 v-for="(item,index) in arrAdd"</td>
+                <td>数据内的 for 循环</td>
+            </tr>
+
+            <tr>
+                <td><a href="#P16">P16</a> </td>
+                <td>v-on 补充</td>
+                <td>标签内写</td>
+                <td>增加参数，keyup.enter 等按键的限定</td>
+            </tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>介绍</h2>
+    <img src="images/P1-2.jpg" alt="">
+
+    <h2>P2 Vue 简介</h2>
+    <img src="images/P2.jpg" alt="">
+
+    <h2>P3 首个例子<br>
+        <a href="https://cn.vuejs.org">官网地址</a>
+    </h2>
+    <img src="images/P3.jpg" alt="">
+    <div id="app" class="code">
+        #app 的代码显示结果：
+        <br>
+        {{message}}<br>
+        显示 school 的 name:{{school.name}}<br>
+        显示 school 的 mobile:{{school.mobile}}<br>
+        <br>
+        校区：{{campus[0]}}<br>
+        校区：{{campus[3]}}<br>
+
+    </div>
+
+
+    <h2>P4 el:挂载点</h2>
+    <strong>el 是用来设置 Vue 实例挂载(管理)的元素</strong><br>
+    <br>
+    <strong>Vue 实例的作用范围是什么呢？</strong><br>
+    &emsp;Vue 会管理 el 选项 <span class="red">命中的元素</span> 及其内部的 <span class="red">后代元素</span><br>
+    <br>
+    <strong>是否可以使用其他的选择器？</strong><br>
+    &emsp;可以使用其他的选择器，但是建议使用 <span class="red">ID选择器</span><br>
+    <br>
+    <strong>是否可以设置其他的 dom 元素呢？</strong><br>
+    &emsp;可以使用其他的双标签，不能使用 <span class="red">HTML</span> 和 <span class="red">BODY</span><br>
+    <br>
+
+    <h2>P5 data 数据对象</h2>
+    Vue 中用到的数据定义在 <span class="red">data</span> 中<br>
+    data 中可以写 <span class="red">复杂类型</span> 的数据<br>
+    渲染复杂类型数据时，遵守 js 的 <span class="red">语法</span> 即可<br>
+
+    <h2>P6 本地应用介绍</h2>
+    通过 <strong class="red">Vue</strong> 实现常见的网页效果<br>
+    学习 <strong class="red">Vue指令</strong>，以案例巩固知识点<br>
+    <strong class="red">Vue指令</strong> 指的是以 <strong class="red"> v- </strong>开关的一组特殊语法<br>
+
+    <h2>P7 本地应用 v-text 指令</h2>
+    <strong class="red">v-text</strong> 指令的作用是：设置标签的内容(textContent)<br>
+    默认写法会替换全部内容，使用<strong class="red">差值表达式{{}}</strong>可以替换指定内容<br>
+    内部支持写<strong class="red">表达式{{}}</strong><br>
+    <div id="P7" class="code">
+        <h6 v-text="message+'!'">我会被替换</h6>
+        <h6>我不会被替换，变量message={{message+" "+message2+"!"}}</h6>
+    </div>
+
+    <h2>P8 本地应用 v-html 指令 -- 疑问：点样以{{}}的形式使用 v-html？</h2>
+    <strong class="red">v-html</strong> 指令的作用是：设置元素的 <strong class="red">innerHTML</strong> <br>
+    内容中有<strong class="red"> html </strong> 结构会被解析为 <strong class="red">标签</strong> <br>
+    <strong class="red"> v-text </strong> 指令无论内容是什么，只会解析为<strong class="red">文本</strong> <br>
+
+    <div id="P8" class="code">
+        {{contnet}}
+        <h6 v-html="contnet"></h6>
+    </div>
+
+    <h2>P9 本地应用 v-on 指令</h2>
+    <strong class="red"> v-on </strong> 指令的作用是：为元素绑定<strong class="red">事件</strong> <br>
+    事件名不需要写<strong class="red"> on </strong> <br>
+    指令可以简写为<strong class="red"> @ </strong> <br>
+    绑定的方法定义在<strong class="red"> methods</strong> 属性中 <br>
+    方法内部通过<strong class="red"> this </strong> 关键字可以访问定义在 <strong class="red"> data </strong> 中数据 <br>
+
+    <div id="P9" class="code">
+        <input type="button" value="单击" v-on:click="b1">
+        <input type="button" value="鼠标移入" v-on:mouseenter="b1">
+        <input type="button" value="鼠标双击" @dblclick="b1">
+        <br>
+        <span @mouseenter="changeTextIn" @mouseleave="changeTextOut">{{txt1}}</span> <!-- 鼠标离开事件 -->
+
+    </div>
+
+
+    <h2>P10 计数器</h2>
+    创建 Vue 示例时:<strong class="red">el</strong>(挂载点)，<strong class="red"> data </strong>(数据)，<strong class="red"> methods
+    </strong>(方法)<br>
+    <strong class="red">v-on</strong> 指令的作用是绑定事件简写为 <strong class="red">@</strong><br>
+    方法中通过 <strong class="red">this</strong> 关键字获取 <strong class="red">data</strong> 中的数据<br>
+    <strong class="red">v-text</strong> 指令的作用是设置元素的 <strong class="red">文本值</strong>， 简写为<strong
+        class="red">{{}}</strong><br>
+    <strong class="red">v-html</strong> 指令的作用是:设置元素的 <strong class="red">innerHTML</strong> <br>
+    <div id="P10" class="code">
+        <button @click="cut">-</button>
+        <span>{{num}}</span>
+        <button id="add" @click="add">+</button>
+    </div>
+
+    <h2>P11 本地应用 v-show 指令</h2>
+    <strong class="red">v-show</strong> 指令的作用是:根据真假切换元素的显示状态<br>
+    原理是修改元素的 display,实现显示隐藏<br>
+    指令后面的内容,最终都会 <strong class="red">解析</strong> 为 <strong class="red">布尔值</strong><br>
+    值为 <strong class="red">true</strong> 元素显示，值为 <strong class="red">false</strong> 元奏隐藏<br>
+    数据改变之后，对应元素的显示状态会 <strong class="red">同步更新</strong><br>
+    <div class="code" id="P11">
+        <span @mouseenter="age20" @mouseleave="age5">三张图，出入时修改第三张图的状态：</span> <br>
+        this.isShow=!this.isShow; 设定反向 <br>
+        可以写 button 加 age 或减 age 控制
+        <img src="images/Chrysanthemum.jpg" width="100px" alt="" v-show="true">
+        <img src="images/Chrysanthemum.jpg" width="100px" alt="" v-show="isShow">
+        <img src="images/Chrysanthemum.jpg" width="100px" alt="" v-show="age>=16">
+    </div>
+
+    <h2>P12 本地应用 v-if 指令</h2>
+    <strong class="red">v-if</strong> 指令的作用是：根据表达式的真假切换元素的显示状态<br>
+    本质是通过操纵<strong class="red"> dom </strong> 元素来切换显示状态<br>
+    表达式的值为<strong class="red"> true </strong>，元素存在于<strong class="red"> dom </strong>树中，为 <strong
+        class="red">false</strong>，从 <strong class="red">dom</strong> 树中移除 <br>
+    频繁的切换用<strong class="red"> v-show </strong>，反之使用<strong class="red"> v-if </strong>，前者的切换消耗小<br>
+    <div class="code" id="P12">
+        <button @click="P12click">isShow变真或假{{c}}度</button>
+        <span v-if="c<40">现在温度{{c}}度，我出来了</span>
+        <span v-if="c>=40">现在温度{{c}}度太高了</span>
+        <p v-if="isShow">我是isShow</p>
+    </div>
+
+    <h2>P13 本地应用 v-bind 指令</h2>
+    <strong class="red">v-bind</strong> 指令的作用是:为元素绑定属性<br>
+    完整写法是 <strong class="red">v-bind:属性名</strong><br>
+    简写的话可以直接省略 <strong class="red">v-bind</strong> ,只保留<strong class="red">:属性名</strong><br>
+    需要动态的增删 <strong class="red">class</strong> 建议使用对象的方式 <br>
+    <div class="code" id="P13">
+        {{temp_value}}
+        <img v-bind:src="imgSrc" v-bind:width="w" alt="">
+        <img :src="imgSrc" :width="w" :title="t_value+'!?!?'" alt="">
+        <img :src="imgSrc" :width="w" :title="t_value+':我是使用?三元表达式'" :class="isRed?'classP13':''" @click="changeBroder"
+            alt="">
+        <img :src="imgSrc" :width="w" :title="t_value+':我是使用:对象 - 类取决于真假'" :class={classP13:isRed} @click="changeBroder"
+            alt="">
+    </div>
+    <script>
+        var P13 = new Vue({
+            el: "#P13",
+            data: {
+                temp_value: "xx",
+                imgSrc: "images/Desert.jpg",
+                w: 100,
+                t_value: "ImTitle",
+                Broder: true,
+                isRed: false,
+            },
+            methods: {
+                changeBroder: function () {
+                    this.isRed = !this.isRed;
+                }
+            }
+        })
+    </script>
+    <style>
+        .classP13 {
+            border-color: red;
+        }
+    </style>
+
+
+    <h2>P14 本地应用例子：图片切换</h2>
+    列表数据使用 <span class="red">数组</span> 保存<br>
+    <strong class="red">v-bind</strong> 指令可以设置元素属性，比如 <strong class="red">src</strong><br>
+    <strong class="red">v-show</strong> 和 <strong class="red">v-if</strong> 都可以切换元素的显示状态，频繁切换用 <strong
+        class="red">v-show</strong><br>
+
+    <a href="https://www.bilibili.com/video/av75420619?p=14">
+        图片上一页，下一页效果:<br>
+        <img src="images/P14.jpg" alt="">
+    </a>
+
+    <h2>P15 本地应用：v-for 指令</h2>
+    <strong class="red">v-for</strong> 指令的作用是根据数据生成列表结构<br>
+    数组经常和 <strong class="red">v-for</strong> 结合使用<br>
+    语法是 <strong class="red">(item, index) in数据</strong> --第1个变量是每1项数据，第2个变量是索引，<strong
+        class="red">这2个变量名可以随便改，但所代表的意义不变</strong> <br>
+    item 和 index 可以结合其他指令一起使用<br>
+    数组长度的更新会同步到页面上，是响应式的<br>
+    <div class="code" id="P15">
+        <ul>
+            <li v-for="(item,indexx) in arrAdd">
+                第{{ indexx+1 }}个地址：{{item}}
+            </li>
+        </ul>
+        <br>
+
+        <button @click="AddMenu">加菜</button>
+        <h5 v-for="m in menu" :title="m.name">
+            {{m.name+" (有title)"}}
+        </h5>
+        <button @click="CutMenu">减菜</button>
+    </div>
+
+
+    <script>
+        var P15 = new Vue({
+            el: "#P15",
+            data: {
+                arrAdd: ["北京", "上海", "深圳", "广州"],
+
+                menu: [
+                    { name: "炒菜" },
+                    { name: "炒肉" },
+                    { name: "炒鸡" },
+                    { name: "炒鸭" },
+                    { name: "鱼" },
+                ]
+            },
+            methods: {
+                AddMenu: function () {
+                    this.menu.push({ name: "蛋蛋蛋蛋蛋蛋蛋蛋" });
+                },
+                CutMenu: function () {
+                    this.menu.shift();
+                },
+            }
+        })
+    </script>
+
+    <h2 id="P16">P16 本地应用：v-on 补充</h2>
+    事件绑定的方法写成 <strong class="red">函数调用</strong> 的形式,可以传入自定义参数<br>
+    定义方法时需要定义 <strong class="red">形参</strong> 来接收传入的实参<br>
+    事件的后面跟上 <strong class="red">.修饰符</strong> 可以对事件进行限制<br>
+    <strong class="red">.enter</strong> 可以限制触发的按键为回车<br>
+    事件修饰符有多种<br>
+    <div class="code" id="P16">
+
+    </div>
+
+
+    <!-- 最后面的集合：     -->
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "你好",
+                school: {
+                    name: "黑马",
+                    mobile: "400xxx"
+                },
+                campus: ["0校区", "1校区", "2校区", "3校区"]
+            }
+        })
+
+        var P7 = new Vue({
+            el: "#P7",
+            data: {
+                message: "ImMessage",
+                message2: "ImMessage2"
+            }
+        })
+
+        var P8 = new Vue({
+            el: "#P8",
+            data: {
+                contnet: "<a href='#'>我是生成的超链接</a>"
+            }
+        })
+
+
+        var P9 = new Vue({
+            el: "#P9",
+            data: {
+                txt1: "我会被改变"
+            },
+            methods: {
+                b1: function () {
+                    alert("test")
+                },
+                changeTextIn: function () {
+                    this.txt1 = "我已被改变"
+                },
+                changeTextOut: function () {
+                    this.txt1 = "你要走就走"
+                }
+            }
+        })
+
+        var P10 = new Vue({
+            el: "#P10",
+            data: {
+                num: 1
+            },
+            methods: {
+                cut: function () {
+                    if (this.num == 0) { }
+                    else {
+                        this.num--
+                    }
+
+                },
+                add: function () {
+                    if (this.num == 10) { }
+                    else {
+                        this.num++
+                    }
+                }
+            }
+        })
+
+        var P11 = new Vue({
+            el: "#P11",
+            data: {
+                isShow: false,
+                age: 15
+            },
+            methods: {
+                age20: function () {
+                    this.age = 20
+                },
+                age5: function () {
+                    this.age = 5
+                }
+            }
+        })
+
+        var P12 = new Vue({
+            el: "#P12",
+            data: {
+                isShow: false,
+                c: 30,
+            },
+            methods: {
+                P12click: function () {
+                    this.isShow = !this.isShow;
+                    if (this.c == 50) {
+                        this.c = 30;
+                    } else {
+                        this.c = 50
+                    }
+                }
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
