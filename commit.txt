@@ -1,3 +1,29 @@
+https://www.bilibili.com/video/av57303253/?spm_id_from=333.788.b_636f6d6d656e74.18
+这里介绍企业开发中进行移动开发的三大主流技术
+1.Angular.js 和 Ionic
+2.Vue.js 和 Weex
+3.React.js 和 React-Native
+
+
+网页布局方式：
+1.固定宽度布局：PC端
+2.流式布局
+3.栅格化布局
+4.响应式布局
+
+这里的第2个评论有学习顺序：
+https://www.bilibili.com/video/av57363596?p=2
+HTML&CSS3 av51518146
+Bootstrap av57345461
+JS av57331657
+jQuery+Ajax av57331112
+Node.js av57235459
+Git av57254429
+Vue.js av57253524
+React av57303253
+Angular.js av57363596
+
+
 HTML5+CSS:
 2020-02-26 23:12 P360 ok
 2020-02-27 14:47 P366 ok
@@ -14,5 +40,7 @@ MVC:
 2020-03-16 14:00 vs2012 mvc 视频 睇到P7，觉得进度好慢，暂时放弃
 
 Vue:
+https://www.bilibili.com/video/av75420619?p=36
 2020-03-17 00:19 只睇了半天就睇完 P9 
 2020-03-18 22:47 P16 睇完未写 code 的笔记
+2020-03-20 17:00 睇完over，但未做最后的 音乐播放器

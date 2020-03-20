@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base target="_blank" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>VUE 学习</title>
 
 
@@ -40,7 +41,15 @@
 </head>
 
 <body>
-    <h1><a href="https://www.bilibili.com/video/av75420619?p=2">VUE 学习来源</a> </h1>
+    <h1>
+        <a href="https://www.bilibili.com/video/av75420619?p=2">黑马程序员VUE经典视频-4小时+5个拣选案例让你快速入门Vue.js-想学习vue的童鞋可以围观了</a>
+    </h1>
+
+    <h2>
+        <a href="https://cn.vuejs.org">Vue 官网地址</a><br>
+        <a href="https://www.runoob.com/vue2/vue-tutorial.html">Vue 菜鸟教程</a><br>
+    </h2>
+
 
     总结学习到的指令：
     <table>
@@ -81,6 +90,24 @@
             </tr>
 
             <tr>
+                <td><a href="#P16">P16</a> </td>
+                <td>v-on 补充</td>
+                <td>
+                    标签内写: <br>
+                    <strong class="red">@click="p2log('参数1','参数2','参数3')"</strong>
+                    <br>
+                    <strong class="red">@keyup.enter="keyEnter"</strong>
+                </td>
+                <td>
+                    <br>
+                    增加参数 <br>
+                    限定按键的事件 <br>
+                </td>
+            </tr>
+
+
+
+            <tr>
                 <td>P11</td>
                 <td>v-show</td>
                 <td>标签内写 v-show="true 或 变量 或 表达式 (的结果指定真假)" (<strong class="red">true 出现,false 消失</strong>)</td>
@@ -111,12 +138,16 @@
             </tr>
 
             <tr>
-                <td><a href="#P16">P16</a> </td>
-                <td>v-on 补充</td>
-                <td>标签内写</td>
-                <td>增加参数，keyup.enter 等按键的限定</td>
+                <td><a href="#P17" target="_salf">P17</a></td>
+                <td>v-model</td>
+                <td>标签内写 v-model="变量"</td>
+                <td>
+                    绑定的数据会和表单元素 <strong class="red">值</strong> 相关联<br>
+                    会代替 value="xx" 的值
+                </td>
             </tr>
-            </tr>
+
+
         </tbody>
     </table>
 
@@ -126,8 +157,8 @@
     <h2>P2 Vue 简介</h2>
     <img src="images/P2.jpg" alt="">
 
-    <h2>P3 首个例子<br>
-        <a href="https://cn.vuejs.org">官网地址</a>
+    <h2>
+        P3 首个例子<br>
     </h2>
     <img src="images/P3.jpg" alt="">
     <div id="app" class="code">
@@ -342,16 +373,307 @@
         })
     </script>
 
-    <h2 id="P16">P16 本地应用：v-on 补充</h2>
+    <h2>P16 本地应用：v-on 补充</h2>
     事件绑定的方法写成 <strong class="red">函数调用</strong> 的形式,可以传入自定义参数<br>
     定义方法时需要定义 <strong class="red">形参</strong> 来接收传入的实参<br>
     事件的后面跟上 <strong class="red">.修饰符</strong> 可以对事件进行限制<br>
     <strong class="red">.enter</strong> 可以限制触发的按键为回车<br>
     事件修饰符有多种<br>
     <div class="code" id="P16">
+        <button @click="p2log('参数1','参数2','参数3')">console.log(传入实参)</button><br>
+        打字到 textbox 中，Enter 时会有 alert 弹出 <input type="text" name="" id="" @keyup.enter="keyEnter">
+    </div>
+    <script>
+        var P16 = new Vue({
+            el: "#P16",
+            data: {
+                temp_val: "xxx",
+                mobile: "400xxx"
+            },
+            methods: {
+                p2log: function (p1, p2, p3) {
+                    console.log("接收到的形参:" + p1 + " " + p2 + " " + p3);
+                    alert("接收到的形参:" + p1 + " " + p2 + " " + p3);
+                },
+                keyEnter: function () {
+                    alert("Enter 完成");
+                }
+            }
+        })
+    </script>
+
+    <h2>P17 本地应用：v-model</h2>
+    <strong class="red">v-model</strong> 指令的作用是便捷的设置和获取表单元素的值<br>
+    绑定的数据会和表单元素 <strong class="red">值</strong> 相关联<br>
+    绑定的数据 <strong class="red">&lt;--&gt;</strong> 表单元素的值<br>
+    <div class="code" id="P17">
+        <input type="text" name="" id="" v-model="msg">
+        <h5>{{ msg }}</h5>
+    </div>
+
+    <script>
+        var P17 = new Vue({
+            el: "#P17",
+            data: { msg: "我是实时更新的值" }
+        })
+    </script>
+
+    <hr>
+    <h2>P18 本地应用例子-小黑记事本：功能介绍</h2>
+    <img src="images/P18.jpg" alt="">
+
+    <h2>P19 本地应用例子-小黑记事本：新增</h2>
+    <img src="images/P19.jpg" alt="">
+
+    <h2>P20 本地应用例子-小黑记事本：删除</h2>
+    1.数据改变，和数据绑定的元素<strong class="red">同步</strong>改变<br>
+    2.事件的<strong class="red">自定义参数</strong><br>
+    3.<strong class="red">splice</strong> 方法的作用：this.list.splice(index,1) 第 index 条开始，删除 1 条
+    <img src="images/P20.jpg" alt="">
+
+    <h2>P21 本地应用例子-小黑记事本：统计</h2>
+    <img src="images/P21.jpg" alt="">
+
+    <h2>P22 本地应用例子-小黑记事本：清空</h2>
+    <img src="images/P22.jpg" alt="">
+
+    <h2>P23 本地应用例子-小黑记事本：隐藏</h2>
+    在底下2个功能键中做 v-show 或 v-if ="list.length!=0"(可以考虑 直接 list.length)
+
+    <hr>
+    <h2>P24 网络应用例子-介绍</h2>
+    <img src="images/P24.jpg" alt="">
+
+
+    <h2>P25 网络应用例子-axios 基本使用 </h2>
+    功能强大的网络请求库
+    <div class="code">
+        &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;<br>
+        key 由可以访问的接口文档提供<br>
+        <br>
+        get 方式：<br>
+        axios.get(接口地址?查询字符串).then(function(response){},function(err){})<br>
+        axios.get(接口地址?key=value&key2=value2).then(function(response){},function(err){})<br>
+        <br>
+        查询字符串 是参数，格式是 key=value&key2=value2<br>
+        .then()方法:<br>
+        第一个函数:请求响应完成时触发<br>
+        第二个函数:请求失败时触发<br>
+        <br>
+        <br>
+        post 方式：(与 get 方式基本一致，只是参数对象不同)<br>
+        axios.post(接口地址,参数对象).then(function(response){},function(err){})<br>
+        axios.post(接口地址,{key:value,key2:value2}).then(function(response){},function(err){})<br>
+        参数对象，格式是 {key:value,key2:value2}<br>
 
     </div>
 
+    <br>
+    <strong class="red">axios</strong> 必须先导入才可以使用<br>
+    使用 <strong class="red">get</strong> 或 <strong class="red">post</strong> 方法即可发送对应的请求<br>
+    <strong class="red">then</strong> 方法中的回调函数会在请求成功或失败时触发<br>
+    通过回调函数的形参可以获取响应内容,或错误信息<br>
+    <br>
+    文档传送门<br>
+    <a href="https://github.com/axios/axios">https://github.com/axios/axios</a>
+
+    <div class="code" id="P25">
+        <br>
+        <input type="text" v-model="jokeCount" @keyup.enter="keyEnter">
+        <button @click="GetJoke">获得{{ jokeCount }}个笑话</button>
+
+        <ul>
+            <li v-for="(item,index) in arrJoke">
+                第{{ index + 1 }}条笑话：{{ item }} <br>
+                <br>
+            </li>
+        </ul>
+    </div>
+
+    <div class="code" id="P25Post">
+        <input type="text" v-model="txtKey">
+        <button @click="doPost">post方式注册 {{ txtKey }} 这个用户名</button>
+
+        <h5>
+            注册结果：<br>
+            <ul>
+                <li v-for="item in returnValueList">
+                    {{ item }}
+                </li>
+            </ul>
+        </h5>
+    </div>
+
+    <h2>P26 网络应用例子-axios + Vue</h2>
+    <h3>在 P25 的例子中，我已经做好了...</h3>
+    <strong class="red">axios</strong> 回调函数中的 <strong class="red">this</strong> 已经改变无法访问到 <strong class="red">data</strong> 中数据<br>
+    把 <strong class="red">this</strong> 保存起来回调函数中直接使用保存的 <strong class="red">this</strong> 即可<br>
+    和本地应用的最大区别就是改变了 <strong class="red">数据来源</strong><br>
+
+    <script>
+        var P25 = new Vue({
+            el: "#P25",
+            data: {
+                jokeCount: 3,
+                arrResponse: [],  //返回的 response
+                arrJoke: []     //笑话 arry
+            },
+            methods: {
+                keyEnter: function () {
+                    // P25.GetJoke();
+                    this.GetJoke();
+                },
+                GetJoke: function () {
+                    var that=this;  // 保存住 this ，因为下面 this 的对象会变
+                    axios.get("https://autumnfish.cn/api/joke/list?num=" + P25.jokeCount).then(function (responseOk) {
+                        // P25.arrResponse = responseOk;
+                        that.arrResponse = responseOk;
+
+                        // 刷新笑话数组
+                        // P25.arrJoke = P25.arrResponse.data.jokes;
+                        that.arrJoke = that.arrResponse.data.jokes;
+                        // console.log(this.arrJoke);   // 这个可以得到正常的笑话
+                        // console.log(P25.arrResponse.data.jokes);
+                        // console.log(P25.arrResponse.data.jokes.length);
+
+                        //添加新笑话数据进数组++
+                        // for(var i=0;i<P25.arrResponse.data.jokes.length;i++){
+
+                        //     P25.arrJoke.push(P25.arrResponse.data.jokes[i]);
+                        // }
+                    }, function (err) {
+                        P25.arrJoke = err;
+                    })
+                }
+            }
+        });
+        /*
+        接 口  1：随机笑话
+        请求地址：https://autumnfish.cn/api/joke/list
+        请求方法：get
+        请求参数：num(笑话条数,数字)
+        响应内容：随机笑话
+        使用方式：https://autumnfish.cn/api/joke/list?num=1
+        */
+
+
+
+
+        /*
+        接 口  2：用户注册
+        请求地址：https://autumnfish.cn/api/user/reg
+        请求方法：post
+        请求参数：username(username,字符串)
+        响应内容：注册成功或失败
+        使用方式：
+        */
+
+        var P25Post = new Vue({
+            el: "#P25Post",
+            data: {
+                txtKey: "kkkkk",
+                returnValueList: [],
+            },
+            methods: {
+                doPost: function () {
+                    axios.post("https://autumnfish.cn/api/user/reg", { username: P25Post.txtKey }).then(function (response) {
+                        P25Post.returnValueList = response;
+                        // console.log(response);
+                    }, function (err) {
+                        P25Post.returnValueList = err;
+                        // console.log(err);
+                    })
+                }
+            }
+        });
+
+    </script>
+
+    <h2>P27 网络应用例子-天知道介绍</h2>
+    <img src="images/P27.jpg" alt="">
+
+    <h2>P28 网络应用例子-天知道 Enter 查询</h2>
+    应用的逻辑代码建议和页面 <strong class="red">分离</strong> ,使用 <strong class="red">单独</strong> 的s文件编写<br>
+    <strong class="red">axios</strong> 回调函数中 <strong class="red">this</strong> 指向改变了,需要额外的保存一份<br>
+    服务器返回的数据比较复杂时,获取的时候需要注意 <strong class="red">层级</strong> 结构<br>
+    <img src="images/P28.jpg" alt="">
+
+    <h2>P29 网络应用例子-天知道 点击查询</h2>
+    自定义参数可以让代码的 <strong class="red">复用性</strong> 更高
+    <strong class="red">methods</strong> 中定义的方法内部,可以通过 <strong class="red">this</strong> 关键字点出其他的方法
+
+    <h2>P30 综合应用-介绍</h2>
+    <img src="images/P30.jpg" alt="">
+
+    <h2>P31 综合应用-音乐查询</h2>
+    <img src="images/P31.jpg" alt="">
+    <!-- 找歌手得到歌曲 id -->
+    <!-- https://autumnfish.cn/search?keywords=王菲 -->   
+
+    <h2>P32 综合应用-音乐播放</h2>
+    <img src="images/P32.jpg" alt="">
+    <!-- 通过歌曲id，得到歌曲地址 -->
+    <!-- https://autumnfish.cn/song/url?id=386175 -->
+    
+    <h2>P33 综合应用-歌曲封面</h2>
+    <img src="images/P33.jpg" alt="">
+    <!-- 通过歌曲id，得到歌曲封面 -->
+    <!-- https://autumnfish.cn/song/detail?ids=386175 -->
+
+    <h2>P34 综合应用-歌曲评论</h2>
+    <img src="images/P34.jpg" alt="">
+    <!-- 通过歌曲id，得到歌曲精品评论 -->
+    <!-- https://autumnfish.cn/comment/hot?type=0&id=386175 -->
+
+    <h2>P35 综合应用-播放动画</h2>
+    <img src="images/P35.jpg" alt="">
+
+    <h2>P36 综合应用-播放MV</h2>
+    <img src="images/P36.jpg" alt="">
+    <!-- 通过 mvid，注意这个 id 就 之前的 mvid -->
+    <!-- https://autumnfish.cn/mv/url?id=386175 -->
+
+
+    <h2>播放器的资料总结：</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>工作说明</th>
+                <th>端口使用</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>P31.通过搜索端口，得到歌曲列表</td>
+                <td>
+                    https://autumnfish.cn/search?keywords=王菲<br>
+                    需要 变量 记录当首选择歌的 id,mvid
+                </td>
+            </tr>
+
+            <tr>
+                <td>P32.通过歌曲id，得到歌曲地址</td>
+                <td>https://autumnfish.cn/song/url?id=386175</td>
+            </tr>
+
+            <tr>
+                <td>P33.通过歌曲id，得到歌曲封面.jpg</td>
+                <td>https://autumnfish.cn/song/detail?ids=386175</td>
+            </tr>
+
+            <tr>
+                <td>P34.通过歌曲id，得到歌曲精品评论</td>
+                <td>https://autumnfish.cn/comment/hot?type=0&id=386175</td>
+            </tr>
+
+            <tr>
+                <td>P36.通过 mvid，注意这个 id 就 之前的 mvid</td>
+                <td>https://autumnfish.cn/mv/url?id=386175</td>
+            </tr>
+        </tbody>
+    </table>
 
     <!-- 最后面的集合：     -->
     <script>
